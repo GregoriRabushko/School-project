@@ -1,0 +1,66 @@
+.flexContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 950px;
+}
+
+.newClassList {
+  width: min-content;
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 45px;
+}
+
+.newClassList:hover {
+  cursor: pointer;
+}
+
+
+.createNewList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.divLabel {
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.createNewStudent {
+  border: 1px solid black;
+  padding: 5px 10px;
+}
+
+.createNewStudent:hover {
+  cursor: pointer;
+}
+
+.headerList {
+  font-size: 40px;
+  padding-bottom: 40px;
+}
+
+label {
+  padding-right: 10px;
+}
+
+tr {
+  border: 1px solid black;
+}
+
+td {
+  border: 1px solid black;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+table {
+  border: 1px solid black;
+}
+
+.numberStudent {
+  width: 8px;
+}
