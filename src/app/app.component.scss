@@ -16,51 +16,23 @@
   cursor: pointer;
 }
 
-
-.createNewList {
+.selectionClass {
+  position: absolute;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #000000b3;
 }
 
-.divLabel {
+.containerToCheckbox {
   display: flex;
-  padding-bottom: 10px;
+  width: 350px;
+  height: 175px;
+  background-color: antiquewhite;
 }
 
-.createNewStudent {
-  border: 1px solid black;
-  padding: 5px 10px;
-}
-
-.createNewStudent:hover {
-  cursor: pointer;
-}
-
-.headerList {
-  font-size: 40px;
-  padding-bottom: 40px;
-}
-
-label {
-  padding-right: 10px;
-}
-
-tr {
-  border: 1px solid black;
-}
-
-td {
-  border: 1px solid black;
-  padding: 5px 10px;
-  text-align: center;
-}
-
-table {
-  border: 1px solid black;
-}
-
-.numberStudent {
-  width: 8px;
+.checkboxClass {
+  display: flex;
 }

@@ -1,63 +1,12 @@
-<!--<div class="flexContainer">-->
-<!--  <div class="newClassList">Добавить новый журнал</div>-->
-<!--</div>-->
-
-
-<!--======================================================================-->
-<!--Заполнение журнала(создание)-->
-<!--Перед тем как заполнять журнал узнать какой класс(ывести на экран табличку в которой можно будет определить класс)-->
-<div class="headerList">Заполнение журнала</div>
-<div class="createNewList">
-
-
-  <div class="divLabel">
-    <label for="surname">ФИО</label>
-    <input id="surname" type="text">
-    <button (click)="addStudentToList()">записать</button>
-  </div>
-
-  <table>
-    <tr>
-      <td rowspan="2" colspan="2">ФИО учащихся</td>
-      <td colspan="20">Название предмета</td>
-      <td rowspan="2">Изученный материал</td>
-    </tr>
-    <tr>
-      <td colspan="2">date</td>
-      <td colspan="2">date</td>
-      <td colspan="2">date</td>
-      <td colspan="2">date</td>
-      <td colspan="2">date</td>
-      <td colspan="2">date</td>
-      <td colspan="2">date</td>
-      <td colspan="2">date</td>
-      <td colspan="2">date</td>
-      <td colspan="2">date</td>
-    </tr>
-    <tr id="infoStudent">
-      <td class="numberStudent">{{countNumberStudent}}</td>
-      <td>Rabushko Gregori</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
+<div class="flexContainer"  *ngIf="creatClassSelection">
+  <div class="newClassList" (click)="creatList()" >Добавить новый журнал</div>
 </div>
+
+<div class="selectionClass" *ngIf="classSelection" >
+  <div class="containerToCheckbox">
+<!--    создать список классов-->
+    <button (click)="creatList()" >Отмена</button>
+    <button (click)="creatNewList()" >Создать</button>
+  </div>
+</div>
+<app-students-list *ngIf="toStudentsList" ></app-students-list>
