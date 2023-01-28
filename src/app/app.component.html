@@ -1,12 +1,64 @@
-<div class="flexContainer"  *ngIf="creatClassSelection">
-  <div class="newClassList" (click)="creatList()" >Добавить новый журнал</div>
+<!--==================== authorization ==================-->
+<div *ngIf="authorization">
+  <form action="" name="formCardInput" class="formCardInput">
+    <h1>Вход</h1>
+
+    <label>Имя</label>
+    <input placeholder="Имя пользователя" type="text">
+
+    <label>Пароль</label>
+    <input placeholder="Введите пароль" type="password">
+
+    <button class="buttonCome" >Войти</button>
+    <p>
+      У вас нет аккаунта? - <a href="#" >Регистрация</a>
+    </p>
+  </form>
 </div>
 
-<div class="selectionClass" *ngIf="classSelection" >
-  <div class="containerToCheckbox">
-<!--    создать список классов-->
-    <button (click)="creatList()" >Отмена</button>
-    <button (click)="creatNewList()" >Создать</button>
-  </div>
+
+<!--================= registration =======================-->
+<div class="containerForm" *ngIf="registration">
+  <form action="" name="formCardInput" class="formCardInput">
+    <h1>Регистрация</h1>
+
+    <div class="accountSelection">
+      <button class="" (click)="directorSchool = true">Директор</button>
+      <button class="" (click)="teacherSchool = true">Учитель</button>
+      <button class="" (click)="parentStudent = true">Родитель</button>
+      <button class="" (click)="studentSchool = true">Ученик</button>
+      <button class="" (click)="householdWorkers = true">ХОЗ-работник</button>
+    </div>
+
+    <label>ФИО</label>
+    <input placeholder="ФИО пользователя" type="text">
+
+    <label>Возраст</label>
+    <input placeholder="Возраст пользователя" type="text">
+
+    <label>E-mail</label>
+    <input placeholder="Введите email" type="email">
+
+    <label *ngIf="directorSchool" >Номер школы</label>
+    <input *ngIf="directorSchool" placeholder="Введите номер школы" type="email">
+
+    <label *ngIf="directorSchool">Телефон школы</label>
+    <input *ngIf="directorSchool" placeholder="Введите номер телефона школы" type="tel">
+
+    <label>Мобильный телефон</label>
+    <input placeholder="Введите ваш мобильный номер телефона" type="tel">
+
+    <label>Пароль</label>
+    <input placeholder="Введите пароль" type="password">
+
+    <label>Подтвердите пароль</label>
+    <input placeholder="Введите пароль" type="password">
+
+    <button class="buttonCome">Зарегистрироваться</button>
+    <p>
+      У вас уже есть аккаунт? - <a href="#">авторизироваться</a>
+    </p>
+  </form>
 </div>
-<app-students-list *ngIf="toStudentsList" ></app-students-list>
+
+<app-items-to-school></app-items-to-school>

@@ -8,17 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'pet-project';
 
-  creatClassSelection = true;
-  toStudentsList = false;
-  classSelection = false;
+  directorSchool = false;
+  teacherSchool = false;
+  parentStudent = false;
+  studentSchool = false;
+  householdWorkers = false;
+  registration = false;
+  authorization = false;
 
-  creatNewList () {
-    this.toStudentsList = true;
-    this.classSelection = false;
-    this.creatClassSelection = false;
-  }
-
-  creatList() {
-    this.classSelection = !this.classSelection;
-  }
 }
