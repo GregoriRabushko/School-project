@@ -11,6 +11,8 @@ export class StudentsListComponent implements OnInit {
   students: string[] = [];
   studentsName:string = '';
 
+  className: string = '';
+
   constructor() { }
 
   ngOnInit(): void {

@@ -80,7 +80,6 @@
 
 
 <!--<app-user-profil></app-user-profil>-->
-<app-students-list></app-students-list>
 <!--<app-school-magazine></app-school-magazine>-->
 
 <!--<app-choose-a-subject></app-choose-a-subject>-->
@@ -88,4 +87,7 @@
 
 <!--<app-items-to-school></app-items-to-school>-->
 <!--<app-bulletin-board></app-bulletin-board>-->
+<button (click)="truOrFalseVue()">NEXT</button>
+<app-select-school-list *ngIf="!truOrFalse"></app-select-school-list>
+<app-students-list *ngIf="truOrFalse"></app-students-list>
 

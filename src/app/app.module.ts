@@ -15,6 +15,7 @@ import { ChooseASubjectComponent } from './school-magazine/choose-a-subject/choo
 import { UserProfilComponent } from './user-profil/user-profil.component';
 import { BulletinBoardComponent } from './bulletin-board/bulletin-board.component';
 import { MessangerComponent } from './messanger/messanger.component';
+import { SelectSchoolListComponent } from './students-list/select-school-list/select-school-list.component';
 
 
 
@@ -35,6 +36,7 @@ const appRoutes: Routes =[
     UserProfilComponent,
     BulletinBoardComponent,
     MessangerComponent,
+    SelectSchoolListComponent,
 
   ],
   imports: [
