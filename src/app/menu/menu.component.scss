@@ -11,3 +11,10 @@ button {
   height: 100%;
   background-color: #F0F0F0;
 }
+
+button:hover{
+  cursor: pointer;
+  background-color: rgba(161, 143, 143, 0.25);
+}
+
+

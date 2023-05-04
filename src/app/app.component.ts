@@ -8,12 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'pet-project';
 
-  directorSchool = false;
-  teacherSchool = false;
-  parentStudent = false;
-  studentSchool = false;
-  householdWorkers = false;
-  registration = false;
-  authorization = false;
-
 }

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from "@angular/forms";
 
+import {Routes, RouterModule} from '@angular/router';
+
 import { AppComponent } from './app.component';
 import { StudentsListComponent } from './students-list/students-list.component';
 import { ItemsToSchoolComponent } from './items-to-school/items-to-school.component';
@@ -14,6 +16,13 @@ import { UserProfilComponent } from './user-profil/user-profil.component';
 import { BulletinBoardComponent } from './bulletin-board/bulletin-board.component';
 import { MessangerComponent } from './messanger/messanger.component';
 
+
+
+const appRoutes: Routes =[
+  // { path: '', component: AppComponent},
+  // { path: 'about', component: UserProfilComponent},
+  // { path: '**', component: MenuComponent }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,10 +34,12 @@ import { MessangerComponent } from './messanger/messanger.component';
     ChooseASubjectComponent,
     UserProfilComponent,
     BulletinBoardComponent,
-    MessangerComponent
+    MessangerComponent,
+
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(appRoutes),
     FormsModule,
     FullCalendarModule
   ],
