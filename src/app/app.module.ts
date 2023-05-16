@@ -20,13 +20,18 @@ import { SelectSchoolListComponent } from './students-list/select-school-list/se
 import { TableRowWithStudentsComponent } from './students-list/table-row-with-students/table-row-with-students.component';
 import { TableRowWithGradeComponent } from './students-list/table-row-with-grade/table-row-with-grade.component';
 import { ChooseASchoolSubjectComponent } from './students-list/select-school-list/choose-a-school-subject/choose-a-school-subject.component';
+import { AuthorizationComponent } from './authorization/authorization.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 
 const appRoutes: Routes =[
-  // { path: 'book/:id', component: AppComponent},
-  // { path: 'about', component: UserProfilComponent},
-  // { path: '**', component: MenuComponent }
+  { path: '', component: AuthorizationComponent },
+  { path: 'authorization', component: AuthorizationComponent },
+  { path: 'registration', component: RegistrationComponent },
+  { path: 'select', component: SelectSchoolListComponent },
+  { path: 'menu', component: MenuComponent },
+  { path: 'student', component: StudentsListComponent }
 ];
 @NgModule({
   declarations: [
@@ -44,6 +49,8 @@ const appRoutes: Routes =[
     TableRowWithStudentsComponent,
     TableRowWithGradeComponent,
     ChooseASchoolSubjectComponent,
+    AuthorizationComponent,
+    RegistrationComponent,
 
   ],
   imports: [

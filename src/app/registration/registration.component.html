@@ -1,0 +1,46 @@
+<div class="containerForm">
+  <form action="" name="formCardInput" class="formCardInput">
+    <h1>Регистрация</h1>
+
+    <div class="accountSelection">
+      <label>Кем вы являетесь</label>
+      <input list="name" placeholder="Выберите нужный">
+      <datalist id="name">
+        <option>Директор</option>
+        <option>Учитель</option>
+        <option>Родитель</option>
+        <option>Ученик</option>
+        <option>ХОЗ-работник</option>
+      </datalist>
+    </div>
+
+    <label>ФИО</label>
+    <input placeholder="ФИО пользователя" type="text">
+
+    <label>Возраст</label>
+    <input placeholder="Возраст пользователя" type="text">
+
+    <label>E-mail</label>
+    <input placeholder="Введите email" type="email">
+
+    <label >Номер школы</label>
+    <input placeholder="Введите номер школы" type="email">
+
+    <label>Телефон школы</label>
+    <input placeholder="Введите номер телефона школы" type="tel">
+
+    <label>Мобильный телефон</label>
+    <input placeholder="Введите ваш мобильный номер телефона" type="tel">
+
+    <label>Пароль</label>
+    <input placeholder="Введите пароль" type="password">
+
+    <label>Подтвердите пароль</label>
+    <input placeholder="Введите пароль" type="password">
+
+    <button class="buttonCome">Зарегистрироваться</button>
+    <p>
+      У вас уже есть аккаунт? - <a routerLink="/authorization">авторизироваться</a>
+    </p>
+  </form>
+</div>

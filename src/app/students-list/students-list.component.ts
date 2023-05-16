@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FunctionalClassListService } from "./functional-class-list.service";
 import { MoreData } from "./functional-class-list.service";
+import { SelectSchoolListService } from 'src/app/students-list/select-school-list/select-school-list.service';
 import { HttpClient} from '@angular/common/http';
 import { Observable} from "rxjs";
 import { map } from "rxjs/operators";
@@ -17,21 +18,24 @@ import { map } from "rxjs/operators";
 
 
 export class StudentsListComponent implements OnInit {
+  @Input() className: string = '';
+  @Input() nameObject:string = '';
 
   countNumberStudent = 0;
   students: string[] = [];
   studentsName:string = '';
-  className: string = '';
   monthToList:string[] = ['January', 'February','March','April','May','June','July','August','September','October','November','December',];
   month = this.monthToList[0];
   item = 0
 
+
   users:MoreData[] = []
 
 
-  constructor(private listService: FunctionalClassListService) { }
+  constructor(private listService: FunctionalClassListService, private selectSchoolListService:SelectSchoolListService) { }
 
   ngOnInit(): void {
+    this.className = this.selectSchoolListService.chosenSubject;
   }
   addStudentToList() {
     this.countNumberStudent += this.countNumberStudent;

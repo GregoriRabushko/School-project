@@ -1,0 +1,35 @@
+.formCardInput {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  border:1px solid  #e3e3e3;
+  padding: 10px 20px;
+}
+
+p {
+  font-size: 12px;
+}
+
+input {
+  margin: 5px 0;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #e3e3e3;
+  outline: none;
+}
+
+label {
+  margin-top: 15px;
+}
+
+a {
+  color: #416ee1;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.buttonCome {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}

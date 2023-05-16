@@ -11,17 +11,24 @@ export class SelectSchoolListComponent implements OnInit {
 
   studentsListNumber:string[] = [];
   schoolObjects:string[] = [];
-
   buttonSchoolListNumber = false;
-  constructor(private listService: FunctionalClassListService,private selectSchoolList:SelectSchoolListService) { }
+  addSchoolObjectOnSchoolList:string = '';
+  className = '';
+  divVueAddSchoolObject = false;
+  openWindowAddSchoolClassList = false;
+
+
+  constructor(private listService: FunctionalClassListService,private selectSchoolListService:SelectSchoolListService) { }
 
 
   ngOnInit(): void {
-    this.studentsListNumber = this.selectSchoolList.getStudentsListNumber();
+    this.studentsListNumber = this.selectSchoolListService.getStudentsListNumber();
     console.log(this.studentsListNumber);
-    this.schoolObjects = this.selectSchoolList.getSchoolObjects();
+    this.schoolObjects = this.selectSchoolListService.getSchoolObjects();
     console.log(this.schoolObjects);
   }
+
+
 
   clickButtonSchoolListNumber() {
     this.buttonSchoolListNumber = true;
@@ -31,9 +38,30 @@ export class SelectSchoolListComponent implements OnInit {
     this.buttonSchoolListNumber = false;
   }
 
+  closeWindowWithSchoolClassList() {
+    this.openWindowAddSchoolClassList = false;
+  }
+
+  divVueAddSchoolClass() {
+    this.openWindowAddSchoolClassList = true;
+  }
+
+  addNewSchoolObject() {
+    this.divVueAddSchoolObject = true;
+  }
+
   selectSchoolObject(item:string) {
     let indexObject;
     indexObject = this.schoolObjects.indexOf(item);
     console.log(indexObject);
+  }
+
+  buttonAddSchoolObject() {
+    this.selectSchoolListService.postSchoolObjects(this.addSchoolObjectOnSchoolList);
+    console.log(this.addSchoolObjectOnSchoolList);
+  }
+
+  addNewClassList() {
+    this.selectSchoolListService.postStudentsListNumber(this.className);
   }
 }
