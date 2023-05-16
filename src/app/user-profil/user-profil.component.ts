@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-user-profil',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfilComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private readonly _router: Router,
+    private readonly _route: ActivatedRoute
+  ) { }
 
-  ngOnInit(): void {
+   ngOnInit() {
   }
 
 }

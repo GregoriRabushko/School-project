@@ -1,0 +1,101 @@
+{
+  "classes": [
+    {
+      "11A":[
+        {
+        "id": 1,
+        "name": "Григорий",
+        "firstName": "Рабушко",
+        "surName": "Николаевич",
+        "email": "zak_zan@bk.ru",
+        "school": "1",
+        "classNumber": "11A",
+        "address": {
+          "street": "Первомайская",
+          "city": "Узда"
+        }
+      },
+        {
+          "id": 15,
+          "name": "Дмитрий",
+          "firstName": "Кривец",
+          "surName": "Антонович",
+          "email": "zak_zan@bk.ru",
+          "school": "2",
+          "classNumber": "11A",
+          "address": {
+            "street": "Первомайская",
+            "city": "Узда"
+          }
+        }
+      ],
+      "11Б":[
+        {
+        "id": 2,
+        "name": "Максим",
+        "firstName": "Кривец",
+        "surName": "Дмитриевич",
+        "email": "zak_zan@bk.ru",
+        "school": "1",
+        "classNumber": "11Б",
+        "address": {
+          "street": "Первомайская",
+          "city": "Узда"
+        }
+      }
+      ],
+      "10A":[
+        {
+        "id": 3,
+        "name": "Алексей",
+        "firstName": "Кривец",
+        "surName": "Дмитриевич",
+        "email": "zak_zan@bk.ru",
+        "school": "3",
+        "classNumber": "10Б",
+        "address": {
+          "street": "Первомайская",
+          "city": "Узда"
+        }
+      }
+      ]
+    }
+  ],
+  "schoolList": [
+    {
+      "January":
+    {
+      "Mathematics": [
+        {
+          "date": "10",
+          "grade": "9"
+        }
+      ],
+      "English": [
+        {
+          "date": "4",
+          "grade": "3"
+        }
+      ],
+      "Athletic": [
+        {
+          "date": "7",
+          "grade": "8"
+        }
+      ],
+      "Biology": [
+        {
+          "date": "24",
+          "grade": "4"
+        }
+      ],
+      "Russian language": [
+        {
+          "date": "15",
+          "grade": "4"
+        }
+      ]
+    }
+    }
+  ]
+}

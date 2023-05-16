@@ -1,9 +1,8 @@
-
-<app-menu></app-menu>
+<!--<app-menu></app-menu>-->
 
 <div class="createNewList">
-  <div class="headerList">{{className}}
-    <input placeholder="Номер класса" [(ngModel)]="className">
+  <div class="headerList">
+    <input class="className" placeholder="Номер класса" [(ngModel)]="className">
   </div>
   <div class="divLabel">
     <label for="surname">ФИО</label>
@@ -11,49 +10,69 @@
     <button (click)="addStudentToList()">записать</button>
   </div>
 
+
+  <div class="monthButtons">
+    <button class="monthButton" (click)="nextMonth()">+</button>
+    <div class="monthText">{{month}}</div>
+    <button class="monthButton" (click)="previousMonth()">-</button>
+  </div>
+
+
+
   <table>
     <tr>
       <td rowspan="2" colspan="2">ФИО учащихся</td>
-      <td colspan="20">Название предмета</td>
+      <td colspan="31"><input class="inputToPredmet" placeholder="Название предмета"></td>
       <td rowspan="2">Изученный материал</td>
     </tr>
     <tr>
-      <td colspan="2">date</td>
-      <td colspan="2">date</td>
-      <td colspan="2">date</td>
-      <td colspan="2">date</td>
-      <td colspan="2">date</td>
-      <td colspan="2">date</td>
-      <td colspan="2">date</td>
-      <td colspan="2">date</td>
-      <td colspan="2">date</td>
-      <td colspan="2">date</td>
+      <td>01</td>
+      <td>02</td>
+      <td>03</td>
+      <td>04</td>
+      <td>05</td>
+      <td>06</td>
+      <td>07</td>
+      <td>08</td>
+      <td>09</td>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+      <td>20</td>
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+      <td>24</td>
+      <td>25</td>
+      <td>26</td>
+      <td>27</td>
+      <td>28</td>
+      <td>29</td>
+      <td>30</td>
+      <td>31</td>
+
+
     </tr>
-    <tr *ngFor="let item of students">
-      <td class="numberStudent">{{students.indexOf(item) + 1}}</td>
-      <td>{{item}}</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+    <tr class="cursorAround" *ngFor="let name of students">
+      <td class="numberStudent">{{students.indexOf(name) + 1}}</td>
+      <td>{{name}}</td>
+      <app-table-row-with-students></app-table-row-with-students>
     </tr>
   </table>
-  <button>Сохранить</button>
+<!--  <button (click)="addUserToSchoolList()">to add user</button>-->
+<!--  <button (click)="saveListButton()">Сохранить</button>-->
+<!--  <button (click)="playObserver()">play</button>-->
 </div>
+
+
+
+
+
+

@@ -1,4 +1,29 @@
+.inputToDate {
+  border: none;
+  width: 20px;
+  height: 14px;
+  text-align: center;
+  outline: none;
+}
 
+.cursorAround:hover {
+  border: 1px solid yellow;
+}
+
+.className {
+  font-size: 32px;
+  text-align: center;
+  outline: none;
+  border: none;
+}
+
+
+.inputToPredmet {
+  border: none;
+  text-align: center;
+  font-size: 24px;
+  outline: none;
+}
 
 .createNewList {
   margin-left: 300px;
@@ -15,7 +40,7 @@
 
 .createNewStudent {
   border: 1px solid black;
-  padding: 5px 10px;
+  //padding: 5px 10px;
 }
 
 .createNewStudent:hover {
@@ -31,10 +56,6 @@ label {
   padding-right: 10px;
 }
 
-tr {
-  border: 1px solid black;
-}
-
 td {
   border: 1px solid black;
   padding: 5px 10px;
@@ -47,4 +68,25 @@ table {
 
 .numberStudent {
   width: 8px;
+}
+
+.monthButtons {
+  display: flex;
+  align-items: center;
+}
+
+.monthText {
+  width: 100px;
+  text-align: center;
+
+}
+
+.monthButton {
+  width: 30px;
+  height: 30px;
+  margin: 5px 10px;
+}
+
+app-table-row-with-students {
+  display: contents;
 }

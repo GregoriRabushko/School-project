@@ -1,9 +1,16 @@
-<app-menu></app-menu>
+<!--<app-menu></app-menu>-->
 <div class="containerByList">
-<div>Добавить журнал</div>
 
-  <div class="createNewSchoolList" *ngFor="let item of classesName">{{item}} класс</div>
+  <button class="createNewSchoolList" (click)="clickButtonSchoolListNumber()" *ngFor="let item of studentsListNumber">{{item}} класс</button>
 
   <button class="createNewSchoolList">Создать журнал +</button>
 
+</div>
+
+<div *ngIf="buttonSchoolListNumber">
+  <p>Выберите предмет</p>
+  <li *ngFor="let item of schoolObjects">
+    <button (click)="selectSchoolObject(item)">{{item}}</button>
+  </li>
+  <button (click)="closeWindowWithSchoolObject()">Закрыть</button>
 </div>
