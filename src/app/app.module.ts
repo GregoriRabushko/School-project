@@ -8,11 +8,9 @@ import { HttpClientModule }   from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { StudentsListComponent } from './students-list/students-list.component';
 import { ItemsToSchoolComponent } from './items-to-school/items-to-school.component';
-import { SchoolMagazineComponent } from './school-magazine/school-magazine.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { MenuComponent } from './menu/menu.component';
 import { ListJinglesComponent } from './items-to-school/list-jingles/list-jingles.component';
-import { ChooseASubjectComponent } from './school-magazine/choose-a-subject/choose-a-subject.component';
 import { UserProfilComponent } from './user-profil/user-profil.component';
 import { BulletinBoardComponent } from './bulletin-board/bulletin-board.component';
 import { MessangerComponent } from './messanger/messanger.component';
@@ -22,26 +20,15 @@ import { TableRowWithGradeComponent } from './students-list/table-row-with-grade
 import { ChooseASchoolSubjectComponent } from './students-list/select-school-list/choose-a-school-subject/choose-a-school-subject.component';
 import { AuthorizationComponent } from './authorization/authorization.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { appRoutes } from 'src/app/Approutes';
 
-
-
-const appRoutes: Routes =[
-  { path: '', component: AuthorizationComponent },
-  { path: 'authorization', component: AuthorizationComponent },
-  { path: 'registration', component: RegistrationComponent },
-  { path: 'select', component: SelectSchoolListComponent },
-  { path: 'menu', component: MenuComponent },
-  { path: 'student', component: StudentsListComponent }
-];
 @NgModule({
   declarations: [
     AppComponent,
     StudentsListComponent,
     ItemsToSchoolComponent,
-    SchoolMagazineComponent,
     MenuComponent,
     ListJinglesComponent,
-    ChooseASubjectComponent,
     UserProfilComponent,
     BulletinBoardComponent,
     MessangerComponent,

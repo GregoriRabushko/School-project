@@ -1,1 +1,15 @@
 <!-- страничка с выбором предмета-->
+<p>Выберите предмет</p>
+<li *ngFor="let item of schoolObjects">
+  <button (click)="selectSchoolObject(item)">{{item}}</button>
+</li>
+<button (click)="addNewSchoolObject()">Добавить новый предмет</button>
+<button (click)="closeWindowWithSelectSchoolObject(false)">Закрыть</button>
+
+
+<div *ngIf="divVueAddSchoolObject">
+  <label>Название предмета</label>
+  <input type="text" [(ngModel)]="addSchoolObjectOnSchoolList">
+  <button (click)="buttonAddSchoolObject()">Добавить</button>
+  <button (click)="closeWindowWithAddSchoolObject()">Закрыть</button>
+</div>

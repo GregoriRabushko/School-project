@@ -24,7 +24,7 @@ export class StudentsListComponent implements OnInit {
   countNumberStudent = 0;
   students: string[] = [];
   studentsName:string = '';
-  monthToList:string[] = ['January', 'February','March','April','May','June','July','August','September','October','November','December',];
+  monthToList:string[] = ['Январь', 'Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь',];
   month = this.monthToList[0];
   item = 0
 
@@ -40,6 +40,11 @@ export class StudentsListComponent implements OnInit {
   addStudentToList() {
     this.countNumberStudent += this.countNumberStudent;
     this.students.push(this.studentsName);
+  }
+
+  deleteStudent(indexStudent:number) {
+    this.students.splice(indexStudent,1)
+    console.log(this.students);
   }
   saveListButton () {
     this.listService.addData(this.className);

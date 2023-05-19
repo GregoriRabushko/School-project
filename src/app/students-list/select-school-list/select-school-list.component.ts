@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { FunctionalClassListService } from 'src/app/students-list/functional-class-list.service';
 import { SelectSchoolListService } from 'src/app/students-list/select-school-list/select-school-list.service';
 @Component({
@@ -10,11 +10,8 @@ import { SelectSchoolListService } from 'src/app/students-list/select-school-lis
 export class SelectSchoolListComponent implements OnInit {
 
   studentsListNumber:string[] = [];
-  schoolObjects:string[] = [];
-  buttonSchoolListNumber = false;
-  addSchoolObjectOnSchoolList:string = '';
+  @Input() closeOrVueChooseASchoolSubject = false;
   className = '';
-  divVueAddSchoolObject = false;
   openWindowAddSchoolClassList = false;
 
 
@@ -24,44 +21,23 @@ export class SelectSchoolListComponent implements OnInit {
   ngOnInit(): void {
     this.studentsListNumber = this.selectSchoolListService.getStudentsListNumber();
     console.log(this.studentsListNumber);
-    this.schoolObjects = this.selectSchoolListService.getSchoolObjects();
-    console.log(this.schoolObjects);
+
   }
-
-
-
-  clickButtonSchoolListNumber() {
-    this.buttonSchoolListNumber = true;
+    clickButtonSchoolListNumber() {
+    this.closeOrVueChooseASchoolSubject = true;
   }
-
-  closeWindowWithSchoolObject() {
-    this.buttonSchoolListNumber = false;
-  }
-
-  closeWindowWithSchoolClassList() {
+  closeWindowWithAddSchoolClassList() {
     this.openWindowAddSchoolClassList = false;
   }
-
   divVueAddSchoolClass() {
     this.openWindowAddSchoolClassList = true;
   }
-
-  addNewSchoolObject() {
-    this.divVueAddSchoolObject = true;
-  }
-
-  selectSchoolObject(item:string) {
-    let indexObject;
-    indexObject = this.schoolObjects.indexOf(item);
-    console.log(indexObject);
-  }
-
-  buttonAddSchoolObject() {
-    this.selectSchoolListService.postSchoolObjects(this.addSchoolObjectOnSchoolList);
-    console.log(this.addSchoolObjectOnSchoolList);
-  }
-
   addNewClassList() {
     this.selectSchoolListService.postStudentsListNumber(this.className);
+    this.openWindowAddSchoolClassList = false;
+  }
+
+  checkingTheStateOfAVariable(item:boolean) {
+    this.closeOrVueChooseASchoolSubject = item;
   }
 }

@@ -2,15 +2,11 @@
   <form action="" name="formCardInput" class="formCardInput">
     <h1>Вход</h1>
 
-    <label>Кем вы являетесь</label>
-    <input list="nameEnter" placeholder="Выберите нужный">
-    <datalist id="nameEnter">
-      <option>Директор</option>
-      <option>Учитель</option>
-      <option>Родитель</option>
-      <option>Ученик</option>
-      <option>ХОЗ-работник</option>
-    </datalist>
+    <h4>Кем вы являетесь</h4>
+    <button (click)="directorsAccount()">Директор</button>
+    <button (click)="teacherAccount()">Учитель</button>
+    <button (click)="UserAccount()">Пользователь</button>
+    <button (click)="otherWorkerAccount()">Иной работник</button>
 
     <label>Имя</label>
     <input placeholder="Имя пользователя" type="text">

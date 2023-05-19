@@ -3,18 +3,15 @@
     <h1>Регистрация</h1>
 
     <div class="accountSelection">
-      <label>Кем вы являетесь</label>
-      <input list="name" placeholder="Выберите нужный">
-      <datalist id="name">
-        <option>Директор</option>
-        <option>Учитель</option>
-        <option>Родитель</option>
-        <option>Ученик</option>
-        <option>ХОЗ-работник</option>
-      </datalist>
+      <h4>Кем вы являетесь</h4>
+        <button (click)="directorsAccount()">Директор</button>
+        <button (click)="teacherAccount()">Учитель</button>
+        <button (click)="UserAccount()">Пользователь</button>
+        <button (click)="otherWorkerAccount()">Иной работник</button>
     </div>
 
     <label>ФИО</label>
+
     <input placeholder="ФИО пользователя" type="text">
 
     <label>Возраст</label>
