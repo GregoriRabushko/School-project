@@ -1,15 +1,63 @@
+.containerContent {
+  display: flex;
+}
+
 .containerByList {
+  display: flex;
   margin-left: 300px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.createNewSchoolList {
-  margin-top: 20px;
+.containerByList_createNewSchoolList {
+  flex: 0 1 15%;
+  margin-top: 40px;
+  margin-right: 100px;
   padding: 20px;
-  border-radius: 50%;
-  border-color: black;
+  border-radius: 8%;
+  border:1px solid black;
 }
 
-.createNewSchoolList:hover {
+.containerByList_createNewSchoolList:hover {
   cursor: pointer;
   background-color: #c9c9e3;
+}
+
+.containerByList_createNewSchoolList_card {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.containerByList_createNewSchoolList_card_text {
+  font-size: 40px;
+}
+
+.containerByList_createNewSchoolList_card_delete {
+
+}
+
+.containerByList_createNewSchoolList_card_delete_button {
+  position: absolute;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  font-size: 35px;
+  margin-left: 65px;
+  margin-top: -30px;
+  transform: rotate(45deg);
+  background-color: #ef3c3c;
+}
+
+.containerByList_createNewSchoolList_card_delete_button:hover {
+  cursor: pointer;
+}
+
+img {
+  height: 150px;
+  width: 150px;
+}
+
+app-add-new-school-class {
+ position: absolute;
 }

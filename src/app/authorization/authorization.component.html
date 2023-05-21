@@ -3,7 +3,11 @@
     <h1>Вход</h1>
 
     <h4>Кем вы являетесь</h4>
-    <button (click)="directorsAccount()">Директор</button>
+    <div [style.display]="'flex'" [style.align-items]="'center'">
+      <input id="directorCheckbox" type="checkbox" [checked]="whoIsRegistration.Director"
+                (change)="directorsAccount($event)">
+      <label [style.margin-left]="'0.5rem'" [style.margin-top]="0" for="directorCheckbox">Директор</label>
+    </div>
     <button (click)="teacherAccount()">Учитель</button>
     <button (click)="UserAccount()">Пользователь</button>
     <button (click)="otherWorkerAccount()">Иной работник</button>

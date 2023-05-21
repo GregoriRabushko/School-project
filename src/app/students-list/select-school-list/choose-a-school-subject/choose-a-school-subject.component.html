@@ -6,7 +6,7 @@
 <button (click)="addNewSchoolObject()">Добавить новый предмет</button>
 <button (click)="closeWindowWithSelectSchoolObject(false)">Закрыть</button>
 
-
+<!--создание нового предмета-->
 <div *ngIf="divVueAddSchoolObject">
   <label>Название предмета</label>
   <input type="text" [(ngModel)]="addSchoolObjectOnSchoolList">

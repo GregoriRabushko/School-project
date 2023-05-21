@@ -21,6 +21,8 @@ import { ChooseASchoolSubjectComponent } from './students-list/select-school-lis
 import { AuthorizationComponent } from './authorization/authorization.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { appRoutes } from 'src/app/Approutes';
+import { CardListComponent } from './students-list/select-school-list/card-list/card-list.component';
+import { AddNewSchoolClassComponent } from './students-list/select-school-list/add-new-school-class/add-new-school-class.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { appRoutes } from 'src/app/Approutes';
     ChooseASchoolSubjectComponent,
     AuthorizationComponent,
     RegistrationComponent,
+    CardListComponent,
+    AddNewSchoolClassComponent,
 
   ],
   imports: [

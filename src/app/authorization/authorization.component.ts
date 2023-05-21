@@ -20,16 +20,18 @@ export class AuthorizationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  directorsAccount() {
-    this.whoIsRegistration.Director = true;
-    this.whoIsRegistration.Teacher = false;
-    this.whoIsRegistration.User = false;
-    this.whoIsRegistration.otherWorker = false;
-    console.log(this.whoIsRegistration)
+  directorsAccount(state: Event) {
+    const checked = !!(state.target as HTMLInputElement)?.checked;
+    this.whoIsRegistration.Director = checked;
+
+    this.whoIsRegistration.Teacher = !checked;
+    this.whoIsRegistration.User = !checked;
+    this.whoIsRegistration.otherWorker = !checked;
   }
   teacherAccount() {
-    this.whoIsRegistration.Director = false;
     this.whoIsRegistration.Teacher = true;
+
+    this.whoIsRegistration.Director = false;
     this.whoIsRegistration.User = false;
     this.whoIsRegistration.otherWorker = false;
     console.log(this.whoIsRegistration)

@@ -11,8 +11,9 @@ export class SelectSchoolListComponent implements OnInit {
 
   studentsListNumber:string[] = [];
   @Input() closeOrVueChooseASchoolSubject = false;
-  className = '';
-  openWindowAddSchoolClassList = false;
+  @Input() openWindowAddSchoolClassList = false;
+  deleteCard = false;
+  contentButtonDelete = 'Удалить журнал -';
 
 
   constructor(private listService: FunctionalClassListService,private selectSchoolListService:SelectSchoolListService) { }
@@ -26,18 +27,30 @@ export class SelectSchoolListComponent implements OnInit {
     clickButtonSchoolListNumber() {
     this.closeOrVueChooseASchoolSubject = true;
   }
-  closeWindowWithAddSchoolClassList() {
-    this.openWindowAddSchoolClassList = false;
-  }
+
   divVueAddSchoolClass() {
     this.openWindowAddSchoolClassList = true;
   }
-  addNewClassList() {
-    this.selectSchoolListService.postStudentsListNumber(this.className);
-    this.openWindowAddSchoolClassList = false;
-  }
 
-  checkingTheStateOfAVariable(item:boolean) {
+  checkingTheStateOfAVariableClassList(item:boolean) {
+    this.openWindowAddSchoolClassList = item;
+  }
+  checkingTheStateOfAVariableSubject(item:boolean) {
     this.closeOrVueChooseASchoolSubject = item;
   }
+
+  changesTheContentOfTheButton() {
+    this.deleteCard = !this.deleteCard;
+
+    if(this.deleteCard) {
+      this.contentButtonDelete = 'Отмена';
+    }
+    if(!this.deleteCard) {
+      this.contentButtonDelete = 'Удалить журнал -';
+    }
+  }
+  deleteSchoolClassList(indexItem:number) {
+    this.studentsListNumber.splice(indexItem,1);
+  }
+
 }
