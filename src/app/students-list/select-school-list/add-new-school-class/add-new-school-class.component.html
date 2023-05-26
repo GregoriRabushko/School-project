@@ -1,0 +1,23 @@
+<div class="contentContainer">
+  <div class="h1WithCloseButton">
+    <h1>Создание класса</h1>
+    <button class="contentContainer_closeWindow" (click)="closeWindowWithAddSchoolClassList(false)">X</button>
+  </div>
+  <div class="contentContainer_label">
+<!--    <label for="className">номер класса</label>-->
+<!--    <input id="className" [(ngModel)]="className">-->
+    <div class="selectClass">
+      <button class="contentContainer_buttonNextClass" (click)="nextNumberClass()"> > </button>
+      <div class="selectClass_name">{{numberClass}}</div>
+      <button class="contentContainer_buttonLastClass" (click)="lastNumberClass()"> < </button>
+    </div>
+    <div class="selectClass">
+      <button class="contentContainer_buttonNextClass" (click)="nextLetterClass()"> > </button>
+      <div class="selectClass_name">{{arrToLettersClass[indexToArrLetter]}}</div>
+      <button class="contentContainer_buttonLastClass" (click)="lastLetterClass()"> < </button>
+    </div>
+
+  </div>
+    <button class="contentContainer_createButton" (click)="addNewClassList()">Создать</button>
+</div>
+

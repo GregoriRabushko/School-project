@@ -1,0 +1,81 @@
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 300px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+
+}
+
+//label {
+//  font-size: 24px;
+//}
+
+.contentContainer_buttonNextClass {
+  height: 60px;
+  width: 30px;
+  transform: rotate(270deg);
+}
+
+.contentContainer_buttonLastClass {
+  height: 60px;
+  width: 30px;
+  transform: rotate(270deg);
+}
+
+.contentContainer_label {
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  width: 200px;
+  align-items: center;
+}
+
+.selectClass {
+  //margin-left: 10px;
+}
+
+.selectClass_name{
+  font-size: 30px;
+  text-align: center;
+}
+
+.contentContainer_createButton {
+  width: 100px;
+  height: 40px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.contentContainer_createButton:hover {
+  cursor: pointer;
+  background-color: #8ce96a6b;
+
+}
+
+.contentContainer_closeWindow {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background-color: #ef3c3c;
+}
+
+.contentContainer_closeWindow:hover {
+  cursor: pointer;
+}
+
+.h1WithCloseButton {
+  margin-left: 20px;
+  width: 400px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+h1{
+  margin-left: 80px;
+  margin-top: 10px;
+}
