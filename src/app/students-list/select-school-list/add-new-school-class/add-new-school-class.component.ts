@@ -20,6 +20,7 @@ export class AddNewSchoolClassComponent implements OnInit {
 
 
   addNewClassList() {
+    this.className = `${this.numberClass}`+this.arrToLettersClass[this.indexToArrLetter];
     this.selectSchoolListService.postStudentsListNumber(this.className);
     this.closeWindowWithAddSchoolClassList(false);
   }
