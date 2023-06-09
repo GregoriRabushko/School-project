@@ -21,6 +21,7 @@ export class SelectSchoolListComponent implements OnInit {
 
   ngOnInit(): void {
     this.studentsListNumber = this.selectSchoolListService.getStudentsListNumber();
+
     console.log(this.studentsListNumber);
 
   }
@@ -51,6 +52,7 @@ export class SelectSchoolListComponent implements OnInit {
   }
   deleteSchoolClassList(indexItem:number) {
     this.studentsListNumber.splice(indexItem,1);
+    console.log(this.studentsListNumber)
   }
 
 }

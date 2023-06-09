@@ -2,7 +2,7 @@
 
 <div class="createNewList">
   <div class="headerList">
-    <h1>{{className}}</h1>
+    <h1>{{classInfo.className}}</h1>
 <!--    <input class="className" placeholder="Номер класса" [(ngModel)]="className">-->
   </div>
   <div class="divLabel">
@@ -21,7 +21,7 @@
     <tr>
       <td rowspan="2" colspan="2">ФИО учащихся</td>
       <td colspan="31">
-        <h2>{{nameObject}}</h2>
+        <h2>{{className?.className}}</h2>
 <!--        <input class="inputToPredmet" placeholder="Название предмета">-->
       </td>
       <td rowspan="2">Изученный материал</td>

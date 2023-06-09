@@ -1,10 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FunctionalClassListService } from "./functional-class-list.service";
 import { MoreData } from "./functional-class-list.service";
-import { SelectSchoolListService } from 'src/app/students-list/select-school-list/select-school-list.service';
+import {ClassInfor, SelectSchoolListService} from 'src/app/students-list/select-school-list/select-school-list.service';
 import { HttpClient} from '@angular/common/http';
 import { Observable} from "rxjs";
 import { map } from "rxjs/operators";
+import {ActivatedRoute, Route} from "@angular/router";
 
 
 
@@ -18,7 +19,10 @@ import { map } from "rxjs/operators";
 
 
 export class StudentsListComponent implements OnInit {
-  @Input() className: string = '';
+  classInfo: ClassInfor = {
+    chooseSubject:'',
+    className:''
+  };
   @Input() nameObject:string = '';
 
   countNumberStudent = 0;
@@ -32,32 +36,38 @@ export class StudentsListComponent implements OnInit {
   users:MoreData[] = []
 
 
-  constructor(private listService: FunctionalClassListService, private selectSchoolListService:SelectSchoolListService) { }
+  constructor(
+    private listService: FunctionalClassListService,
+    private selectSchoolListService:SelectSchoolListService,
+    private readonly activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-    this.className = this.selectSchoolListService.chosenSubject;
+    const subjectIndex = this.activatedRoute.snapshot.paramMap.get('subjectIndex');
+    const classIndex = this.activatedRoute.snapshot.paramMap.get('classIndex');
+    if (subjectIndex && classIndex) {
+      this.classInfo = this.selectSchoolListService.getClassInfo(+classIndex, +subjectIndex);
+    }
   }
   addStudentToList() {
     this.countNumberStudent += this.countNumberStudent;
     this.students.push(this.studentsName);
+    this.studentsName = '';
   }
 
   deleteStudent(indexStudent:number) {
     this.students.splice(indexStudent,1)
     console.log(this.students);
   }
-  saveListButton () {
-    this.listService.addData(this.className);
-  }
+  // saveListButton () {
+  //   this.listService.addData(this.className);
+  // }
+  className?: ClassInfor;
   playObserver () {
     this.listService.getRes().subscribe(val => this.users = val);
     console.log(this.users)
-
-
   }
-  addUserToSchoolList() {
 
-  }
 
   nextMonth() {
     ++this.item ;

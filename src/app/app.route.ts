@@ -8,7 +8,7 @@ import {UserProfilComponent} from "./user-profil/user-profil.component";
 import {MessangerComponent} from "./messanger/messanger.component";
 import {ItemsToSchoolComponent} from "./items-to-school/items-to-school.component";
 
-export const appRoutes: Routes =[
+export const appRoute: Routes =[
   { path: '', component: AuthorizationComponent },
   { path: 'authorization', component: AuthorizationComponent },
   { path: 'registration', component: RegistrationComponent },
@@ -16,5 +16,6 @@ export const appRoutes: Routes =[
   { path: 'menu', component: MenuComponent },
   { path: 'itemstoschool', component: ItemsToSchoolComponent },
   { path: 'userprofile', component: UserProfilComponent },
-  { path: 'messenger', component: MessangerComponent }
+  { path: 'messenger', component: MessangerComponent },
+  { path: 'studentlist/:classIndex/:subjectIndex', component: StudentsListComponent }
 ];

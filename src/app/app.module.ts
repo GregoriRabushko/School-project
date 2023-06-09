@@ -20,7 +20,7 @@ import { TableRowWithGradeComponent } from './students-list/table-row-with-grade
 import { ChooseASchoolSubjectComponent } from './students-list/select-school-list/choose-a-school-subject/choose-a-school-subject.component';
 import { AuthorizationComponent } from './authorization/authorization.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { appRoutes } from 'src/app/Approutes';
+import { appRoute } from 'src/app/app.route';
 import { CardListComponent } from './students-list/select-school-list/card-list/card-list.component';
 import { AddNewSchoolClassComponent } from './students-list/select-school-list/add-new-school-class/add-new-school-class.component';
 
@@ -46,7 +46,7 @@ import { AddNewSchoolClassComponent } from './students-list/select-school-list/a
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoute),
     FormsModule,
     FullCalendarModule,
     HttpClientModule

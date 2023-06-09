@@ -1,9 +1,4 @@
 .containerContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 500px;
-  height: 450px;
   background-color: #f0f0f0;
   border-radius: 8px;
 }
@@ -17,7 +12,7 @@
 }
 
 h1{
-  margin-left: 80px;
+  margin-left: 115px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -52,7 +47,7 @@ h1{
   background-color: #e3e3e3;
 }
 
-.buttonBddNewSchoolObject {
+.buttonAddNewSchoolObject {
   width: 150px;
   height: 55px;
   border-radius: 8px;
@@ -60,7 +55,65 @@ h1{
   margin-top: 10px;
 }
 
-.buttonBddNewSchoolObject:hover {
+
+
+.buttonAddNewSchoolObject:hover {
   cursor: pointer;
   background-color: #8ce96a6b;
+}
+
+.buttonDeleteSchoolObject {
+  width: 150px;
+  height: 55px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.buttonDeleteSchoolObject:hover {
+  cursor: pointer;
+  background-color: #ff000087;
+}
+
+.divVueAddSchoolObject {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 450px;
+
+}
+
+.divVueChooseSubject {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 450px;
+}
+
+.inputNewSubject {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+input {
+  margin: 5px 0;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #e3e3e3;
+  outline: none;
+  text-align: center;
+}
+
+label {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
 }

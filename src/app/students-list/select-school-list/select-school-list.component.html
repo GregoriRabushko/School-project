@@ -14,7 +14,7 @@
   <button class="containerByList_createNewSchoolList" (click)="changesTheContentOfTheButton()">{{contentButtonDelete}}</button>
   </div>
   <app-add-new-school-class (closeWindow)="checkingTheStateOfAVariableClassList($event)" *ngIf="openWindowAddSchoolClassList"></app-add-new-school-class>
-  <app-choose-a-school-subject  (closeOrVueChooseASchoolSubject)="checkingTheStateOfAVariableSubject($event)" *ngIf="closeOrVueChooseASchoolSubject"></app-choose-a-school-subject>
+  <app-choose-a-school-subject (closeOrVueChooseASchoolSubject)="checkingTheStateOfAVariableSubject($event)" *ngIf="closeOrVueChooseASchoolSubject"></app-choose-a-school-subject>
 </div>
 
 

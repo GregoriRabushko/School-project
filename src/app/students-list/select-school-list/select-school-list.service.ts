@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,10 @@ export class SelectSchoolListService {
 
   chosenSubject = '';
 
-
+  classInfo: ClassInfor = {
+    chooseSubject:'',
+    className:''
+  };
 
   schoolObjects: string[] = [
     'Математика',
@@ -55,20 +59,27 @@ export class SelectSchoolListService {
   constructor() { }
 
   getSchoolObjects() {
+    // return of(this.schoolObjects);
     return this.schoolObjects;
   }
 
-  addSchoolObjects(item:string) {
-    this.schoolObjects.push(item);
+  postClassInfo(subject:string,) {
+      this.classInfo.chooseSubject = subject;
   }
 
+  getClassInfo(classIndex: number, subjectIndex: number) {
+    const subject = this.schoolObjects[subjectIndex];
+    const className = this.studentsListNumber[classIndex];
+    // TODO get class info by subject id
+    const classInfo: ClassInfor = {
+      chooseSubject: subject,
+      className
+    };
+    return classInfo;
+  }
   getStudentsListNumber() {
+    console.log(this.studentsListNumber)
     return this.studentsListNumber;
-  }
-
-  chooseSubject(index:number) {
-    this.chosenSubject = this.schoolObjects[index];
-    return this.chosenSubject;
   }
 
 
@@ -81,6 +92,13 @@ export class SelectSchoolListService {
     this.studentsListNumber.push(item)
   }
 
+  deleteSchoolObjects(itemIndex: number) {
+    this.schoolObjects.splice(itemIndex, 1)
+  }
 
+}
 
+export interface ClassInfor {
+  chooseSubject:string,
+  className:string
 }
