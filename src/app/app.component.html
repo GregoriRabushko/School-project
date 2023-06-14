@@ -1,5 +1,9 @@
 <div class="containerContent">
-  <app-menu></app-menu>
-  <router-outlet></router-outlet>
+  <div *ngIf="hiddenAppMenu">
+    <app-menu></app-menu>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
 </div>
 

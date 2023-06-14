@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+
 
 @Component({
   selector: 'app-registration',
@@ -7,11 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
-  whoIsRegistration:WhoIsWhoIsAuthorization = {
-    'Director': false,
-    'Teacher': false,
-    'User': false,
-    'otherWorker': false
+  userInfo:UserInfo = {
+    whoIsRegistration: '',
+    name: '',
+    surName: '',
+    genericName: '',
+    age: '',
+    email: '',
+    tel: '',
+    password: '',
+    repeatPassword: ''
   }
 
   constructor() { }
@@ -20,42 +26,29 @@ export class RegistrationComponent implements OnInit {
   }
 
 
+  registrationUser() {
+    //todo чтобы небыло пустых полей
+    for(let key in this.userInfo) {
 
-  directorsAccount() {
-    this.whoIsRegistration.Director = true;
-    this.whoIsRegistration.Teacher = false;
-    this.whoIsRegistration.User = false;
-    this.whoIsRegistration.otherWorker = false;
-    console.log(this.whoIsRegistration)
-  }
-  teacherAccount() {
-    this.whoIsRegistration.Director = false;
-    this.whoIsRegistration.Teacher = true;
-    this.whoIsRegistration.User = false;
-    this.whoIsRegistration.otherWorker = false;
-    console.log(this.whoIsRegistration)
-  }
-  UserAccount() {
-    this.whoIsRegistration.Director = false;
-    this.whoIsRegistration.Teacher = false;
-    this.whoIsRegistration.User = true;
-    this.whoIsRegistration.otherWorker = false;
-    console.log(this.whoIsRegistration)
-  }
-  otherWorkerAccount() {
-    this.whoIsRegistration.Director = false;
-    this.whoIsRegistration.Teacher = false;
-    this.whoIsRegistration.User = false;
-    this.whoIsRegistration.otherWorker = true;
-    console.log(this.whoIsRegistration)
-  }
+    }
+    //todo пароль и повторный пароль должны совпадать
+    if(this.userInfo.password === this.userInfo.repeatPassword) {
 
+    }
+    console.log(this.userInfo)
+  }
 
 }
 
-export interface WhoIsWhoIsAuthorization {
-  'Director': boolean,
-  'Teacher': boolean,
-  'User': boolean,
-  'otherWorker': boolean
+export interface UserInfo {
+  whoIsRegistration: '',
+  name: '',
+  surName: '',
+  genericName: '',
+  age: '',
+  email: '',
+  tel: '',
+  password: '',
+  repeatPassword: ''
 }
+

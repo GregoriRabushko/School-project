@@ -1,17 +1,7 @@
 <div>
   <form action="" name="formCardInput" class="formCardInput">
     <h1>Вход</h1>
-
-    <h4>Кем вы являетесь</h4>
-    <div [style.display]="'flex'" [style.align-items]="'center'">
-      <input id="directorCheckbox" type="checkbox" [checked]="whoIsRegistration.Director"
-                (change)="directorsAccount($event)">
-      <label [style.margin-left]="'0.5rem'" [style.margin-top]="0" for="directorCheckbox">Директор</label>
-    </div>
-    <button (click)="teacherAccount()">Учитель</button>
-    <button (click)="UserAccount()">Пользователь</button>
-    <button (click)="otherWorkerAccount()">Иной работник</button>
-
+    <app-checkbox></app-checkbox>
     <label>Имя</label>
     <input placeholder="Имя пользователя" type="text">
 

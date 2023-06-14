@@ -23,6 +23,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { appRoute } from 'src/app/app.route';
 import { CardListComponent } from './students-list/select-school-list/card-list/card-list.component';
 import { AddNewSchoolClassComponent } from './students-list/select-school-list/add-new-school-class/add-new-school-class.component';
+import { CheckboxComponent } from './registration/checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { AddNewSchoolClassComponent } from './students-list/select-school-list/a
     RegistrationComponent,
     CardListComponent,
     AddNewSchoolClassComponent,
+    CheckboxComponent,
 
   ],
   imports: [

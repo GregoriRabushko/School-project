@@ -1,43 +1,35 @@
 <div class="containerForm">
-  <form action="" name="formCardInput" class="formCardInput">
+  <div class="formCardInput">
     <h1>Регистрация</h1>
+    <app-checkbox></app-checkbox>
 
-    <div class="accountSelection">
-      <h4>Кем вы являетесь</h4>
-        <button (click)="directorsAccount()">Директор</button>
-        <button (click)="teacherAccount()">Учитель</button>
-        <button (click)="UserAccount()">Пользователь</button>
-        <button (click)="otherWorkerAccount()">Иной работник</button>
-    </div>
+    <label>Имя</label>
+    <input [(ngModel)]="userInfo.name"  placeholder="Имя пользователя" type="text">
 
-    <label>ФИО</label>
+    <label>Фамилия</label>
+    <input [(ngModel)]="userInfo.surName"  placeholder="Фамилия пользователя" type="text">
 
-    <input placeholder="ФИО пользователя" type="text">
+    <label>Отчество</label>
+    <input [(ngModel)]="userInfo.genericName"  placeholder="Отчество пользователя" type="text">
 
     <label>Возраст</label>
-    <input placeholder="Возраст пользователя" type="text">
+    <input [(ngModel)]="userInfo.age"  placeholder="Возраст пользователя" type="text">
 
     <label>E-mail</label>
-    <input placeholder="Введите email" type="email">
-
-    <label >Номер школы</label>
-    <input placeholder="Введите номер школы" type="email">
-
-    <label>Телефон школы</label>
-    <input placeholder="Введите номер телефона школы" type="tel">
+    <input [(ngModel)]="userInfo.email"  placeholder="Введите email" type="email">
 
     <label>Мобильный телефон</label>
-    <input placeholder="Введите ваш мобильный номер телефона" type="tel">
+    <input [(ngModel)]="userInfo.tel"  placeholder="Введите ваш мобильный номер телефона" type="tel">
 
     <label>Пароль</label>
-    <input placeholder="Введите пароль" type="password">
+    <input [(ngModel)]="userInfo.password"  placeholder="Введите пароль" type="password">
 
     <label>Подтвердите пароль</label>
-    <input placeholder="Введите пароль" type="password">
+    <input [(ngModel)]="userInfo.repeatPassword" placeholder="Введите пароль" type="password">
 
-    <button class="buttonCome">Зарегистрироваться</button>
+    <button class="buttonCome" (click)="registrationUser()">Зарегистрироваться</button>
     <p>
       У вас уже есть аккаунт? - <a routerLink="/authorization">авторизироваться</a>
     </p>
-  </form>
+  </div>
 </div>
