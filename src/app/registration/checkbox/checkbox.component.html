@@ -1,0 +1,23 @@
+<div class="containerContent">
+  <h4>Кем вы являетесь</h4>
+  <div class="divWithCheckbox">
+    <input id="directorCheckbox" type="checkbox" [checked]="whoIsRegistration.Director"
+         (change)="directorsAccount($event)">
+    <label class="labelWithCheckbox" for="directorCheckbox">Директор</label>
+  </div>
+  <div class="divWithCheckbox">
+    <input type="checkbox" [checked]="whoIsRegistration.Teacher"
+         (change)="teacherAccount($event)">
+    <label class="labelWithCheckbox" for="directorCheckbox">Учитель</label>
+  </div>
+  <div class="divWithCheckbox">
+    <input type="checkbox" [checked]="whoIsRegistration.User"
+         (change)="userAccount($event)">
+    <label class="labelWithCheckbox" for="directorCheckbox">Пользователь</label>
+  </div>
+  <div class="divWithCheckbox">
+    <input type="checkbox" [checked]="whoIsRegistration.otherWorker"
+         (change)="otherWorkerAccount($event)">
+    <label class="labelWithCheckbox" for="directorCheckbox">Иной работник</label>
+  </div>
+</div>
