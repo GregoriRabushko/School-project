@@ -117,3 +117,25 @@ label {
 a {
   text-decoration: none;
 }
+
+.containerSubjectWithBtnDelete{
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+}
+
+.containerSubjectWithBtnDelete:hover {
+  background-color: rgba(161, 143, 143, 0.25);
+}
+
+.btnDelete {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #ef3c3c;
+}
+
+.subject {
+  cursor: pointer;
+}

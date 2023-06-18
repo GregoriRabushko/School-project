@@ -1,9 +1,8 @@
-<!--<app-menu></app-menu>-->
-
+<div class="containerContent">
+<app-menu></app-menu>
 <div class="createNewList">
   <div class="headerList">
     <h1>{{classInfo.className}}</h1>
-<!--    <input class="className" placeholder="Номер класса" [(ngModel)]="className">-->
   </div>
   <div class="divLabel">
     <label for="surname">ФИО</label>
@@ -12,17 +11,16 @@
   </div>
 
   <div class="monthButtons">
-    <button class="monthButton" (click)="nextMonth()">+</button>
-    <div class="monthText">{{month}}</div>
     <button class="monthButton" (click)="previousMonth()">-</button>
+    <div class="monthText">{{month}}</div>
+    <button class="monthButton" (click)="nextMonth()">+</button>
   </div>
 
   <table>
     <tr>
       <td rowspan="2" colspan="2">ФИО учащихся</td>
       <td colspan="31">
-        <h2>{{className?.className}}</h2>
-<!--        <input class="inputToPredmet" placeholder="Название предмета">-->
+        <h2>{{classInfo.chooseSubject}}</h2>
       </td>
       <td rowspan="2">Изученный материал</td>
     </tr>
@@ -61,17 +59,15 @@
     </tr>
     <tr class="cursorAround" *ngFor="let name of students">
       <td class="numberStudent">{{students.indexOf(name) + 1}}</td>
-      <td>{{name}}</td>
+      <td>{{name|studentList}}</td>
       <app-table-row-with-students></app-table-row-with-students>
       <td>
         <button (click)="deleteStudent(students.indexOf(name))">Удалить</button>
       </td>
-
     </tr>
   </table>
-<!--  <button (click)="addUserToSchoolList()">to add user</button>-->
-<!--  <button (click)="saveListButton()">Сохранить</button>-->
-<!--  <button (click)="playObserver()">play</button>-->
+  <button class="btnSave">Сохранить</button>
+</div>
 </div>
 
 

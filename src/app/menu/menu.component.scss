@@ -6,7 +6,8 @@ a {
 }
 
 .containerDiv {
-  //position: absolute;
+  display: flex;
+  flex-direction: column;
   left: 0;
   height: 100%;
   background-color: #F0F0F0;

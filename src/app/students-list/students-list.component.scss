@@ -1,3 +1,7 @@
+.containerContent {
+  display: flex;
+}
+
 .inputToDate {
   border: none;
   width: 20px;
@@ -17,20 +21,13 @@
   border: none;
 }
 
-
-.inputToPredmet {
-  border: none;
-  text-align: center;
-  font-size: 24px;
-  outline: none;
-}
-
 .createNewList {
-  margin-left: 300px;
+  margin-top: 20px;
+  margin-left: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
 }
 
 .divLabel {
@@ -89,4 +86,8 @@ table {
 
 app-table-row-with-students {
   display: contents;
+}
+
+.btnSave {
+  margin-top: 10px;
 }
