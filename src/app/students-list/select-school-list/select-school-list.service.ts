@@ -1,14 +1,11 @@
 import { Injectable } from '@angular/core';
-import {of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SelectSchoolListService {
 
-  chosenSubject = '';
-
-  classInfo: ClassInfor = {
+  classInfo: ClassInfo = {
     chooseSubject:'',
     className:''
   };
@@ -91,7 +88,7 @@ export class SelectSchoolListService {
     const subject = this.schoolObjects[subjectIndex];
     const className = this.studentsListNumber[classIndex];
     // TODO get class info by subject id
-    const classInfo: ClassInfor = {
+    const classInfo: ClassInfo = {
       chooseSubject: subject,
       className
     };
@@ -118,7 +115,7 @@ export class SelectSchoolListService {
 
 }
 
-export interface ClassInfor {
+export interface ClassInfo {
   chooseSubject:string,
   className:string
 }

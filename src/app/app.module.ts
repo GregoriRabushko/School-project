@@ -12,7 +12,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { MenuComponent } from './menu/menu.component';
 import { ListJinglesComponent } from './items-to-school/list-jingles/list-jingles.component';
 import { UserProfilComponent } from './user-profil/user-profil.component';
-import { BulletinBoardComponent } from './bulletin-board/bulletin-board.component';
+import { BulletinBoardComponent } from './items-to-school/bulletin-board/bulletin-board.component';
 import { MessangerComponent } from './messanger/messanger.component';
 import { SelectSchoolListComponent } from './students-list/select-school-list/select-school-list.component';
 import { TableRowWithStudentsComponent } from './students-list/table-row-with-students/table-row-with-students.component';
@@ -26,6 +26,8 @@ import { AddNewSchoolClassComponent } from './students-list/select-school-list/a
 import { CheckboxComponent } from './registration/checkbox/checkbox.component';
 import { SchoolCanteenComponent } from './school-canteen/school-canteen.component';
 import { StudentListPipe } from './students-list/student-list.pipe';
+import { NewsComponent } from './news/news.component';
+import { ScheduleForWorkersComponent } from './schedule-for-workers/schedule-for-workers.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { StudentListPipe } from './students-list/student-list.pipe';
     CheckboxComponent,
     SchoolCanteenComponent,
     StudentListPipe,
+    NewsComponent,
+    ScheduleForWorkersComponent,
 
   ],
   imports: [

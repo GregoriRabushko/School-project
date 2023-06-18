@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FunctionalClassListService } from "./functional-class-list.service";
 import { MoreData } from "./functional-class-list.service";
-import {ClassInfor, SelectSchoolListService} from 'src/app/students-list/select-school-list/select-school-list.service';
+import {ClassInfo, SelectSchoolListService} from 'src/app/students-list/select-school-list/select-school-list.service';
 import { HttpClient} from '@angular/common/http';
 import { Observable} from "rxjs";
 import { map } from "rxjs/operators";
@@ -19,7 +19,7 @@ import {ActivatedRoute, Route} from "@angular/router";
 
 
 export class StudentsListComponent implements OnInit {
-  classInfo: ClassInfor = {
+  classInfo: ClassInfo = {
     chooseSubject:'',
     className:''
   };
@@ -43,8 +43,8 @@ export class StudentsListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const subjectIndex = this.activatedRoute.snapshot.paramMap.get('subjectIndex');
     const classIndex = this.activatedRoute.snapshot.paramMap.get('classIndex');
+    const subjectIndex = this.activatedRoute.snapshot.paramMap.get('subjectIndex');
     if (subjectIndex && classIndex) {
       this.classInfo = this.selectSchoolListService.getClassInfo(+classIndex, +subjectIndex);
     }
@@ -62,7 +62,7 @@ export class StudentsListComponent implements OnInit {
   // saveListButton () {
   //   this.listService.addData(this.className);
   // }
-  className?: ClassInfor;
+  className?: ClassInfo;
   playObserver () {
     this.listService.getRes().subscribe(val => this.users = val);
     console.log(this.users)
