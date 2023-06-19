@@ -28,6 +28,8 @@ import { SchoolCanteenComponent } from './school-canteen/school-canteen.componen
 import { StudentListPipe } from './students-list/student-list.pipe';
 import { NewsComponent } from './news/news.component';
 import { ScheduleForWorkersComponent } from './schedule-for-workers/schedule-for-workers.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { ScheduleForWorkersComponent } from './schedule-for-workers/schedule-for
     StudentListPipe,
     NewsComponent,
     ScheduleForWorkersComponent,
+    AboutUsComponent,
+    SearchComponent,
 
   ],
   imports: [

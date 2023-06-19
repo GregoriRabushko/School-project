@@ -31,6 +31,9 @@ export class SelectSchoolListComponent implements OnInit {
 
   divVueAddSchoolClass() {
     this.openWindowAddSchoolClassList = true;
+    this.deleteCard = false;
+    this.contentButtonDelete = 'Удалить журнал -';
+
   }
 
   checkingTheStateOfAVariableClassList(item:boolean) {

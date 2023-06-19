@@ -1,17 +1,17 @@
 <div class="containerContent">
   <app-menu></app-menu>
   <div class="containerByList">
-      <a class="containerByList_createNewSchoolList" (click)="clickButtonSchoolListNumber()" *ngFor="let item of studentsListNumber">
-        <div class="containerByList_createNewSchoolList_card">
-          <div class="containerByList_createNewSchoolList_card_text">{{item}}</div>
+      <a class="schoolListNumber" (click)="clickButtonSchoolListNumber()" *ngFor="let item of studentsListNumber">
+        <div class="schoolListCard">
+          <div class="schoolListCardText">{{item}}</div>
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIdnDHIh_Yp3bq8uTZ8hvqJ2IFBilV91stcRm5_boRXtWpoPXQQ6K9hqtfGehS1QXEZcM&usqp=CAU" alt="books">
-          <div class="containerByList_createNewSchoolList_card_delete" *ngIf="deleteCard">
-            <button class="containerByList_createNewSchoolList_card_delete_button" (click)="deleteSchoolClassList(studentsListNumber.indexOf(item))">+</button>
+          <div class="containerToCardWithDeleteBtn" *ngIf="deleteCard">
+            <button class="btnDeleteCard" (click)="deleteSchoolClassList(studentsListNumber.indexOf(item))">+</button>
           </div>
         </div>
       </a>
-    <button class="containerByList_createNewSchoolList" (click)="divVueAddSchoolClass()">Создать журнал +</button>
-  <button class="containerByList_createNewSchoolList" (click)="changesTheContentOfTheButton()">{{contentButtonDelete}}</button>
+    <button class="controlBtn" (click)="divVueAddSchoolClass()">Создать журнал +</button>
+  <button class="controlBtn" (click)="changesTheContentOfTheButton()">{{contentButtonDelete}}</button>
   </div>
   <app-add-new-school-class (closeWindow)="checkingTheStateOfAVariableClassList($event)" *ngIf="openWindowAddSchoolClassList"></app-add-new-school-class>
   <app-choose-a-school-subject (closeOrVueChooseASchoolSubject)="checkingTheStateOfAVariableSubject($event)" *ngIf="closeOrVueChooseASchoolSubject"></app-choose-a-school-subject>

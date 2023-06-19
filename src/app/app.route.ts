@@ -10,6 +10,8 @@ import {ItemsToSchoolComponent} from "./items-to-school/items-to-school.componen
 import {NewsComponent} from "./news/news.component";
 import {SchoolCanteenComponent} from "./school-canteen/school-canteen.component";
 import {ScheduleForWorkersComponent} from "./schedule-for-workers/schedule-for-workers.component";
+import {SearchComponent} from "./search/search.component";
+import {AboutUsComponent} from "./about-us/about-us.component";
 
 export const appRoute: Routes =[
   { path: '', component: AuthorizationComponent },
@@ -20,6 +22,8 @@ export const appRoute: Routes =[
   { path: 'userprofile', component: UserProfilComponent },
   { path: 'messenger', component: MessangerComponent },
   { path: 'news', component: NewsComponent },
+  { path: 'search', component: SearchComponent },
+  { path: 'aboutUs', component: AboutUsComponent },
   { path: 'scheduleWorkers', component: ScheduleForWorkersComponent },
   { path: 'schoolCanteen', component: SchoolCanteenComponent },
   { path: 'studentList/:classIndex/:subjectIndex', component: StudentsListComponent }

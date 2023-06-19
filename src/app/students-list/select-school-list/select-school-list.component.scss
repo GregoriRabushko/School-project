@@ -5,13 +5,32 @@
 
 .containerByList {
   display: flex;
-  margin-left: 300px;
+  margin-left: 200px;
+  margin-right: 200px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.containerByList_createNewSchoolList {
+.schoolListNumber {
   flex: 0 1 15%;
+  max-width: 225px;
+  max-height: 240px;
+  margin-top: 40px;
+  margin-right: 100px;
+  margin-bottom: 79px;
+  padding: 20px;
+  border-radius: 8%;
+  border:1px solid black;
+}
+
+.schoolListNumber:hover {
+  cursor: pointer;
+  background-color: #c9c9e3;
+}
+
+.controlBtn {
+  width: 225px;
+  height: 240px;
   margin-top: 40px;
   margin-right: 100px;
   padding: 20px;
@@ -19,26 +38,21 @@
   border:1px solid black;
 }
 
-.containerByList_createNewSchoolList:hover {
-  cursor: pointer;
-  background-color: #c9c9e3;
-}
-
-.containerByList_createNewSchoolList_card {
+.schoolListCard {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
 }
 
-.containerByList_createNewSchoolList_card_text {
+.schoolListCardText {
   font-size: 40px;
 }
 
-.containerByList_createNewSchoolList_card_delete {
+.containerToCardWithDeleteBtn {
 
 }
 
-.containerByList_createNewSchoolList_card_delete_button {
+.btnDeleteCard {
   position: absolute;
   border-radius: 50%;
   height: 50px;
@@ -50,7 +64,7 @@
   background-color: #ef3c3c;
 }
 
-.containerByList_createNewSchoolList_card_delete_button:hover {
+.btnDeleteCard:hover {
   cursor: pointer;
 }
 
