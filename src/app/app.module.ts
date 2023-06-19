@@ -30,6 +30,8 @@ import { NewsComponent } from './news/news.component';
 import { ScheduleForWorkersComponent } from './schedule-for-workers/schedule-for-workers.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { SearchComponent } from './search/search.component';
+import { TableWithItemComponent } from './items-to-school/table-with-item/table-with-item.component';
+import { TdCalssNameAndRoomNumberComponent } from './items-to-school/table-with-item/td-calss-name-and-room-number/td-calss-name-and-room-number.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,8 @@ import { SearchComponent } from './search/search.component';
     ScheduleForWorkersComponent,
     AboutUsComponent,
     SearchComponent,
+    TableWithItemComponent,
+    TdCalssNameAndRoomNumberComponent,
 
   ],
   imports: [

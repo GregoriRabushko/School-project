@@ -1,0 +1,25 @@
+<table>
+  <thead>
+  <tr class="trHeader">
+    Рассписание
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td></td>
+      <td>
+        <app-td-calss-name-and-room-number></app-td-calss-name-and-room-number>
+      </td>
+    </tr>
+    <tr *ngFor="let day of week">
+      <td>{{day}}</td>
+      <td>
+        <input>
+        <input>
+      </td>
+    </tr>
+  </tbody>
+
+  <tfoot></tfoot>
+</table>
