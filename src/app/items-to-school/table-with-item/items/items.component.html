@@ -1,0 +1,13 @@
+<div class="containerContent">
+  <div class="containerNumberAndItemAndBtnDel" *ngFor="let item of itemsSchool,let i = index">
+    <div class="containerNumberAndItem">
+      <div>{{itemsSchool.indexOf(item)+1}}</div>
+      <div class="item">{{item}}</div>
+    </div>
+    <button class="btnDelete" (click)="deleteItem(i)">+</button>
+  </div>
+  <div class="containerInputAndBtnCreate">
+    <input [(ngModel)]="val">
+    <button class="btnCreate" (click)="addItem(val)">add</button>
+  </div>
+</div>

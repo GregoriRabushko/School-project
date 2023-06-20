@@ -32,6 +32,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { SearchComponent } from './search/search.component';
 import { TableWithItemComponent } from './items-to-school/table-with-item/table-with-item.component';
 import { TdCalssNameAndRoomNumberComponent } from './items-to-school/table-with-item/td-calss-name-and-room-number/td-calss-name-and-room-number.component';
+import { ItemsComponent } from './items-to-school/table-with-item/items/items.component'
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { TdCalssNameAndRoomNumberComponent } from './items-to-school/table-with-
     SearchComponent,
     TableWithItemComponent,
     TdCalssNameAndRoomNumberComponent,
+    ItemsComponent
 
   ],
   imports: [

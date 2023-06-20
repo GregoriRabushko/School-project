@@ -1,0 +1,44 @@
+.containerNumberAndItemAndBtnDel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px;
+  border-bottom: 0.5px solid black;
+
+}
+
+.containerNumberAndItem {
+  display: flex;
+  flex-direction: row;
+}
+
+.containerInputAndBtnCreate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item {
+  margin-left: 5px;
+}
+
+.btnDelete {
+  border-radius: 50%;
+  background-color: #ef3c3c;
+  height: 26px;
+  width: 26px;
+  font-size: 20px;
+  //margin-left: 65px;
+  //margin-top: -30px;
+  transform: rotate(45deg);
+}
+
+.btnDelete:hover {
+  cursor: pointer;
+}
+
+.btnCreate {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
