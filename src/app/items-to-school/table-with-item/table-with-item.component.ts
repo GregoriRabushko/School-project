@@ -7,10 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableWithItemComponent implements OnInit {
 
-  week = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+  classesSchoolInfo:ClassesSchoolInfo = {
+    'week': ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+    'classes':['11A', '10A','9A','8A','7A','6A','5A','4A','3A'],
+    'items':[]
+  };
+  showItemsWindow = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
+  showItemsMenu() {
+    this.showItemsWindow = true;
+  }
+}
+
+interface ClassesSchoolInfo {
+  'week':string[],
+  'classes':string[],
+  'items':string[]
 }

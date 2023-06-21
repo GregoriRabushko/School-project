@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-td-calss-name-and-room-number',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TdCalssNameAndRoomNumberComponent implements OnInit {
 
+  @Input() classNum = '';
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
 
 }

@@ -1,5 +1,7 @@
 table {
   border-collapse: collapse;
+  margin-left: 20px;
+  margin-top: 20px;
 }
 
 .trHeader {
@@ -11,7 +13,11 @@ table {
   flex-direction: column;
 }
 
-
+.itemsMenu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
 

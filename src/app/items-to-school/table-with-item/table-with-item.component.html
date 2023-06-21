@@ -1,22 +1,26 @@
 <table>
   <thead>
   <tr class="trHeader">
-    Рассписание
+    <td colspan="">
+      Рассписание
+    </td>
   </tr>
   </thead>
 
   <tbody>
     <tr>
       <td></td>
-      <td>
-        <app-td-calss-name-and-room-number></app-td-calss-name-and-room-number>
+      <td *ngFor="let classNumber of classesSchoolInfo.classes">
+        <app-td-calss-name-and-room-number [classNum]="classNumber"></app-td-calss-name-and-room-number>
       </td>
     </tr>
-    <tr *ngFor="let day of week">
+    <tr *ngFor="let day of classesSchoolInfo.week">
       <td>{{day}}</td>
-      <td>
-        <app-items></app-items>
-        <input>
+      <td  class="itemsMenu">
+        <app-items *ngIf="showItemsWindow;else showBtnAddAppItems"></app-items>
+        <ng-template #showBtnAddAppItems>
+          <button class="btnAddAppItems" (click)="showItemsMenu()">+</button>
+        </ng-template>
       </td>
     </tr>
   </tbody>

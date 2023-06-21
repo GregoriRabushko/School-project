@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemsComponent implements OnInit {
   val:string = '';
-  itemsSchool:string[] = ['matem'];
+  itemsSchool:string[] = [];
 
   constructor() { }
 
