@@ -4,7 +4,7 @@
       <a class="schoolListNumber" (click)="clickButtonSchoolListNumber()" *ngFor="let item of studentsListNumber">
         <div class="schoolListCard">
           <div class="schoolListCardText">{{item}}</div>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIdnDHIh_Yp3bq8uTZ8hvqJ2IFBilV91stcRm5_boRXtWpoPXQQ6K9hqtfGehS1QXEZcM&usqp=CAU" alt="books">
+          <img src="assets/img/img-to-select-school-component/images.jpg" alt="books">
           <div class="containerToCardWithDeleteBtn" *ngIf="deleteCard">
             <button class="btnDeleteCard" (click)="deleteSchoolClassList(studentsListNumber.indexOf(item))">+</button>
           </div>

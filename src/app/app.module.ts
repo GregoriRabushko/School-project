@@ -32,7 +32,9 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { SearchComponent } from './search/search.component';
 import { TableWithItemComponent } from './items-to-school/table-with-item/table-with-item.component';
 import { TdCalssNameAndRoomNumberComponent } from './items-to-school/table-with-item/td-calss-name-and-room-number/td-calss-name-and-room-number.component';
-import { ItemsComponent } from './items-to-school/table-with-item/items/items.component'
+import { ItemsComponent } from './items-to-school/table-with-item/items/items.component';
+import { ScheduleForTheDayComponent } from './items-to-school/table-with-item/schedule-for-the-day/schedule-for-the-day.component';
+import { AddClassToScheduleComponent } from './items-to-school/table-with-item/add-class-to-schedule/add-class-to-schedule.component'
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { ItemsComponent } from './items-to-school/table-with-item/items/items.co
     SearchComponent,
     TableWithItemComponent,
     TdCalssNameAndRoomNumberComponent,
-    ItemsComponent
+    ItemsComponent,
+    ScheduleForTheDayComponent,
+    AddClassToScheduleComponent
 
   ],
   imports: [
