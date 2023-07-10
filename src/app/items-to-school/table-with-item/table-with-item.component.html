@@ -1,32 +1,52 @@
-<table>
-  <thead>
-  <tr>
-    <th colspan="200" class="trHeader">
-      Рассписание
-    </th>
-  </tr>
-  <tr>
-    <th></th>
-    <th scope="col" *ngFor="let classNumber of classesSchoolInfo; let index = index" >
-      <app-td-calss-name-and-room-number [classNum]="classNumber.id" ></app-td-calss-name-and-room-number>
-    </th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr (click)="selectRow(index)" *ngFor="let day of week; let index = index;">
-    <td [class.selected-row]="selectedIndex === index">{{day}}</td>
-    <td [class.selected-row]="selectedIndex === index" *ngFor="let items of classesSchoolInfo">
-      <div *ngFor="let lessons of items.lessons[day]">{{lessons}}</div>
-    </td>
-  </tr>
-  </tbody>
+<div class="contentContainer">
+  <table>
+    <tbody>
+    <tr>
+      <th colspan="200" class="trHeader">
+        Рассписание
+      </th>
+    </tr>
+    <tr>
+      <th></th>
+      <th scope="col" *ngFor="let classNumber of classesSchoolInfo; let index = index" >
+        <app-td-calss-name-and-room-number [classNum]="classNumber.id" ></app-td-calss-name-and-room-number>
+      </th>
+      <th rowspan="7" scope="rowgroup" *ngIf="!openWindowAddSchoolClassName">
+        <div>
+          <button (click)="openWindowAddSchoolClassName=true">+</button>
+        </div>
+      </th>
+    </tr>
 
-  <tfoot></tfoot>
-</table>
-<button (click)="openWindowAddSchoolClassName=true">+</button>
+    <tr (click)="selectRow(index)" *ngFor="let day of week; let index = index;">
+      <th scope="row" [class.selected-row]="selectedIndex === index">{{day}}</th>
+      <td [class.selected-row]="selectedIndex === index" *ngFor="let items of classesSchoolInfo">
+        <div *ngFor="let lessons of items.lessons[day]">{{lessons}}</div>
+      </td>
+      <td *ngIf="addItems">
+        <button (click)="addItemsToSchedule()">+</button>
+      </td>
+    </tr>
+    </tbody>
+    <tfoot></tfoot>
+  </table>
 
-<app-add-class-to-schedule (closeWindow)="checkingTheStateOfAVariableClassList($event)" [className]="classSchool.id" *ngIf="openWindowAddSchoolClassName"></app-add-class-to-schedule>
-<!--<app-schedule-for-the-day class="scheduleForDay" *ngIf="classesSchoolInfo.length>0;else showBtnAddAppItems" [day]="selectDay"></app-schedule-for-the-day>-->
-<ng-template #showBtnAddAppItems>
-  <button class="btnAddAppItems" (click)="showItemsMenu()">+</button>
-</ng-template>
+
+
+
+  <app-add-class-to-schedule
+    [className]="classId"
+    *ngIf="openWindowAddSchoolClassName"
+    (closeWindow)="checkingTheStateOfAVariableClassList($event)">
+  </app-add-class-to-schedule>
+
+
+
+<!--  <app-schedule-for-the-day class="scheduleForDay" *ngIf="classesSchoolInfo.length>0" [day]="selectDay"></app-schedule-for-the-day>-->
+
+
+
+  <ng-template *ngIf="openWindowAddSchoolClassName">
+    <button class="btnAddAppItems" (click)="showItemsMenu()">+</button>
+  </ng-template>
+</div>

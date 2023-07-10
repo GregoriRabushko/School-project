@@ -6,15 +6,15 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./table-with-item.component.scss']
 })
 export class TableWithItemComponent implements OnInit {
-
     week:string[] = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+    classesId:string[] =[];
+    @Input()classId = '';
     selectDay = '';
+    addItems = true;
+    showItemsWindow = false;
+    selectedIndex?: number;
   @Input() openWindowAddSchoolClassName = false;
 
-  // classesSchoolInfo:ClassesSchoolInfo = {
-  //   'classes':['11A', '10A','9A','8A','7A','6A','5A','4A','3A'],
-  //   'items':[]
-  // };
   classSchool:ClassSchool = {
     id: '',
     lessons:{
@@ -25,7 +25,7 @@ export class TableWithItemComponent implements OnInit {
       'Пт':[],
       'Сб':[]
     }
-};
+  };
 
   classesSchoolInfo:ClassSchool[] = [
 
@@ -34,7 +34,7 @@ export class TableWithItemComponent implements OnInit {
       lessons:{
         'Пн':['Английский', 'Физра'],
         'Вт':['Русск.яз.', 'Математика'],
-        'Ср':['Бел.лит.', 'Астрономия'],
+        'Ср':[],
         'Чт':['Алгебра', 'Геометрия'],
         'Пт':['Труд.об.', 'ДПЮ'],
         'Сб':['Медицина', 'История']
@@ -59,16 +59,11 @@ export class TableWithItemComponent implements OnInit {
         'Ср':['Бел.лит.', 'Астрономия'],
         'Чт':['Английский', 'Физра'],
         'Пт':['Труд.об.', 'ДПЮ'],
-        'Сб':['Медицина', 'История']
+        'Сб':[]
       }
     }
-
-
-
   ];
 
-  showItemsWindow = false;
-  selectedIndex?: number;
   constructor() { }
 
   ngOnInit(): void {
@@ -92,7 +87,16 @@ export class TableWithItemComponent implements OnInit {
 
   checkingTheStateOfAVariableClassList(item:boolean) {
     this.openWindowAddSchoolClassName = item;
+      this.classesId.push(this.classId);
+      console.log(this.classId);
+      console.log(this.classesId);
+      // console.log(this.classSchool.id);
   }
+
+  addItemsToSchedule() {
+
+  }
+
 }
 export interface ClassSchool {
   id:string,

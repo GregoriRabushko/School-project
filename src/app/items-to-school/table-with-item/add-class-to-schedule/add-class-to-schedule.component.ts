@@ -8,18 +8,20 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class AddClassToScheduleComponent implements OnInit {
 
 
-  @Output() className = '';
+  @Output()className = '';
   numberClass:number = 1;
   indexToArrLetter:number = 0;
   arrToLettersClass:string[] = ['A', 'Б', 'В', 'Г']
   @Output() closeWindow = new EventEmitter<boolean>();  constructor() { }
 
   ngOnInit(): void {
+
   }
 
   addNewClassList() {
     this.className = `${this.numberClass}`+this.arrToLettersClass[this.indexToArrLetter];
     this.closeWindowWithAddSchoolClassList(false);
+    console.log('className= ' + this.className);
   }
   closeWindowWithAddSchoolClassList(item:boolean) {
     this.closeWindow.emit(item);
