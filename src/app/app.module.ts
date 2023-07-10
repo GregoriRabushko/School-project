@@ -5,62 +5,57 @@ import { FormsModule } from "@angular/forms";
 import {Routes, RouterModule} from '@angular/router';
 import { HttpClientModule }   from '@angular/common/http';
 
-import { AppComponent } from './app.component';
-import { StudentsListComponent } from './students-list/students-list.component';
-import { ItemsToSchoolComponent } from './items-to-school/items-to-school.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
-import { MenuComponent } from './menu/menu.component';
-import { ListJinglesComponent } from './items-to-school/list-jingles/list-jingles.component';
-import { UserProfilComponent } from './user-profil/user-profil.component';
-import { BulletinBoardComponent } from './items-to-school/bulletin-board/bulletin-board.component';
-import { MessangerComponent } from './messanger/messanger.component';
-import { SelectSchoolListComponent } from './students-list/select-school-list/select-school-list.component';
-import { TableRowWithStudentsComponent } from './students-list/table-row-with-students/table-row-with-students.component';
-import { TableRowWithGradeComponent } from './students-list/table-row-with-grade/table-row-with-grade.component';
-import { ChooseASchoolSubjectComponent } from './students-list/select-school-list/choose-a-school-subject/choose-a-school-subject.component';
+import { appRoute } from 'src/app/app.route';
+
+import { AppComponent } from './app.component';
 import { AuthorizationComponent } from './authorization/authorization.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { appRoute } from 'src/app/app.route';
-import { CardListComponent } from './students-list/select-school-list/card-list/card-list.component';
-import { AddNewSchoolClassComponent } from './students-list/select-school-list/add-new-school-class/add-new-school-class.component';
 import { CheckboxComponent } from './registration/checkbox/checkbox.component';
+import { ItemsToSchoolComponent } from './items-to-school/items-to-school.component';
+import { MenuComponent } from './menu/menu.component';
+import { UserProfilComponent } from './user-profil/user-profil.component';
+import { MessangerComponent } from './messanger/messanger.component';
 import { SchoolCanteenComponent } from './school-canteen/school-canteen.component';
-import { StudentListPipe } from './students-list/student-list.pipe';
 import { NewsComponent } from './news/news.component';
-import { ScheduleForWorkersComponent } from './schedule-for-workers/schedule-for-workers.component';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { SearchComponent } from './search/search.component';
+import { ScheduleForWorkersComponent } from './schedule-for-workers/schedule-for-workers.component';
+
+import { ListJinglesComponent } from './items-to-school/list-jingles/list-jingles.component';
+import { BulletinBoardComponent } from './items-to-school/bulletin-board/bulletin-board.component';
 import { TableWithItemComponent } from './items-to-school/table-with-item/table-with-item.component';
 import { TdCalssNameAndRoomNumberComponent } from './items-to-school/table-with-item/td-calss-name-and-room-number/td-calss-name-and-room-number.component';
 import { ItemsComponent } from './items-to-school/table-with-item/items/items.component';
 import { ScheduleForTheDayComponent } from './items-to-school/table-with-item/schedule-for-the-day/schedule-for-the-day.component';
-import { AddClassToScheduleComponent } from './items-to-school/table-with-item/add-class-to-schedule/add-class-to-schedule.component'
+import { AddClassToScheduleComponent } from './items-to-school/table-with-item/add-class-to-schedule/add-class-to-schedule.component';
+
+import {AboutUsModule} from "./about-us/about-us.module";
+import {ItemsToSchoolModule} from "./items-to-school/items-to-school.module";
+import {MenuModule} from "./menu/menu.module";
+import {MessengerModule} from "./messanger/messenger.module";
+import {NewsModule} from "./news/news.module";
+import {ScheduleForWorkersModule} from "./schedule-for-workers/schedule-for-workers.module";
+import {SchoolCanteenModule} from "./school-canteen/school-canteen.module";
+import {SearchModule} from "./search/search.module";
+import {StudentsListModule} from "./students-list/students-list.module";
+import {UserProfilModule} from "./user-profil/user-profil.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentsListComponent,
     ItemsToSchoolComponent,
     MenuComponent,
     ListJinglesComponent,
     UserProfilComponent,
     BulletinBoardComponent,
     MessangerComponent,
-    SelectSchoolListComponent,
-    TableRowWithStudentsComponent,
-    TableRowWithGradeComponent,
-    ChooseASchoolSubjectComponent,
     AuthorizationComponent,
     RegistrationComponent,
-    CardListComponent,
-    AddNewSchoolClassComponent,
     CheckboxComponent,
     SchoolCanteenComponent,
-    StudentListPipe,
     NewsComponent,
     ScheduleForWorkersComponent,
     AboutUsComponent,
-    SearchComponent,
     TableWithItemComponent,
     TdCalssNameAndRoomNumberComponent,
     ItemsComponent,
@@ -73,7 +68,17 @@ import { AddClassToScheduleComponent } from './items-to-school/table-with-item/a
     RouterModule.forRoot(appRoute),
     FormsModule,
     FullCalendarModule,
-    HttpClientModule
+    HttpClientModule,
+    AboutUsModule,
+    ItemsToSchoolModule,
+    MenuModule,
+    MessengerModule,
+    NewsModule,
+    ScheduleForWorkersModule,
+    SchoolCanteenModule,
+    StudentsListModule,
+    SearchModule,
+    UserProfilModule
   ],
   providers: [],
   bootstrap: [AppComponent]

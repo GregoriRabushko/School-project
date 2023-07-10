@@ -59,7 +59,7 @@
     </tr>
     <tr class="cursorAround" *ngFor="let name of students">
       <td class="numberStudent">{{students.indexOf(name) + 1}}</td>
-      <td>{{name|studentList}}</td>
+      <td>{{name|nameTransform}}</td>
       <app-table-row-with-students></app-table-row-with-students>
       <td>
         <button (click)="deleteStudent(students.indexOf(name))">Удалить</button>
