@@ -13,7 +13,6 @@ import { AuthorizationComponent } from './authorization/authorization.component'
 import { RegistrationComponent } from './registration/registration.component';
 import { CheckboxComponent } from './registration/checkbox/checkbox.component';
 import { ItemsToSchoolComponent } from './items-to-school/items-to-school.component';
-import { MenuComponent } from './menu/menu.component';
 import { UserProfilComponent } from './user-profil/user-profil.component';
 import { MessangerComponent } from './messanger/messanger.component';
 import { SchoolCanteenComponent } from './school-canteen/school-canteen.component';
@@ -39,29 +38,14 @@ import {SchoolCanteenModule} from "./school-canteen/school-canteen.module";
 import {SearchModule} from "./search/search.module";
 import {StudentsListModule} from "./students-list/students-list.module";
 import {UserProfilModule} from "./user-profil/user-profil.module";
+import {SharedModule} from "./common/shared.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    ItemsToSchoolComponent,
-    MenuComponent,
-    ListJinglesComponent,
-    UserProfilComponent,
-    BulletinBoardComponent,
-    MessangerComponent,
     AuthorizationComponent,
     RegistrationComponent,
     CheckboxComponent,
-    SchoolCanteenComponent,
-    NewsComponent,
-    ScheduleForWorkersComponent,
-    AboutUsComponent,
-    TableWithItemComponent,
-    TdCalssNameAndRoomNumberComponent,
-    ItemsComponent,
-    ScheduleForTheDayComponent,
-    AddClassToScheduleComponent
-
   ],
   imports: [
     BrowserModule,
@@ -78,7 +62,8 @@ import {UserProfilModule} from "./user-profil/user-profil.module";
     SchoolCanteenModule,
     StudentsListModule,
     SearchModule,
-    UserProfilModule
+    UserProfilModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

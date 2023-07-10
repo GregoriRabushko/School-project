@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { SearchComponent } from 'src/app/search/search.component';
-import { MenuComponent } from 'src/app/menu/menu.component';
-
+import {SearchComponent} from "./search.component";
+import {SharedModule} from "../common/shared.module";
 
 @NgModule({
   declarations: [
     SearchComponent,
-    MenuComponent,
 
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule,
   ]
 })
 export class SearchModule { }
