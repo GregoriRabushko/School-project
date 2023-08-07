@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SliderFood} from "./school-canteen.service";
 
 @Component({
   selector: 'app-school-canteen',
@@ -8,12 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class SchoolCanteenComponent implements OnInit {
   isTuckShopActive = false;
 
-  slider:SliderFood = {
-    1: true,
-    2: false,
-    3: false,
-    4: false
-  }
+  slider:SliderFood[] = []
 
   constructor() { }
 
@@ -27,9 +23,4 @@ export class SchoolCanteenComponent implements OnInit {
   sliderNext() {
 
   }
-}
-
-
-export interface SliderFood {
-  [key:number]: boolean
 }
