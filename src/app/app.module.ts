@@ -12,21 +12,6 @@ import { AppComponent } from './app.component';
 import { AuthorizationComponent } from './authorization/authorization.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { CheckboxComponent } from './registration/checkbox/checkbox.component';
-import { ItemsToSchoolComponent } from './items-to-school/items-to-school.component';
-import { UserProfilComponent } from './user-profil/user-profil.component';
-import { MessangerComponent } from './messanger/messanger.component';
-import { SchoolCanteenComponent } from './school-canteen/school-canteen.component';
-import { NewsComponent } from './news/news.component';
-import { AboutUsComponent } from './about-us/about-us.component';
-import { ScheduleForWorkersComponent } from './schedule-for-workers/schedule-for-workers.component';
-
-import { ListJinglesComponent } from './items-to-school/list-jingles/list-jingles.component';
-import { BulletinBoardComponent } from './items-to-school/bulletin-board/bulletin-board.component';
-import { TableWithItemComponent } from './items-to-school/table-with-item/table-with-item.component';
-import { TdCalssNameAndRoomNumberComponent } from './items-to-school/table-with-item/td-calss-name-and-room-number/td-calss-name-and-room-number.component';
-import { ItemsComponent } from './items-to-school/table-with-item/items/items.component';
-import { ScheduleForTheDayComponent } from './items-to-school/table-with-item/schedule-for-the-day/schedule-for-the-day.component';
-import { AddClassToScheduleComponent } from './items-to-school/table-with-item/add-class-to-schedule/add-class-to-schedule.component';
 
 import {AboutUsModule} from "./about-us/about-us.module";
 import {ItemsToSchoolModule} from "./items-to-school/items-to-school.module";

@@ -1,6 +1,8 @@
 import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import { SelectSchoolListService } from 'src/app/students-list/select-school-list/select-school-list.service';
 import {take} from "rxjs";
+import {User} from "src/app/students-list/select-school-list/interface";
+
 import {Router} from "@angular/router";
 
 @Component({
@@ -11,7 +13,8 @@ import {Router} from "@angular/router";
 export class ChooseASchoolSubjectComponent implements OnInit {
 
   @Output() closeOrVueChooseASchoolSubject = new EventEmitter<boolean>();
-  schoolObjects:string[] = [];
+  schoolSubjects:string[] = [];
+
   addSchoolObjectOnSchoolList:string = '';
   isAddNewSubjectModeActive = false;
   isChooseSubjectModeActive = true;
@@ -21,6 +24,8 @@ export class ChooseASchoolSubjectComponent implements OnInit {
   clickOnButtonSelectObject = false;
   isViewSubjectActive = true;
 
+  users: User[]=[];
+  subjects: User[]=[];
   constructor(
     private selectSchoolListService:SelectSchoolListService,
     private readonly router: Router,
@@ -28,11 +33,11 @@ export class ChooseASchoolSubjectComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this._loadSubjects()
+    this._loadSubjects();
   }
 
   viewSchoolObject(index: number) {
-    this.router.navigate(['studentlist', index, index]); // TODO classId
+    this.router.navigate(['studentList', index, index]); // TODO classId
   }
 
   deleteObject(item: string, index: number) {
@@ -74,10 +79,23 @@ export class ChooseASchoolSubjectComponent implements OnInit {
   }
 
   private _loadSubjects() {
-    this.schoolObjects = this.selectSchoolListService.getSchoolObjects();
-    // this.selectSchoolListService.getSchoolObjects().pipe(take(1)).subscribe(result => {
-    //   this.schoolObjects = result;
-    //   console.log(this.schoolObjects);
+    // if(this.schoolSubjects === []) {
+      // this.selectSchoolListService.getSchoolSubjects().subscribe({next:(data:User[]) => this.subjects=data});
+    // }
+    // else {
+    //   return console.log(this.schoolSubjects);
+    // }
+    this.schoolSubjects = this.selectSchoolListService.getSchoolSubjects()
+    // this.selectSchoolListService.getSchoolSubjects().pipe(take(1)).subscribe(result => {
+    //   this.schoolSubjects = result;
+    //   console.log(this.schoolSubjects);
     // });
+  }
+
+
+  //========================================== просто пробовал через observer ===========
+  giveInfo() {
+    this.selectSchoolListService.getInfo().subscribe({next:(data: User[]) => this.users=data});
+    return console.log(this.users);
   }
 }

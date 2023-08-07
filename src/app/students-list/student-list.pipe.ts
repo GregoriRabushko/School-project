@@ -5,6 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class StudentListPipe implements PipeTransform {
 
+  // todo что делать если не указали все данные (Иван Петрович) например без фамилии
   transform(value: string): any {
     let nameStudent = value.split(' ');
     let name = '';

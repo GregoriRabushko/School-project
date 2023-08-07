@@ -6,6 +6,7 @@ import { HttpClient} from '@angular/common/http';
 import { Observable} from "rxjs";
 import { map } from "rxjs/operators";
 import {ActivatedRoute, Route} from "@angular/router";
+import {User} from "./select-school-list/interface";
 
 
 
@@ -43,6 +44,9 @@ export class StudentsListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+
+
     const classIndex = this.activatedRoute.snapshot.paramMap.get('classIndex');
     const subjectIndex = this.activatedRoute.snapshot.paramMap.get('subjectIndex');
     if (subjectIndex && classIndex) {
@@ -77,6 +81,14 @@ export class StudentsListComponent implements OnInit {
     this.month = this.monthToList[this.item];
 
 
+    // get data of json
+    // const arToInfo:Info = {id: 0, name: '' }
+    // this.selectSchoolListService.getInfo()
+    //   .subscribe((data:Info)=> this.arrToInfo = {
+    //     id: data.id,
+    //     name: data.name
+    //   });
+
   }
 
   previousMonth() {
@@ -86,7 +98,9 @@ export class StudentsListComponent implements OnInit {
     }
     this.month = this.monthToList[this.item];
   }
+}
 
-
-
+export interface Info {
+  id:number,
+  name:string
 }

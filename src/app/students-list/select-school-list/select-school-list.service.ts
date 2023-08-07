@@ -1,4 +1,10 @@
 import { Injectable } from '@angular/core';
+import * as http from "http";
+import {HttpClient} from "@angular/common/http";
+import { Observable } from 'rxjs';
+import {User} from "./interface";
+import {schoolObjects, studentsListNumber, students} from "src/assets/school-info-test-db/info-school"
+import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -6,87 +12,23 @@ import { Injectable } from '@angular/core';
 export class SelectSchoolListService {
 
   classInfo: ClassInfo = {
-    chooseSubject:'',
-    className:''
+    chooseSubject: '',
+    className: ''
   };
 
-  schoolObjects: string[] = [
-    'Математика',
-    'География',
-    'Физика',
-    'Химия',
-    'Русский язык',
-    'Русская литература',
-    'Беларусский язык',
-    'Беларусская литература',
-    'Иностранный язык',
-    'Информатика',
-    'Физическая культура',
-    'Допризывная подготовка',
-    'История',
-    'Астрономия',
-    'Обществоведение'
-  ];
-
-  studentsListNumber:string[] = [
-    '11A',
-    '11Б',
-    '10A',
-    '10Б',
-    '9A',
-    '9Б',
-    '8A',
-    '8Б',
-    '7A',
-    '7Б',
-    '6A',
-    '6Б',
-    '5A',
-    '5Б',
-    '4A',
-    '4Б',
-    '3A',
-    '3Б',
-    '2A',
-    '2Б',
-    '1A',
-    '1Б',
-  ];
-
-  students = [
-    'Борозна Олег Александрович',
-    'Гиро Егор Сергеевич',
-    'Дробыш Владислав Павлович',
-    'Египко Евгения Дмитриевна',
-    'Земко Роман Никитич',
-    'Казакова Анастасия Сергеевна',
-    'Климентова София Маратовна',
-    'Ковалёв Захар Николаевич',
-    'Коваленок Данила Дмитриевич',
-    'Красовская Екатерина Сергеевна',
-    'Лелеш Иван Александрович',
-    'Лицкевич Владислав Анатольевич',
-    'Логовский Евгений Александрович',
-    'Майсак Кирилл Александрович',
-    'Макейчик Алексей Вячеславович',
-    'Мелещеня Ульяна Андреевна'
-  ]
 
 
-  constructor() { }
-
-  getSchoolObjects() {
-    // return of(this.schoolObjects);
-    return this.schoolObjects;
+  constructor(private http: HttpClient) {
   }
 
-  postClassInfo(subject:string,) {
-      this.classInfo.chooseSubject = subject;
+
+  postClassInfo(subject: string,) {
+    this.classInfo.chooseSubject = subject;
   }
 
   getClassInfo(classIndex: number, subjectIndex: number) {
-    const subject = this.schoolObjects[subjectIndex];
-    const className = this.studentsListNumber[classIndex];
+    const subject = schoolObjects[subjectIndex];
+    const className = studentsListNumber[classIndex];
     // TODO get class info by subject id
     const classInfo: ClassInfo = {
       chooseSubject: subject,
@@ -94,28 +36,65 @@ export class SelectSchoolListService {
     };
     return classInfo;
   }
+
   getStudentsListNumber() {
-    console.log(this.studentsListNumber)
-    return this.studentsListNumber;
+    console.log(studentsListNumber)
+    return studentsListNumber;
   }
 
 
-  postSchoolObjects(item:string) {
-    this.schoolObjects.push(item);
+  postSchoolObjects(item: string) {
+    schoolObjects.push(item);
     console.log(item);
   }
 
-  postStudentsListNumber(item:string) {
-    this.studentsListNumber.push(item)
+  postStudentsListNumber(item: string) {
+    studentsListNumber.push(item)
   }
 
   deleteSchoolObjects(itemIndex: number) {
-    this.schoolObjects.splice(itemIndex, 1)
+    schoolObjects.splice(itemIndex, 1)
   }
 
+
+  getSchoolSubjects() {
+    return schoolObjects
+  }
+
+
+
+
+  // ================= просто пробовал через observer ===========
+  getInfo():Observable<User[]> {
+    return this.http.get('assets/school-info-test-db/school-info.json').
+    pipe(map((data:any)=>{
+    let usersList = data["students"];
+
+    // console.log(usersList)
+    return usersList.map(function(user: any): User {
+      return new User(user.id, user.name);
+    });
+  }));
+  }
+
+  // getSchoolSubjects():Observable<User[]> {
+  //   return this.http.get('assets/school-info-test-db/school-info.json').
+  //     pipe(map((data:any)=>{
+  //       let schoolSubject = data["schoolSubjects"];
+  //
+  //       return schoolSubject.map(function(item:any):User {
+  //         return new User(item.id, item.name);
+  //     });
+  //   }));
+  // }
 }
 
 export interface ClassInfo {
   chooseSubject:string,
   className:string
 }
+
+export interface InfoClass {
+  [key:number]:[string]
+}
+
