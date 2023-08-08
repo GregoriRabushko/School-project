@@ -21,8 +21,8 @@
      </ol>
 
      <div class="slider-food-image">
-       <div class="img-box" *ngFor="let item of slider">
-         <img src="{{item.url}}">
+       <div class="img-box">
+         <img  *ngFor="let item of slider" src="{{item.url}}">
        </div>
        <div class="image-switching-buttons">
          <button (click)="sliderLast()"> < </button>

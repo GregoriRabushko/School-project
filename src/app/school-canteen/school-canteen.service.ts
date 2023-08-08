@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -28,12 +29,29 @@ export class SchoolCanteenService {
       name: "Сок апельсиновый",
       url: "https://www.gastronom.ru/binfiles/images/20141015/b7492a6d.jpg",
       isActivated: false
+    },
+    {
+      id: 5,
+      name: "Овсянка",
+      url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoklsnOJnkdEm3AeBsG2qhKDfLQW0kd0n_DQ&usqp=CAU",
+      isActivated: false
     }
   ]
 
-  constructor() { }
+  // menu:any = {
+  //   "Пн": [{foodId: 1}, {foodId: 3}],
+  //   "Вт": [{foodId: 2}, {foodId: 4}],
+  //   "Ср": [{foodId: 1}, {foodId: 4}],
+  //   "Чт": [{foodId: 4}, {foodId: 3}],
+  //   "Пт": [{foodId: 3}, {foodId: 2}, {foodId: 1}],
+  //   "Сб": [{foodId: 2}]
+  // }
 
+  constructor( readonly http:HttpClient) { }
 
+  getFoodInfo():any {
+    return this.http.get('assets.json');
+  }
 
 
 }

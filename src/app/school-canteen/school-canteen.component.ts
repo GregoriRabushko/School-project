@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SliderFood} from "./school-canteen.service";
+import { SchoolCanteenService, SliderFood} from "./school-canteen.service";
 
 @Component({
   selector: 'app-school-canteen',
@@ -11,9 +11,14 @@ export class SchoolCanteenComponent implements OnInit {
 
   slider:SliderFood[] = []
 
-  constructor() { }
+  constructor(readonly foodService:SchoolCanteenService) { }
 
   ngOnInit(): void {
+    this.getFoodInfo();
+  }
+
+  getFoodInfo() {
+    this.slider = this.foodService.getFoodInfo().subscribe((data:any)=>{console.log(data)});
   }
 
   sliderLast() {

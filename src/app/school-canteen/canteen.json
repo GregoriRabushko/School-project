@@ -1,5 +1,5 @@
 {
-  "slider": [
+  "food": [
     {
       "id": "1",
       "name": "Суп: 'Борщ'",
@@ -24,5 +24,13 @@
       "url": "https://www.gastronom.ru/binfiles/images/20141015/b7492a6d.jpg",
       "isActivated": "false"
     }
-  ]
+  ],
+  "menu": {
+    "Пн": [{"foodId": "1"}, {"foodId": "3"}],
+    "Вт": [{"foodId": "2"}, {"foodId": "4"}],
+    "Ср": [{"foodId": "1"}, {"foodId": "4"}],
+    "Чт": [{"foodId": "4"}, {"foodId": "3"}],
+    "Пт": [{"foodId": "3"}, {"foodId": "2"}, {"foodId": "1"}],
+    "Сб": [{"foodId": "2"}]
+  }
 }
