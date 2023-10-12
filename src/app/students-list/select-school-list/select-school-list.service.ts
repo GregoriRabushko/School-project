@@ -66,9 +66,9 @@ export class SelectSchoolListService {
 
   // ================= просто пробовал через observer ===========
   getInfo():Observable<User[]> {
-    return this.http.get('assets/school-info-test-db/school-info.json').
+    return this.http.get('http://localhost:3000/classes').
     pipe(map((data:any)=>{
-    let usersList = data["students"];
+    let usersList = data["classes"];
 
     // console.log(usersList)
     return usersList.map(function(user: any): User {
@@ -78,7 +78,7 @@ export class SelectSchoolListService {
   }
 
   // getSchoolSubjects():Observable<User[]> {
-  //   return this.http.get('assets/school-info-test-db/school-info.json').
+  //   return this.http.get('assets/school-info-test-db/infoprostotak.json').
   //     pipe(map((data:any)=>{
   //       let schoolSubject = data["schoolSubjects"];
   //

@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {map} from "rxjs/operators";
+import {User} from "../students-list/select-school-list/interface";
 
 @Injectable({
   providedIn: 'root'
@@ -50,7 +52,14 @@ export class SchoolCanteenService {
   constructor( readonly http:HttpClient) { }
 
   getFoodInfo():any {
-    return this.http.get('assets.json');
+    const food = [];
+    return this.http.get('assets/school-info-test-db/canteen.json').
+    pipe(map((data:any)=>{
+      let usersList = data["food"];
+
+      console.log(usersList)
+      return food.push(usersList);
+    }));
   }
 
 

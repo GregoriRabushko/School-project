@@ -20,33 +20,34 @@
 
     <tr (click)="selectRow(index)" *ngFor="let day of week; let index = index;">
       <th scope="row" [class.selected-row]="selectedIndex === index">{{day}}</th>
-      <td [class.selected-row]="selectedIndex === index" *ngFor="let items of classesSchoolInfo">
-        <div *ngFor="let lessons of items.lessons[day]">{{lessons}}</div>
-      </td>
-      <td *ngIf="addItems">
-        <button (click)="addItemsToSchedule()">+</button>
+      <td [class.selected-row]="selectedIndex === index" *ngFor="let items of classesSchoolInfo" >
+        <div class="container-items-and-btn">
+          <div>
+            <div *ngFor="let lessons of items.lessons[day]" (click)="clickOnTable(items.lessons)">{{lessons}}</div>
+          </div>
+          <div *ngIf="addItems">
+            <button class="btn-add-items" (click)="addItemsToSchedule()">+</button>
+          </div>
+        </div>
       </td>
     </tr>
     </tbody>
     <tfoot></tfoot>
   </table>
 
+<app-items></app-items>
 
 
+<!--  <ng-template *ngIf="openWindowAddSchoolClassName">-->
+<!--    <button class="btnAddAppItems" (click)="showItemsMenu()">+</button>-->
+<!--  </ng-template>-->
+<!--</div>-->
 
-  <app-add-class-to-schedule
-    [className]="classId"
-    *ngIf="openWindowAddSchoolClassName"
-    (closeWindow)="checkingTheStateOfAVariableClassList($event)">
-  </app-add-class-to-schedule>
+<!--  <app-add-class-to-schedule-->
+<!--    [className]="classId"-->
+<!--    *ngIf="openWindowAddSchoolClassName"-->
+<!--    (closeWindow)="checkingTheStateOfAVariableClassList($event)">-->
+<!--  </app-add-class-to-schedule>-->
 
-
-
+<!-- Уже не надо-->
 <!--  <app-schedule-for-the-day class="scheduleForDay" *ngIf="classesSchoolInfo.length>0" [day]="selectDay"></app-schedule-for-the-day>-->
-
-
-
-  <ng-template *ngIf="openWindowAddSchoolClassName">
-    <button class="btnAddAppItems" (click)="showItemsMenu()">+</button>
-  </ng-template>
-</div>

@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {TableItemsService, ClassSchool} from 'src/app/items-to-school/table-with-item/table-items.service';
 
 @Component({
   selector: 'app-table-with-item',
@@ -13,61 +14,13 @@ export class TableWithItemComponent implements OnInit {
     addItems = true;
     showItemsWindow = false;
     selectedIndex?: number;
-  @Input() openWindowAddSchoolClassName = false;
+    classesSchoolInfo:any = [];
+  @Input() openWindowAddSchoolClassName = true;
 
-  classSchool:ClassSchool = {
-    id: '',
-    lessons:{
-      'Пн':[],
-      'Вт':[],
-      'Ср':[],
-      'Чт':[],
-      'Пт':[],
-      'Сб':[]
-    }
-  };
-
-  classesSchoolInfo:ClassSchool[] = [
-
-    {
-      id: '11A',
-      lessons:{
-        'Пн':['Английский', 'Физра'],
-        'Вт':['Русск.яз.', 'Математика'],
-        'Ср':[],
-        'Чт':['Алгебра', 'Геометрия'],
-        'Пт':['Труд.об.', 'ДПЮ'],
-        'Сб':['Медицина', 'История']
-      }
-    },
-    {
-      id: '10B',
-      lessons:{
-        'Пн':['Русск.яз.', 'Математика'],
-        'Вт':['Английский', 'Физра'],
-        'Ср':['Бел.лит.', 'Астрономия'],
-        'Чт':['Алгебра', 'Геометрия'],
-        'Пт':['Труд.об.', 'ДПЮ'],
-        'Сб':['Медицина', 'История']
-      }
-    },
-    {
-      id: '3A',
-      lessons:{
-        'Пн':['Алгебра', 'Геометрия'],
-        'Вт':['Русск.яз.', 'Математика'],
-        'Ср':['Бел.лит.', 'Астрономия'],
-        'Чт':['Английский', 'Физра'],
-        'Пт':['Труд.об.', 'ДПЮ'],
-        'Сб':[]
-      }
-    }
-  ];
-
-  constructor() { }
+  constructor(private tableItemsService: TableItemsService) { }
 
   ngOnInit(): void {
-
+    this.classesSchoolInfo = this.tableItemsService.getLessons();
   }
 
 
@@ -97,8 +50,8 @@ export class TableWithItemComponent implements OnInit {
 
   }
 
-}
-export interface ClassSchool {
-  id:string,
-  lessons:{[key:string]:string[]},
+  clickOnTable(item:any) {
+    console.log(item);
+  }
+
 }

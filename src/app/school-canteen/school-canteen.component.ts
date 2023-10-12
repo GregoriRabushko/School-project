@@ -9,7 +9,7 @@ import { SchoolCanteenService, SliderFood} from "./school-canteen.service";
 export class SchoolCanteenComponent implements OnInit {
   isTuckShopActive = false;
 
-  slider:SliderFood[] = []
+  slider:any[] = []
 
   constructor(readonly foodService:SchoolCanteenService) { }
 
@@ -18,7 +18,8 @@ export class SchoolCanteenComponent implements OnInit {
   }
 
   getFoodInfo() {
-    this.slider = this.foodService.getFoodInfo().subscribe((data:any)=>{console.log(data)});
+    this.slider = this.foodService.getFoodInfo().subscribe((data:any)=>{this.slider=data});
+    // console.log(this.slider)
   }
 
   sliderLast() {
