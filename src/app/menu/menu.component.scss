@@ -7,7 +7,7 @@
 }
 
 a {
-  width: 200px;
+  //width: 200px;
   padding: 10px 10px;
   text-decoration: none;
   text-align: center;
@@ -20,4 +20,7 @@ a:hover{
   background-color: rgba(161, 143, 143, 0.25);
 }
 
-
+svg {
+  width: 25px;
+  height: 25px;
+}
