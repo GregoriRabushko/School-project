@@ -23,7 +23,7 @@
       <td [class.selected-row]="selectedIndex === index" *ngFor="let items of classesSchoolInfo" >
         <div class="container-items-and-btn">
           <div>
-            <div *ngFor="let lessons of items.lessons[day]" (click)="clickOnTable(items.lessons)">{{lessons}}</div>
+            <div *ngFor="let lessons of items.lessons[day]" (click)="clickOnTable(items.lessons[day])">{{lessons}}</div>
           </div>
           <div *ngIf="addItems">
             <button class="btn-add-items" (click)="addItemsToSchedule()">+</button>

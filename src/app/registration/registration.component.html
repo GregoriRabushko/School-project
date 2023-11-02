@@ -1,35 +1,47 @@
 <div class="containerForm">
-  <div class="formCardInput">
+  <form class="formCardInput" method="post" [formGroup]="myForm" novalidate="" (ngSubmit)="registrationUser()">
     <h1>Регистрация</h1>
-    <app-checkbox></app-checkbox>
+    <!--    <app-checkbox></app-checkbox>-->
 
     <label>Имя</label>
-    <input [(ngModel)]="userInfo.name"  placeholder="Имя пользователя" type="text">
+    <input placeholder="Имя пользователя" type="text" name="name"
+           formControlName="userName">
 
     <label>Фамилия</label>
-    <input [(ngModel)]="userInfo.surName"  placeholder="Фамилия пользователя" type="text">
+    <input placeholder="Фамилия пользователя" type="text" name="surname"
+           formControlName="userSurName">
 
     <label>Отчество</label>
-    <input [(ngModel)]="userInfo.genericName"  placeholder="Отчество пользователя" type="text">
+    <input placeholder="Отчество пользователя" type="text" name="genericName"
+           formControlName="userGenericName">
 
     <label>Возраст</label>
-    <input [(ngModel)]="userInfo.age"  placeholder="Возраст пользователя" type="text">
+    <input placeholder="Возраст пользователя" type="text" name="age"
+           formControlName="userAge">
 
     <label>E-mail</label>
-    <input [(ngModel)]="userInfo.email"  placeholder="Введите email" type="email">
+    <input placeholder="Введите email" type="email" name="email"
+           formControlName="userEmail">
 
     <label>Мобильный телефон</label>
-    <input [(ngModel)]="userInfo.tel"  placeholder="Введите ваш мобильный номер телефона" type="tel">
+    <input placeholder="0(29)" type="tel" name="tel"
+           formControlName="userTel">
 
     <label>Пароль</label>
-    <input [(ngModel)]="userInfo.password"  placeholder="Введите пароль" type="password">
+    <input placeholder="Введите пароль" type="password" name="userPassword"
+           formControlName="userPassword">
 
     <label>Подтвердите пароль</label>
-    <input [(ngModel)]="userInfo.repeatPassword" placeholder="Введите пароль" type="password">
+    <input placeholder="Введите пароль" type="password"
+           name="userRepeatPassword" formControlName="userRepeatPassword">
 
-    <button class="buttonCome" (click)="registrationUser()">Зарегистрироваться</button>
+    <div class="errP" *ngIf="isPasswordMismatch">
+      <p>Проверте правильность паролей<p>
+    </div>
+
+    <button [disabled]="myForm.invalid" class="buttonCome">Зарегистрироваться</button>
     <p>
       У вас уже есть аккаунт? - <a routerLink="/authorization">авторизироваться</a>
     </p>
-  </div>
+  </form>
 </div>
