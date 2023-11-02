@@ -1,7 +1,7 @@
 import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
-import { SelectSchoolListService } from 'src/app/students-list/select-school-list/select-school-list.service';
+import { SelectSchoolListService } from 'src/app/select-school-list/select-school-list.service';
 import {take} from "rxjs";
-import {User} from "src/app/students-list/select-school-list/interface";
+import {User} from "src/app/select-school-list/interface";
 
 import {Router} from "@angular/router";
 

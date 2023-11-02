@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { FunctionalClassListService } from 'src/app/students-list/functional-class-list.service';
-import { SelectSchoolListService } from 'src/app/students-list/select-school-list/select-school-list.service';
+import { FunctionalClassListService } from 'src/app/select-school-list/students-list/functional-class-list.service';
+import { SelectSchoolListService } from 'src/app/select-school-list/select-school-list.service';
 @Component({
   selector: 'app-select-school-list',
   templateUrl: './select-school-list.component.html',

@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FunctionalClassListService } from "./functional-class-list.service";
 import { MoreData } from "./functional-class-list.service";
-import {ClassInfo, SelectSchoolListService} from 'src/app/students-list/select-school-list/select-school-list.service';
+import {ClassInfo, SelectSchoolListService} from 'src/app/select-school-list/select-school-list.service';
 import { HttpClient} from '@angular/common/http';
 import { Observable} from "rxjs";
 import { map } from "rxjs/operators";
 import {ActivatedRoute, Route} from "@angular/router";
-import {User} from "./select-school-list/interface";
+import {User} from "../interface";
 
 
 

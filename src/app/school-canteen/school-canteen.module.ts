@@ -6,15 +6,16 @@ import { TuckShopComponent } from './tuck-shop/tuck-shop.component';
 
 
 
+
 @NgModule({
   declarations: [
     SchoolCanteenComponent,
     TuckShopComponent,
 
   ],
-  imports: [
-    SharedModule,
-    CommonModule
-  ]
+    imports: [
+        SharedModule,
+        CommonModule
+    ]
 })
 export class SchoolCanteenModule { }

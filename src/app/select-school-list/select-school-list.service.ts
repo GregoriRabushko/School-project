@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import * as http from "http";
-import {HttpClient} from "@angular/common/http";
-import { Observable } from 'rxjs';
+import {HttpClient, HttpParams} from "@angular/common/http";
+import { Observable, Subscription} from 'rxjs';
+import { ActivatedRoute} from '@angular/router';
+import {map} from "rxjs/operators";
 import {User} from "./interface";
 import {schoolObjects, studentsListNumber, students} from "src/assets/school-info-test-db/info-school"
-import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -18,13 +18,9 @@ export class SelectSchoolListService {
 
 
 
-  constructor(private http: HttpClient) {
-  }
-
-
-  postClassInfo(subject: string,) {
-    this.classInfo.chooseSubject = subject;
-  }
+  constructor(
+    private http: HttpClient
+  ){}
 
   getClassInfo(classIndex: number, subjectIndex: number) {
     const subject = schoolObjects[subjectIndex];
