@@ -41,21 +41,22 @@ export class RegistrationComponent implements OnInit {
 
 
   registrationUser() {
-    const body = this.myForm.value;
-    if (this.myForm.value.userPassword === this.myForm.value.userRepeatPassword) {
-      this.isPasswordMismatch = false;
-      const registrationUser = this.http.post('http://localhost:3000/registration', body);
-      console.log(body);
-
-      registrationUser.subscribe(data => {
-        if (data) {
-          this.router.navigate(['selectList']);
-          //todo сверстать страничку приветсвия после успешной регистрации!!! или всплывающее окно!!!
-          console.log(data)
-        }
-      })
-    } else {
-      this.isPasswordMismatch = true;
-    }
+    this.router.navigate(['selectList']);
+  //   const body = this.myForm.value;
+  //   if (this.myForm.value.userPassword === this.myForm.value.userRepeatPassword) {
+  //     this.isPasswordMismatch = false;
+  //     const registrationUser = this.http.post('http://localhost:3000/registration', body);
+  //     console.log(body);
+  //
+  //     registrationUser.subscribe(data => {
+  //       if (data) {
+  //         this.router.navigate(['selectList']);
+  //         //todo сверстать страничку приветсвия после успешной регистрации!!! или всплывающее окно!!!
+  //         console.log(data)
+  //       }
+  //     })
+  //   } else {
+  //     this.isPasswordMismatch = true;
+  //   }
   }
 }

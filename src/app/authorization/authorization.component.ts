@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 
 @Component({
@@ -8,12 +9,13 @@ import {Router} from '@angular/router';
   styleUrls: ['./authorization.component.scss']
 })
 export class AuthorizationComponent implements OnInit {
-  userInfo: UserInfo = {
-    who: '',
-    name: '',
-    password: ''
-  }
 
+  myForm: FormGroup = new FormGroup({
+    "userEmail": new FormControl("zak_zan@bk.ru", [Validators.required, Validators.email]),
+    "userPassword": new FormControl("", Validators.required)
+  });
+
+  isPasswordMismatch = false;
   constructor(
     private http: HttpClient,
     private router: Router
@@ -24,12 +26,15 @@ export class AuthorizationComponent implements OnInit {
 
   clickBtnCome() {
     this.router.navigate(['selectList']);
-    //  раскоментировать как будет готов сервер и БД
-    // this.http.post('http://localhost:3000/registration', this.userInfo).subscribe(data => {
+
+    // const body = this.myForm.value;
+    //
+    // this.http.post('http://localhost:3000/registration', body).subscribe(data => {
     //     if (data) {
+    //       this.isPasswordMismatch = false;
     //       this.router.navigate(['selectList']);
     //     } else {
-    //
+    //         this.isPasswordMismatch = true;
     //     }
     //   }
     // )
