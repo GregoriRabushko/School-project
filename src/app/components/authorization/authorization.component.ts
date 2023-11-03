@@ -25,7 +25,7 @@ export class AuthorizationComponent implements OnInit {
   }
 
   clickBtnCome() {
-    this.router.navigate(['selectList']);
+    this.router.navigate(['']);
 
     // const body = this.myForm.value;
     //
