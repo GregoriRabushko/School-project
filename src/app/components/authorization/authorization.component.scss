@@ -1,0 +1,58 @@
+.formCardInput {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  border:1px solid  #e3e3e3;
+  padding: 10px 20px;
+}
+
+p {
+  font-size: 12px;
+}
+
+input {
+  margin: 5px 0;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #e3e3e3;
+  outline: none;
+}
+
+input.ng-touched {
+  border-radius: 10px;
+}
+
+input.ng-touched.ng-invalid {
+  border:solid red 2px;
+}
+
+input.ng-touched.ng-valid {
+  border:solid green 2px;
+}
+
+.errP {
+  width: 210px;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+  border:solid red 1px;
+  color: #ce0000;
+  background-color: #ffcccc;
+}
+
+label {
+  margin-top: 15px;
+}
+
+a {
+  color: #416ee1;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.buttonCome {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
