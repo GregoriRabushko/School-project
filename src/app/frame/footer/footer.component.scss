@@ -1,0 +1,145 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  width: 1170px;
+  padding: 55px 15px;
+  border-bottom: 1px solid #999999;
+}
+
+.section-i{
+  margin-right: 120px;
+}
+
+img {
+  width: 145px;
+  height: 145px;
+  margin-bottom: 35px;
+}
+
+.tel-i {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.bi-telephone-fill {
+  margin-right: 20px;
+  color: #999999;
+}
+
+.tel-number {
+  color: #999999;
+}
+
+.tel-number:hover {
+  cursor: pointer;
+  color: #ffb606;
+  transition-duration: 0.5s;
+}
+
+.social {
+  display: flex;
+}
+
+.svg-i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  border: 2px solid #999999;
+  border-radius: 50%;
+  padding: 7px;
+  margin-right: 10px;
+}
+
+.bi {
+  color: #999999;
+}
+
+.svg-i:hover {
+  background-color: #ef3c3c;
+  border: 2px solid #ef3c3c;
+  cursor: pointer;
+  transition-duration: 0.5s;
+
+  .bi-telegram {
+    color: #F0F0F0;
+  }
+  .bi-instagram {
+    color: #F0F0F0;
+  }
+
+  .bi-youtube {
+    color: #F0F0F0;
+  }
+  .bi-facebook {
+    color: #F0F0F0;
+  }
+}
+
+.telegram:hover {
+  border: 2px solid #6989dc;
+  background-color: #6989dc;
+}
+
+.facebook:hover {
+  background-color: #1d50e0;
+  border: 2px solid #1d50e0;
+}
+
+.section-info {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  margin-left: 30px;
+}
+
+p {
+  font-size: 14px;
+  color: #F0F0F0;
+  margin: -13px 0 17px;
+}
+
+a {
+  font-size: 13px;
+  color: #999999;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #ffb606;
+  transition-duration: 0.5s;
+
+}
+
+.about {
+  color: #999999;
+}
+
+footer {
+  width: 1170px;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+}
+
+.f-ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.f-ul li {
+  margin-left: 10px;
+}
+.f-a:hover {
+  color: #999999;
+  text-decoration: underline;
+}

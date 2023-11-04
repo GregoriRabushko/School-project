@@ -1,76 +1,40 @@
-<div class="bg-container">
-  <div class="n-container">
-    <nav>
-      <div class="nav-container">
-        <img src="assets/img/img-header-slider/icon.png">
-        <ul class="name-option">
-          <li>
-            ОДНО ОКНО
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-              <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-            </svg>
-            <ul></ul>
-          </li>
-          <li>
-            ОБ УЧРЕЖДЕНИИ
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-              <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-            </svg>
-            <ul></ul>
-          </li>
-          <li>
-            ОБУЧАЮЩИМСЯ
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-              <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-            </svg>
-            <ul></ul>
-          </li>
-          <li>
-            БАССЙЕН
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-              <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-            </svg>
-            <ul></ul>
-          </li>
-          <li>
-            РОДИТЕЛЯМ
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-              <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-            </svg>
-            <ul></ul>
-          </li>
-          <li>
-            УЧИТЕЛЬСКАЯ
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-              <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-            </svg>
-            <ul></ul>
-          </li>
-          <li>
-            СЕРВИСЫ
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-              <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-            </svg>
-            <ul></ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <main>
-      <h2>
-        Управление по образованию
-        <br>
-        администрации Узденского района
-        <br>
-        Государственное учреждение образования
-      </h2>
-      <h1>"Средняя школа №1 г.Узда"</h1>
-      <a class="home-a">КОНТАКТЫ</a>
-    </main>
-    <footer>
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi-footer" viewBox="0 0 16 16">
-        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-      </svg>
-    </footer>
+<nav>
+  <div class="nav-container">
+    <img src="assets/img/img-header-slider/icon.png">
+    <ul class="name-option">
+      <li>
+        <a routerLink="home">ГЛАВНАЯ</a>
+        <ul></ul>
+      </li>
+      <li >
+        <a routerLink="userprofile">ПРОФИЛЬ</a>
+        <!--            вместе с ссылкой Настройки-->
+        <ul></ul>
+      </li>
+      <li>
+        <a  routerLink="messenger">СООБЩЕНИЯ</a>
+        <ul></ul>
+      </li>
+      <li>
+        <a  routerLink="">УЧИТЕЛЬСКАЯ</a>
+        <!--            вместе с ссылкой Журналы , График работников-->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+          <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+        </svg>
+        <ul></ul>
+      </li>
+      <li>
+        <a  routerLink="news">НОВОСТИ</a>
+        <ul></ul>
+      </li>
+      <li>
+        <a  routerLink="itemsToSchool">РАССПИСАНИЕ ЗАНЯТИЙ</a>
+        <ul></ul>
+      </li>
+      <li>
+        <a  routerLink="schoolCanteen">СТОЛОВАЯ</a>
+        <ul></ul>
+      </li>
+    </ul>
   </div>
-</div>
+</nav>

@@ -9,9 +9,13 @@ import {AboutUsComponent} from "../components/about-us/about-us.component";
 import {ScheduleForWorkersComponent} from "../components/schedule-for-workers/schedule-for-workers.component";
 import {SchoolCanteenComponent} from "../components/school-canteen/school-canteen.component";
 import {StudentsListComponent} from "../components/select-school-list/students-list/students-list.component";
+import {FrameComponent} from "./frame.component";
+import {HomeComponent} from "../components/home/home.component";
 
 export const frameRout: Routes =[
+  { path: '', component: HomeComponent },
   { path: 'selectList', component: SelectSchoolListComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'itemsToSchool', component: ItemsToSchoolComponent },
   { path: 'userprofile', component: UserProfilComponent },
   { path: 'messenger', component: MessangerComponent },

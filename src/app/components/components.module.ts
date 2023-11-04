@@ -13,6 +13,8 @@ import {StudentsListModule} from "./select-school-list/students-list/students-li
 import {UserProfilModule} from "./user-profil/user-profil.module";
 import {ReactiveFormsModule} from "@angular/forms";
 import {RouterLinkWithHref} from "@angular/router";
+import { HomeComponent } from './home/home.component';
+import {NgIf} from "@angular/common";
 
 
 
@@ -21,20 +23,22 @@ import {RouterLinkWithHref} from "@angular/router";
     AuthorizationComponent,
     RegistrationComponent,
     CheckboxComponent,
+    HomeComponent,
   ],
-  imports: [
-    AboutUsModule,
-    SchoolCanteenModule,
-    SearchModule,
-    MessengerModule,
-    ItemsToSchoolModule,
-    ScheduleForWorkersModule,
-    StudentsListModule,
-    UserProfilModule,
-    NewsModule,
-    ReactiveFormsModule,
-    RouterLinkWithHref,
-  ],
+    imports: [
+        AboutUsModule,
+        SchoolCanteenModule,
+        SearchModule,
+        MessengerModule,
+        ItemsToSchoolModule,
+        ScheduleForWorkersModule,
+        StudentsListModule,
+        UserProfilModule,
+        NewsModule,
+        ReactiveFormsModule,
+        RouterLinkWithHref,
+        NgIf,
+    ],
   providers: [],
   exports: [
     AboutUsModule,

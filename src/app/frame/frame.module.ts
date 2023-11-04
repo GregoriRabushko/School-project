@@ -4,6 +4,7 @@ import {FrameComponent} from "./frame.component";
 import {HeaderNavComponent} from "./header-nav/header-nav.component";
 import {frameRout} from "./frame.rout";
 import {appRoute} from "../app.route";
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -11,7 +12,8 @@ import {appRoute} from "../app.route";
 @NgModule({
   declarations: [
     FrameComponent,
-    HeaderNavComponent
+    HeaderNavComponent,
+    FooterComponent
 
   ],
   imports: [
@@ -21,9 +23,10 @@ import {appRoute} from "../app.route";
 
   ],
   providers: [],
-  exports: [
-    FrameComponent
-  ],
+    exports: [
+        FrameComponent,
+        FooterComponent
+    ],
   bootstrap: []
 })
 export class FrameModule { }
