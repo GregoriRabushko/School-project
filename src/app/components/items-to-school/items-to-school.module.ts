@@ -11,6 +11,7 @@ import {ScheduleForTheDayComponent} from "./table-with-item/schedule-for-the-day
 import {AddClassToScheduleComponent} from "./table-with-item/add-class-to-schedule/add-class-to-schedule.component";
 import {SharedModule} from "../../common/shared.module";
 import {FormsModule} from "@angular/forms";
+import {HeaderCModule} from "../header-c/header-c.module";
 
 
 
@@ -26,10 +27,11 @@ import {FormsModule} from "@angular/forms";
     ScheduleForTheDayComponent,
     AddClassToScheduleComponent,
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    SharedModule,
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        SharedModule,
+        HeaderCModule,
+    ]
 })
 export class ItemsToSchoolModule { }

@@ -1,7 +1,7 @@
 import {NgModule} from "@angular/core";
-import { AuthorizationComponent } from './authorization/authorization.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { CheckboxComponent } from './registration/checkbox/checkbox.component';
+import {AuthorizationComponent} from './authorization/authorization.component';
+import {RegistrationComponent} from './registration/registration.component';
+import {CheckboxComponent} from './registration/checkbox/checkbox.component';
 import {AboutUsModule} from "./about-us/about-us.module";
 import {SchoolCanteenModule} from "./school-canteen/school-canteen.module";
 import {SearchModule} from "./search/search.module";
@@ -13,9 +13,9 @@ import {StudentsListModule} from "./select-school-list/students-list/students-li
 import {UserProfilModule} from "./user-profil/user-profil.module";
 import {ReactiveFormsModule} from "@angular/forms";
 import {RouterLinkWithHref} from "@angular/router";
-import { HomeComponent } from './home/home.component';
-import {NgIf} from "@angular/common";
-
+import {HomeComponent} from './home/home.component';
+import {NgIf, NgStyle} from "@angular/common";
+import {HeaderCModule} from './header-c/header-c.module';
 
 
 @NgModule({
@@ -25,20 +25,22 @@ import {NgIf} from "@angular/common";
     CheckboxComponent,
     HomeComponent,
   ],
-    imports: [
-        AboutUsModule,
-        SchoolCanteenModule,
-        SearchModule,
-        MessengerModule,
-        ItemsToSchoolModule,
-        ScheduleForWorkersModule,
-        StudentsListModule,
-        UserProfilModule,
-        NewsModule,
-        ReactiveFormsModule,
-        RouterLinkWithHref,
-        NgIf,
-    ],
+  imports: [
+    AboutUsModule,
+    SchoolCanteenModule,
+    SearchModule,
+    MessengerModule,
+    ItemsToSchoolModule,
+    ScheduleForWorkersModule,
+    StudentsListModule,
+    UserProfilModule,
+    NewsModule,
+    ReactiveFormsModule,
+    RouterLinkWithHref,
+    NgIf,
+    NgStyle,
+    HeaderCModule,
+  ],
   providers: [],
   exports: [
     AboutUsModule,
@@ -50,7 +52,11 @@ import {NgIf} from "@angular/common";
     StudentsListModule,
     UserProfilModule,
     NewsModule,
+    AuthorizationComponent,
+    HeaderCModule,
+
   ],
   bootstrap: []
 })
-export class ComponentsModule { }
+export class ComponentsModule {
+}
