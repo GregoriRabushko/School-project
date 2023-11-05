@@ -10,6 +10,7 @@ import {ChooseASchoolSubjectComponent} from "../choose-a-school-subject/choose-a
 import {StudentListPipe} from "./student-list.pipe";
 import {StudentsListComponent} from "./students-list.component";
 import {SharedModule} from "../../../common/shared.module";
+import {HeaderCModule} from "../../header-c/header-c.module";
 
 @NgModule({
   declarations: [
@@ -26,10 +27,11 @@ import {SharedModule} from "../../../common/shared.module";
   exports: [
     StudentListPipe
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    SharedModule,
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        SharedModule,
+        HeaderCModule,
+    ]
 })
 export class StudentsListModule { }

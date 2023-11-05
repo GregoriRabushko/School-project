@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { FunctionalClassListService } from 'src/app/components/select-school-list/students-list/functional-class-list.service';
 import { SelectSchoolListService } from 'src/app/components/select-school-list/select-school-list.service';
+import {HeaderInfo} from "../header-c/header-c.component";
 @Component({
   selector: 'app-select-school-list',
   templateUrl: './select-school-list.component.html',
@@ -9,6 +10,10 @@ import { SelectSchoolListService } from 'src/app/components/select-school-list/s
 })
 export class SelectSchoolListComponent implements OnInit {
 
+  infoToHeader:HeaderInfo = {
+    imag: 'url("/assets/img/img-header-slider/teachers.jpg")',
+    textP: 'Журналы'
+  }
   studentsListNumber:string[] = [];
   @Input() closeOrVueChooseASchoolSubject = false;
   @Input() openWindowAddSchoolClassList = false;

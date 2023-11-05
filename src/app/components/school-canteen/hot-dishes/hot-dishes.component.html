@@ -1,0 +1,6 @@
+<div class="contentContainer">
+  <app-header-c [info]="infoToHeader"></app-header-c>
+  <div class="content">
+    <app-dishes-category *ngFor="let item of dishesHot" [dishesInfo]="item"></app-dishes-category>
+  </div>
+</div>

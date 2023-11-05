@@ -1,44 +1,17 @@
 <div class="contentContainer">
   <app-header-c [info]="infoToHeader"></app-header-c>
-
- <div>
-   <h1>Столовая</h1>
+ <div class="content">
+   <div class="section-tittle-container">
+    <h1>Ассортимент</h1>
+   </div>
    <div>
-    <button>
-      Меню
-      <button>Буфет</button>
-    </button>
+     <section class="img-dishes">
+       <app-dishes-category *ngFor="let item of dishesInfo" [dishesInfo]="item"></app-dishes-category>
+     </section>
    </div>
-   <h2>Обед</h2>
-
-
-   <div class="menu-to-food">
-     <h3>Пн</h3>
-     <ol>
-       <li>Суп "Борщ"</li>
-       <li>Пюре</li>
-       <li>Чай c булочкой</li>
-       <li>Сок апельсиновый</li>
-     </ol>
-
-     <div class="slider-food-image">
-       <div class="img-box">
-         <img  src="https://s.pfst.net/2010.09/2930631362bef09a9a21c917b7fcbe1fd026d36610_b.jpg">
-         <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs1zJfWZsJiY6-pT5JonTV_Bptcrrefs-kwg&usqp=CAU">
-         <img  src="https://img-api.yumapos.ru/image/crop/256x256/dd1a8955-5b22-fbda-7f23-d460bf7b9712.jpg">
-         <img  src="https://www.gastronom.ru/binfiles/images/20141015/b7492a6d.jpg">
-       </div>
-       <div class="image-switching-buttons">
-         <button (click)="sliderLast()"> < </button>
-         <div >1</div>
-         <div >2</div>
-         <div >3</div>
-         <div >4</div>
-         <button (click)="sliderNext()"> > </button>
-       </div>
-     </div>
+   <div>
+     <a>ПОДРОБНЕЕ</a>
    </div>
-
-    <app-tuck-shop *ngIf="isTuckShopActive"></app-tuck-shop>
  </div>
+  <router-outlet></router-outlet>
 </div>

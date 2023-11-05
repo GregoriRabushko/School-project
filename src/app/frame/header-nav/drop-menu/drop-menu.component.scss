@@ -1,0 +1,38 @@
+.content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.a-with-svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+svg {
+  margin-left: 5px;
+}
+
+.ul-drop-down {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F0F0F0;
+  top: 35px;
+  width: 300px;
+}
+
+.ul-drop-down li a{
+  margin-left: 0;
+  color: #999999;
+}
+
+.ul-drop-down li a:hover {
+  //padding-bottom: 3px;
+  border-bottom: none;
+  color: black;
+  transition-duration: 0.7s;
+}

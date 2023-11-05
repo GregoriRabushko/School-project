@@ -24,10 +24,6 @@ nav {
   padding-right: 20px;
 }
 
-.name-option li:first-child {
-  margin-left: 50px;
-}
-
 .name-option li{
   display: flex;
   align-items: center;
@@ -55,7 +51,11 @@ nav {
   color: #F0F0F0;
 }
 
-
+//.li-options {
+//  display: flex;
+//  flex-direction: column;
+//  position: relative;
+//}
 
 
 
