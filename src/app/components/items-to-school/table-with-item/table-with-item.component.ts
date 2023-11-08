@@ -8,50 +8,84 @@ import {TableItemsService, ClassSchool} from 'src/app/components/items-to-school
 })
 export class TableWithItemComponent implements OnInit {
     week:string[] = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
-    classesId:string[] =[];
-    @Input()classId = '';
-    selectDay = '';
-    addItems = true;
-    showItemsWindow = false;
-    selectedIndex?: number;
-    classesSchoolInfo:any = [];
-  @Input() openWindowAddSchoolClassName = true;
+  //   classesId:string[] =[];
+  //   @Input()classId = '';
+  //   selectDay = '';
+  //   addItems = true;
+  //   showItemsWindow = false;
+  //   selectedIndex?: number;
+  // @Input() openWindowAddSchoolClassName = true;
+    classesSchoolInfo:ClassSchool[] = [];
 
   constructor(private tableItemsService: TableItemsService) { }
 
   ngOnInit(): void {
     this.classesSchoolInfo = this.tableItemsService.getLessons();
-  }
 
+    for( let itemsClass of this.classesSchoolInfo) {
 
-  showItemsMenu() {
-    this.showItemsWindow = true;
-  }
-
-  selectRow(index: number) {
-    this.selectDay = this.week[index];
-
-    if (this.selectedIndex === index) {
-      this.selectedIndex = undefined;
-    } else {
-      this.selectedIndex = index;
     }
   }
 
-  checkingTheStateOfAVariableClassList(item:boolean) {
-    this.openWindowAddSchoolClassName = item;
-      this.classesId.push(this.classId);
-      console.log(this.classId);
-      console.log(this.classesId);
-      // console.log(this.classSchool.id);
-  }
 
-  addItemsToSchedule() {
 
-  }
 
-  clickOnTable(item:any) {
-    console.log(item);
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // showItemsMenu() {
+  //   this.showItemsWindow = true;
+  // }
+  //
+  // selectRow(index: number) {
+  //   this.selectDay = this.week[index];
+  //
+  //   if (this.selectedIndex === index) {
+  //     this.selectedIndex = undefined;
+  //   } else {
+  //     this.selectedIndex = index;
+  //   }
+  // }
+  //
+  // checkingTheStateOfAVariableClassList(item:boolean) {
+  //   this.openWindowAddSchoolClassName = item;
+  //     this.classesId.push(this.classId);
+  //     console.log(this.classId);
+  //     console.log(this.classesId);
+  //     // console.log(this.classSchool.id);
+  // }
+  //
+  // addItemsToSchedule() {
+  //
+  // }
+  //
+  // clickOnTable(item:any) {
+  //   console.log(item);
+  // }
 
 }

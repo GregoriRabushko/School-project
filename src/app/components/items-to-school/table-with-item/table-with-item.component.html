@@ -1,42 +1,87 @@
-<div class="contentContainer">
+<div class="container-table">
+  <div class="container-to-h1">
+    <h1>Рассписание</h1>
+    <h1>
+      Учреждение образования: Средняя школа №1"имени А.С. Пушкина" г.Узда
+    </h1>
+  </div>
   <table>
-    <tbody>
     <tr>
-      <th colspan="200" class="trHeader">
-        Рассписание
+      <th>Класс</th>
+      <th *ngFor="let day of week">
+        <p class="p-day">{{day}}</p>
       </th>
     </tr>
-    <tr>
-      <th></th>
-      <th scope="col" *ngFor="let classNumber of classesSchoolInfo; let index = index" >
-        <app-td-calss-name-and-room-number [classNum]="classNumber.id" ></app-td-calss-name-and-room-number>
-      </th>
-      <th rowspan="7" scope="rowgroup" *ngIf="!openWindowAddSchoolClassName">
-        <div>
-          <button (click)="openWindowAddSchoolClassName=true">+</button>
+    <tr *ngFor="let item of classesSchoolInfo">
+      <td>{{item.id}}</td>
+      <td>
+        <div *ngFor="let lessenWithRoom of item.lessons['Пн']" class="div-container-lesson-with-room">
+          <p>
+            {{lessenWithRoom.nameLesson}}
+          </p>
+          <p>
+            к.{{lessenWithRoom.room}}
+          </p>
         </div>
-      </th>
-    </tr>
-
-    <tr (click)="selectRow(index)" *ngFor="let day of week; let index = index;">
-      <th scope="row" [class.selected-row]="selectedIndex === index">{{day}}</th>
-      <td [class.selected-row]="selectedIndex === index" *ngFor="let items of classesSchoolInfo" >
-        <div class="container-items-and-btn">
-          <div>
-            <div *ngFor="let lessons of items.lessons[day]" (click)="clickOnTable(items.lessons[day])">{{lessons}}</div>
-          </div>
-          <div *ngIf="addItems">
-            <button class="btn-add-items" (click)="addItemsToSchedule()">+</button>
-          </div>
+      </td>
+      <td>
+        <div *ngFor="let lessenWithRoom of item.lessons['Вт']" class="div-container-lesson-with-room">
+          <p>
+            {{lessenWithRoom.nameLesson}}
+          </p>
+          <p>
+            {{lessenWithRoom.room}}
+          </p>
+        </div>
+      </td>
+      <td>
+        <div *ngFor="let lessenWithRoom of item.lessons['Ср']" class="div-container-lesson-with-room">
+          <p>
+            {{lessenWithRoom.nameLesson}}
+          </p>
+          <p>
+            {{lessenWithRoom.room}}
+          </p>
+        </div>
+      </td>
+      <td>
+        <div *ngFor="let lessenWithRoom of item.lessons['Чт']" class="div-container-lesson-with-room">
+          <p>
+            {{lessenWithRoom.nameLesson}}
+          </p>
+          <p>
+            {{lessenWithRoom.room}}
+          </p>
+        </div>
+      </td>
+      <td>
+        <div *ngFor="let lessenWithRoom of item.lessons['Пт']" class="div-container-lesson-with-room">
+          <p>
+            {{lessenWithRoom.nameLesson}}
+          </p>
+          <p>
+            {{lessenWithRoom.room}}
+          </p>
+        </div>
+      </td>
+      <td>
+        <div *ngFor="let lessenWithRoom of item.lessons['Сб']" class="div-container-lesson-with-room">
+          <p>
+            {{lessenWithRoom.nameLesson}}
+          </p>
+          <p>
+            {{lessenWithRoom.room}}
+          </p>
         </div>
       </td>
     </tr>
-    </tbody>
-    <tfoot></tfoot>
   </table>
+</div>
 
-<app-items></app-items>
 
+<!--  ========================================================================================================-->
+<!--<app-items></app-items>-->
+<!--  ===================================================================================-->
 
 <!--  <ng-template *ngIf="openWindowAddSchoolClassName">-->
 <!--    <button class="btnAddAppItems" (click)="showItemsMenu()">+</button>-->

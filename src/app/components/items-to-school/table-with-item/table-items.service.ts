@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -6,135 +6,100 @@ import { Injectable } from '@angular/core';
 export class TableItemsService {
 
 
-  classesSchoolInfo:ClassSchool[] = [
+  classesSchoolInfo: ClassSchool[] = [
     {
       id: '9А',
       lessons: {
-        'Пн': ['Алгебра', 'Геометрия'],
-        'Вт': ['Русск.яз.', 'Математика'],
-        'Ср': ['Бел.лит.', 'Астрономия'],
-        'Чт': ['Английский', 'Физра'],
-        'Пт': ['Труд.об.', 'ДПЮ'],
-        'Сб': ['Практика']
+        'Пн': [{room: '18', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'},],
+        'Вт': [{room: '18', nameLesson: 'Русск.яз.'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'},],
+        'Ср': [{room: '18', nameLesson: 'Бел.лит.'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'},],
+        'Чт': [{room: '18', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Физра'}, {room: '19', nameLesson: 'Физра'}, {room: '19', nameLesson: 'Физра'}, {room: '19', nameLesson: 'Физра'},],
+        'Пт': [{room: '18', nameLesson: 'Труд.об.'}, {room: '19', nameLesson: 'Труд.об.'}, {room: '19', nameLesson: 'ДПЮ'}, {room: '19', nameLesson: 'ДПЮ'}, {room: '19', nameLesson: 'ДПЮ'},],
+        'Сб': [{room: '', nameLesson: 'Практика'},]
       }
     },
     {
       id: '9Б',
       lessons: {
-        'Пн': ['Алгебра', 'Геометрия'],
-        'Ср': ['Бел.лит.', 'Астрономия'],
-        'Вт': ['Русск.яз.', 'Математика', 'fkg'],
-        'Пт': ['Труд.об.', 'ДПЮ'],
-        'Чт': ['Английский', 'Физра'],
-        'Сб': ['Практика']
+        'Пн': [{room: '18', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'},],
+        'Вт': [{room: '18', nameLesson: 'Русск.яз.'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'},],
+        'Ср': [{room: '18', nameLesson: 'Бел.лит.'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'},],
+        'Чт': [{room: '18', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Физра'},{room: '19', nameLesson: 'Физра'},{room: '19', nameLesson: 'Физра'},{room: '19', nameLesson: 'Физра'},],
+        'Пт': [{room: '18', nameLesson: 'Труд.об.'}, {room: '19', nameLesson: 'Труд.об.'}, {room: '19', nameLesson: 'ДПЮ'},],
+        'Сб': [{room: '', nameLesson: 'Практика'},]
       }
     },
     {
       id: '8A',
       lessons: {
-        'Пн': [],
-        'Вт': ['f'],
-        'Ср': [],
-        'Чт': [],
-        'Пт': [],
-        'Сб': []
+        'Пн': [{room: '18', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'},],
+        'Вт': [{room: '18', nameLesson: 'Русск.яз.'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'},],
+        'Ср': [{room: '18', nameLesson: 'Бел.лит.'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'},],
+        'Чт': [{room: '18', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Физра'}, {room: '19', nameLesson: 'Физра'}, {room: '19', nameLesson: 'Физра'}, {room: '19', nameLesson: 'Физра'},],
+        'Пт': [{room: '18', nameLesson: 'Труд.об.'}, {room: '19', nameLesson: 'Труд.об.'}, {room: '19', nameLesson: 'ДПЮ'}, {room: '19', nameLesson: 'Труд.об.'}, {room: '19', nameLesson: 'ДПЮ'}, {room: '19', nameLesson: 'Труд.об.'}, {room: '19', nameLesson: 'ДПЮ'},],
+        'Сб': [{room: '', nameLesson: ''}]
       }
     },
     {
       id: '8Б',
-      lessons:{
-        'Вт':['Русск.яз.', 'Математика'],
-        'Чт':['Английский', 'Физра'],
-        'Ср':['Бел.лит.', 'Астрономия'],
-        'Пт':['Труд.об.', 'ДПЮ'],
-        'Пн':['Алгебра', 'Геометрия'],
-        'Сб':[]
+      lessons: {
+        'Пн': [{room: '18', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'},],
+        'Вт': [{room: '18', nameLesson: 'Русск.яз.'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'},],
+        'Ср': [{room: '18', nameLesson: 'Бел.лит.'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'},],
+        'Чт': [{room: '18', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Физра'}, {room: '19', nameLesson: 'Физра'}, {room: '19', nameLesson: 'Физра'}, {room: '19', nameLesson: 'Физра'},],
+        'Пт': [{room: '18', nameLesson: 'Труд.об.'}, {room: '19', nameLesson: 'Труд.об.'}, {room: '19', nameLesson: 'ДПЮ'}, {room: '19', nameLesson: 'ДПЮ'}, {room: '19', nameLesson: 'ДПЮ'},],
+        'Сб': [{room: '', nameLesson: ''},]
       }
     },
     {
       id: '7А',
-      lessons:{
-        'Пн':['Алгебра', 'Геометрия'],
-        'Вт':['Русск.яз.', 'Математика'],
-        'Ср':['Бел.лит.', 'Астрономия'],
-        'Чт':['Английский', 'Физра'],
-        'Пт':['Труд.об.', 'ДПЮ'],
-        'Сб':[]
+      lessons: {
+        'Пн': [{room: '18', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'},],
+        'Вт': [{room: '18', nameLesson: 'Русск.яз.'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'},],
+        'Ср': [{room: '18', nameLesson: 'Бел.лит.'}, {room: '', nameLesson: '-'}, {room: '19', nameLesson: 'Астрономия'},],
+        'Чт': [{room: '18', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Физра'},{room: '19', nameLesson: 'Физра'},{room: '19', nameLesson: 'Физра'},],
+        'Пт': [{room: '18', nameLesson: 'Труд.об.'}, {room: '19', nameLesson: 'Труд.об.'}, {room: '19', nameLesson: 'ДПЮ'}, {room: '19', nameLesson: 'ДПЮ'},],
+        'Сб': [{room: '', nameLesson: ''},]
       }
     },
     {
       id: '7Б',
-      lessons:{
-        'Пн':['Алгебра', 'Геометрия'],
-        'Вт':['Русск.яз.', 'Математика'],
-        'Ср':['Бел.лит.', 'Астрономия'],
-        'Чт':['Английский', 'Физра'],
-        'Пт':['Труд.об.', 'ДПЮ'],
-        'Сб':[]
+      lessons: {
+        'Пн': [{room: '18', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'},],
+        'Вт': [{room: '18', nameLesson: 'Русск.яз.'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'},],
+        'Ср': [{room: '18', nameLesson: 'Бел.лит.'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'},],
+        'Чт': [{room: '18', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Физра'}, {room: '19', nameLesson: 'Физра'}, {room: '19', nameLesson: 'Физра'},],
+        'Пт': [{room: '18', nameLesson: 'Труд.об.'}, {room: '19', nameLesson: 'Труд.об.'}, {room: '19', nameLesson: 'ДПЮ'},],
+        'Сб': [{room: '', nameLesson: ''},]
       }
     },
     {
       id: '6А',
-      lessons:{
-        'Пн':['Алгебра', 'Геометрия'],
-        'Вт':['Русск.яз.', 'Математика'],
-        'Ср':['Бел.лит.', 'Астрономия'],
-        'Чт':['Английский', 'Физра'],
-        'Пт':['Труд.об.', 'ДПЮ'],
-        'Сб':[]
+      lessons: {
+        'Пн': [{room: '18', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'},],
+        'Вт': [{room: '18', nameLesson: 'Русск.яз.'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'},],
+        'Ср': [{room: '18', nameLesson: 'Бел.лит.'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'},],
+        'Чт': [{room: '18', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Физра'}, {room: '19', nameLesson: 'Физра'}, {room: '19', nameLesson: 'Физра'}, {room: '19', nameLesson: 'Физра'},],
+        'Пт': [{room: '18', nameLesson: 'Труд.об.'}, {room: '19', nameLesson: 'Труд.об.'}, {room: '19', nameLesson: 'ДПЮ'},],
+        'Сб': [{room: '', nameLesson: ''},]
       }
     }
   ];
 
-  school:any = [
-    {
-      id: '11A',
-      schedule: [
-        {id:'1', day:'Пн', lessons:['Алгебра', 'Геометрия']},
-        {id:'2', day:'Вт', lessons:['Алгебра', 'Геометрия']},
-        {id:'3', day:'Ср', lessons:[]}
-      ]
-    },
-    {
-      id:'10',
-      schedule: [
-        {id:'1', day:'Пн', lessons:['Алгебра', 'Геометрия']},
-        {id:'2', day:'Вт', lessons:[]},
-        {id:'3', day:'Вт', lessons:['Алгебра', 'Геометрия']}
-      ]
-    }
-  ]
-
-  constructor() { }
-
-  getLessons():any {
-    return this.classesSchoolInfo;
-    // checkingTheInside(this.school);
-  };
-
-}
-
-
-
-
-function checkingTheInside(item:any) {
-  let lessons:any = [];
-
-  for(let lesson of item) {
-    lessons.push(lesson);
-    for(let i of lesson.schedule) {
-      console.log(i);
-      if(i.lessons.length<1) {
-        i.lessons.push('-');
-      }
-    }
+  constructor() {
   }
-  console.log(lessons);
-  return lessons;
 
+  getLessons(): any {
+    return this.classesSchoolInfo;
+  };
 }
 
 export interface ClassSchool {
-  id:string,
-  lessons:{[key:string]:string[]},
+  id: string,
+  lessons: {
+    [key: string]: {
+      room: string,
+      nameLesson: string
+    }[]
+  }
 }
