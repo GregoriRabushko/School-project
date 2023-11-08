@@ -1,6 +1,11 @@
+
 <div class="contentContainer">
-  <app-header-c [info]="infoToHeader"></app-header-c>
+  <div class="section-tittle-container">
+    <h1>Горячие блюда</h1>
+  </div>
   <div class="content">
-    <app-dishes-category *ngFor="let item of dishesHot" [dishesInfo]="item"></app-dishes-category>
+    <div class="container-dishes">
+      <app-dishes-category *ngFor="let item of dishesHot" [dishesInfo]="item"></app-dishes-category>
+    </div>
   </div>
 </div>

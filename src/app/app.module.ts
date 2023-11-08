@@ -4,7 +4,6 @@ import { RouterModule} from '@angular/router';
 import { HttpClientModule }   from '@angular/common/http';
 import { appRoute } from './app.route';
 import { FrameModule } from './frame/frame.module';
-import { ComponentsModule } from './components/components.module';
 import {SharedModule} from "./common/shared.module";
 import { AppComponent } from './app.component';
 
@@ -18,7 +17,6 @@ import { AppComponent } from './app.component';
     RouterModule.forRoot(appRoute),
     HttpClientModule,
     SharedModule,
-    ComponentsModule,
     FrameModule,
   ],
   providers: [],

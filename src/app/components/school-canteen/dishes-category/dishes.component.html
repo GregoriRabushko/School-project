@@ -1,8 +1,20 @@
 <div class="contentContainer">
-  <div class="content">
-    <div class="img-container">
-      <img routerLink="{{dishesInfo?.routerLink}}" src="{{dishesInfo.img}}">
+  <div *ngIf="dishesInfo.hasRout;else containerImg" class="content">
+    <div class="img-container-with-router">
+      <img class="img-with-link" routerLink="{{dishesInfo.routerLink}}" src="{{dishesInfo.img}}">
     </div>
-    <p routerLink="{{dishesInfo?.routerLink}}">{{dishesInfo.textP}}</p>
+    <p class="p-with-link" routerLink="{{dishesInfo.routerLink}}">{{dishesInfo.textP}}</p>
   </div>
+  <ng-template #containerImg>
+    <div class="content">
+      <div class="img-container-with-router">
+        <img src="{{dishesInfo.img}}">
+      </div>
+      <div>
+        <p class="p-name-product">{{dishesInfo.textP}}</p>
+        <p>Вес: {{dishesInfo.weight}}</p>
+        <p>Цена: {{dishesInfo.price}}</p>
+      </div>
+    </div>
+  </ng-template>
 </div>

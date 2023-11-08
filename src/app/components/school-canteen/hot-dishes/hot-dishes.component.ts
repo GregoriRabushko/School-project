@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HeaderInfo} from "../../header-c/header-c.component";
 import {dishesHotInfo} from "../dishes-info";
 import {DishesInfo} from "../dishes-category/dishes.component";
+import {Routes} from "@angular/router";
 
 @Component({
   selector: 'app-hot-dishes',

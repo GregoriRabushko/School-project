@@ -1,17 +1,12 @@
 <div class="contentContainer">
   <app-header-c [info]="infoToHeader"></app-header-c>
  <div class="content">
-   <div class="section-tittle-container">
-    <h1>Ассортимент</h1>
-   </div>
-   <div>
-     <section class="img-dishes">
-       <app-dishes-category *ngFor="let item of dishesInfo" [dishesInfo]="item"></app-dishes-category>
-     </section>
+   <div class="body-router">
+     <router-outlet></router-outlet>
    </div>
    <div>
      <a>ПОДРОБНЕЕ</a>
    </div>
  </div>
-  <router-outlet></router-outlet>
+
 </div>

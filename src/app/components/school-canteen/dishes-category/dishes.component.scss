@@ -5,20 +5,44 @@
   align-items: center;
 }
 
-p {
+.p-name-product {
+  word-wrap: normal;
+  overflow-wrap: normal;
+  width: 360px;
   font-size: 20px;
+  color: black;
 }
 
-.img-container {
+p {
+  word-wrap: normal;
+  overflow-wrap: normal;
+  width: 360px;
+  font-size: 16px;
+  color: #999999;
+}
+
+.img-container-with-router {
   margin-bottom: 10px;
   overflow: hidden;
 }
 
-p:hover {
+.p-with-link {
+  word-wrap: normal;
+  overflow-wrap: normal;
+  width: 360px;
+  font-size: 20px;
+  color: black;
+}
+
+.p-with-link:hover {
   cursor: pointer;
 }
 
-img:hover {
+.img-with-link {
+
+}
+
+.img-with-link:hover {
   cursor: pointer;
   transform: scale(1.1) rotate(3deg);
   transition: 0.5s;

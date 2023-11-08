@@ -1,6 +1,11 @@
-<div class="contentContainer">
-  <app-header-c [info]="infoToHeader"></app-header-c>
-  <div class="content">
 
+<div class="contentContainer">
+  <div class="section-tittle-container">
+    <h1>Гарниры</h1>
+  </div>
+  <div class="content">
+    <div class="container-dishes">
+      <app-dishes-category *ngFor="let item of dishesSide" [dishesInfo]="item"></app-dishes-category>
+    </div>
   </div>
 </div>

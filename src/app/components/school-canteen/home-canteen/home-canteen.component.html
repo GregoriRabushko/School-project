@@ -1,0 +1,12 @@
+<div class="contentContainer">
+  <div class="content">
+    <div class="section-tittle-container">
+      <h1>Ассортимент</h1>
+    </div>
+    <div>
+        <section class="img-dishes">
+          <app-dishes-category *ngFor="let item of dishesInfo" [dishesInfo]="item"></app-dishes-category>
+        </section>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {HeaderInfo} from "../../header-c/header-c.component";
+import {dishesFirstInfo} from "../dishes-info";
+import {DishesInfo} from "../dishes-category/dishes.component";
+
 
 @Component({
   selector: 'app-first-dishes',
@@ -12,6 +15,8 @@ export class FirstDishesComponent implements OnInit {
     imag: 'url("/assets/img/img-header-slider/Cafe-Cecilia.webp")',
     textP: 'Столовая'
   }
+
+  dishesFirst:DishesInfo[] = dishesFirstInfo;
   constructor() { }
 
   ngOnInit(): void {

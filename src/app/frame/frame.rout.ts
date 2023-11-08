@@ -11,10 +11,12 @@ import {SchoolCanteenComponent} from "../components/school-canteen/school-cantee
 import {StudentsListComponent} from "../components/select-school-list/students-list/students-list.component";
 import {FrameComponent} from "./frame.component";
 import {HomeComponent} from "../components/home/home.component";
+import {SchoolCanteenModule} from "../components/school-canteen/school-canteen.module";
 
 export const frameRout: Routes =[
   { path: '', component: HomeComponent },
   { path: 'selectList', component: SelectSchoolListComponent },
+  { path: 'schoolCanteen', component: SchoolCanteenComponent },
   { path: 'home', component: HomeComponent },
   { path: 'itemsToSchool', component: ItemsToSchoolComponent },
   { path: 'userprofile', component: UserProfilComponent },
@@ -23,6 +25,9 @@ export const frameRout: Routes =[
   { path: 'search', component: SearchComponent },
   { path: 'aboutUs', component: AboutUsComponent },
   { path: 'scheduleWorkers', component: ScheduleForWorkersComponent },
-  { path: 'schoolCanteen', component: SchoolCanteenComponent },
-  { path: 'studentList/:classIndex/:subjectIndex', component: StudentsListComponent }
-]
+  { path: 'studentList/:classIndex/:subjectIndex', component: StudentsListComponent },
+];
+
+// export const frameRout: Routes = [
+//   { path: 'frame', component: FrameComponent, children:itemsRout },
+// ]

@@ -10,7 +10,10 @@ export class DishesComponent implements OnInit {
   @Input() dishesInfo = {
     img: '',
     textP: '',
-    routerLink: ''
+    routerLink: '',
+    hasRout: false,
+    weight: '',
+    price: ''
   }
   constructor() { }
 
@@ -22,5 +25,8 @@ export class DishesComponent implements OnInit {
 export interface DishesInfo {
   img:string,
   textP:string,
-  routerLink:string
+  routerLink:string,
+  hasRout:boolean,
+  weight:string,
+  price:string
 }

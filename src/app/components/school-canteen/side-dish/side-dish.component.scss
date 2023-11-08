@@ -1,0 +1,41 @@
+.container-dishes {
+  width: 1170px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+app-dishes-category {
+  margin: 10px 50px;
+}
+
+
+.section-tittle-container {
+  position: relative;
+  width: 1170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  font-size: 1.5em;
+  background: #ffffff;
+  padding: 0 10px;
+}
+
+h1::before {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  border-top: 1px dashed #000000;
+  z-index: -1;
+}
+.img-dishes {
+  width: 1170px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

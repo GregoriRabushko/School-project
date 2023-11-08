@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SchoolCanteenService, SliderFood} from "./school-canteen.service";
+import { SchoolCanteenService } from "./school-canteen.service";
 import {HeaderInfo} from "../header-c/header-c.component";
+import {Router} from '@angular/router';
 import {DishesInfo} from "./dishes-category/dishes.component";
 
 @Component({
@@ -14,28 +15,10 @@ export class SchoolCanteenComponent implements OnInit {
     textP: 'Столовая'
   }
 
-  dishesInfo:DishesInfo[] = [{
-    img: 'assets/img/canteen/category-dish/first-dishes.jpg',
-    textP: 'ПЕРВЫЕ БЛЮДА',
-    routerLink: 'firstDishes'
-  },{
-    img: 'assets/img/canteen/category-dish/second-dishes.jpg',
-    textP: 'ГОРЯЧИЕ БЛЮДА',
-    routerLink: 'hotDishes'
-  },{
-    img: 'assets/img/canteen/category-dish/dishes3.jpg',
-    textP: 'ГАРНИРЫ',
-    routerLink: 'sideDish'
-  },{
-    img: 'assets/img/canteen/category-dish/dishes4.jpg',
-    textP: 'САЛАТЫ',
-    routerLink: 'salads'
-  },
-  ]
 
-  constructor() { }
+  constructor(  private router: Router) { }
 
   ngOnInit(): void {
-
+    // this.router.navigate(['frame/schoolCanteen/homeCanteen']);
   }
 }

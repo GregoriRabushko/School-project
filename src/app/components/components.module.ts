@@ -16,6 +16,7 @@ import {RouterLinkWithHref} from "@angular/router";
 import {HomeComponent} from './home/home.component';
 import {NgIf, NgStyle} from "@angular/common";
 import {HeaderCModule} from './header-c/header-c.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import {HeaderCModule} from './header-c/header-c.module';
     RegistrationComponent,
     CheckboxComponent,
     HomeComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     AboutUsModule,

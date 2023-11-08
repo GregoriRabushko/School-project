@@ -1,14 +1,3 @@
-.container-dishes {
-  width: 1170px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-app-dishes-category {
-  margin: 10px 50px;
-}
-
 
 .section-tittle-container {
   position: relative;
@@ -38,4 +27,8 @@ h1::before {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+app-dishes-category {
+  margin: 10px 50px;
 }
