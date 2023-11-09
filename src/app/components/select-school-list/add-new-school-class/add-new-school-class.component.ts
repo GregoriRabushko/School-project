@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {SelectSchoolListService} from "../select-school-list.service";
+import {TableItemsService, ClassSchool} from 'src/app/components/items-to-school/table-with-item/table-items.service';
 
 @Component({
   selector: 'app-add-new-school-class',
@@ -13,7 +14,7 @@ export class AddNewSchoolClassComponent implements OnInit {
   indexToArrLetter:number = 0;
   arrToLettersClass:string[] = ['A', 'Б', 'В', 'Г']
   @Output() closeWindow = new EventEmitter<boolean>();
-  constructor(private selectSchoolListService:SelectSchoolListService) { }
+  constructor(private tableItemsService:TableItemsService) { }
 
   ngOnInit(): void {
   }
@@ -21,7 +22,7 @@ export class AddNewSchoolClassComponent implements OnInit {
 
   addNewClassList() {
     this.className = `${this.numberClass}`+this.arrToLettersClass[this.indexToArrLetter];
-    this.selectSchoolListService.postStudentsListNumber(this.className);
+    this.tableItemsService.postStudentsListNumber(this.className);
     this.closeWindowWithAddSchoolClassList(false);
   }
   closeWindowWithAddSchoolClassList(item:boolean) {

@@ -25,7 +25,6 @@ export const frameRout: Routes =[
   { path: 'search', component: SearchComponent },
   { path: 'aboutUs', component: AboutUsComponent },
   { path: 'scheduleWorkers', component: ScheduleForWorkersComponent },
-  { path: 'studentList/:classIndex/:subjectIndex', component: StudentsListComponent },
 ];
 
 // export const frameRout: Routes = [

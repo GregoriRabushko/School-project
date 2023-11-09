@@ -1,0 +1,22 @@
+<div class="content-select-list">
+  <div class="school-list">
+    <a class="school-list-number" (click)="clickButtonSchoolListNumber()" *ngFor="let item of classesSchoolInfo">
+
+      <div class="school-list-card">
+        <div *ngIf="deleteCard">
+          <button class="btn-delete-card" (click)="deleteSchoolClassList(classesSchoolInfo.indexOf(item))">+</button>
+        </div>
+
+        <img src="../../../assets/img/img-to-select-school-component/images.jpg" alt="books">
+        <div class="school-list-card-text">{{item.id}}</div>
+      </div>
+
+    </a>
+    <div>
+      <button class="control-btn btn-create" (click)="divVueAddSchoolClass()">Создать журнал +</button>
+      <button class="control-btn btn-delete" (click)="changesTheContentOfTheButton()">{{contentButtonDelete}}</button>
+    </div>
+  </div>
+  <app-add-new-school-class (closeWindow)="checkingTheStateOfAVariableClassList($event)" *ngIf="openWindowAddSchoolClassList"></app-add-new-school-class>
+  <app-choose-a-school-subject (closeOrVueChooseASchoolSubject)="checkingTheStateOfAVariableSubject($event)" *ngIf="closeOrVueChooseASchoolSubject"></app-choose-a-school-subject>
+</div>

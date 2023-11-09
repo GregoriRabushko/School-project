@@ -89,6 +89,21 @@ export class TableItemsService {
   constructor() {
   }
 
+  postStudentsListNumber(item:string) {
+    // todo добавить сортировку при добавлении, что бы нумерация классов остовалась
+    this.classesSchoolInfo.push({
+      id:item,
+      lessons: {
+        'Пн': [{room: '', nameLesson: ''}],
+        'Вт': [{room: '', nameLesson: ''}],
+        'Ср': [{room: '', nameLesson: ''}],
+        'Чт': [{room: '', nameLesson: ''}],
+        'Пт': [{room: '', nameLesson: ''}],
+        'Сб': [{room: '', nameLesson: ''}]
+      }
+    })
+  }
+
   getLessons(): any {
     return this.classesSchoolInfo;
   };

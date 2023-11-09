@@ -37,7 +37,7 @@ export class ChooseASchoolSubjectComponent implements OnInit {
   }
 
   viewSchoolObject(index: number) {
-    this.router.navigate(['studentList', index, index]); // TODO classId
+    this.router.navigate(['selectList', index, index]); // TODO classId
   }
 
   deleteObject(item: string, index: number) {

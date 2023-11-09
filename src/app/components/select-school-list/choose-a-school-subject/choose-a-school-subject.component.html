@@ -5,29 +5,17 @@
       <h1>Выберите предмет</h1>
       <button class="closeWindowWithSelectSchoolObject" (click)="closeWindowWithSelectSchoolObject(false)">X</button>
     </div>
-
-
-
-
-
-
     <div class="buttonsSelectObject">
       <div class="containerSubjectWithBtnDelete" *ngFor="let item of schoolSubjects; let index = index;">
         <div class="subject" (click)="viewSchoolObject(index)">{{item}}</div>
-
-
-
-
-
-
-<!--        <button class="btnDelete" *ngIf="isDeleteButtonActive" (click)="deleteObject(item, index)">x</button>-->
+                <button class="btnDelete" *ngIf="isDeleteButtonActive" (click)="deleteObject(item, index)">x</button>
       </div>
     </div>
     <button class="buttonAddNewSchoolObject" (click)="addNewSchoolObject()">Добавить новый предмет</button>
     <button class="buttonDeleteSchoolObject" (click)="toggleState()">{{contentToggleStateButton}}</button>
   </div>
 
-<!--создание нового предмета-->
+  <!--создание нового предмета-->
   <div *ngIf="isAddNewSubjectModeActive" class="divVueAddSchoolObject">
     <div class="h1WithCloseButton">
       <h1>Новый предмет</h1>
@@ -39,6 +27,5 @@
     </div>
     <button class="buttonAddNewSchoolObject" (click)="buttonAddSchoolObject()">Добавить</button>
   </div>
-<button [style.font-size]="'24px'" (click)="giveInfo()">Give info</button>
 </div>
 

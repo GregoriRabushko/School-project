@@ -9,7 +9,12 @@ import {MessengerModule} from "./messanger/messenger.module";
 import {NewsModule} from "./news/news.module";
 import {ItemsToSchoolModule} from "./items-to-school/items-to-school.module";
 import {ScheduleForWorkersModule} from "./schedule-for-workers/schedule-for-workers.module";
-import {StudentsListModule} from "./select-school-list/students-list/students-list.module";
+
+
+// import {StudentsListModule} from "./select-school-list/students-list/students-list.module";
+import {SelectSchoolListModule} from "./select-school-list/select-school-list.module";
+
+
 import {UserProfilModule} from "./user-profil/user-profil.module";
 import {ReactiveFormsModule} from "@angular/forms";
 import {RouterLinkWithHref} from "@angular/router";
@@ -34,7 +39,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MessengerModule,
     ItemsToSchoolModule,
     ScheduleForWorkersModule,
-    StudentsListModule,
+
+
+    // StudentsListModule,
+    SelectSchoolListModule,
+
+
     UserProfilModule,
     NewsModule,
     ReactiveFormsModule,
@@ -51,7 +61,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MessengerModule,
     ItemsToSchoolModule,
     ScheduleForWorkersModule,
-    StudentsListModule,
+
+
+    // StudentsListModule,
+    SelectSchoolListModule,
+
+
     UserProfilModule,
     NewsModule,
     AuthorizationComponent,

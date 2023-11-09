@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TableItemsService, ClassSchool} from 'src/app/components/items-to-school/table-with-item/table-items.service';
 
 @Component({
@@ -8,13 +8,6 @@ import {TableItemsService, ClassSchool} from 'src/app/components/items-to-school
 })
 export class TableWithItemComponent implements OnInit {
     week:string[] = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
-  //   classesId:string[] =[];
-  //   @Input()classId = '';
-  //   selectDay = '';
-  //   addItems = true;
-  //   showItemsWindow = false;
-  //   selectedIndex?: number;
-  // @Input() openWindowAddSchoolClassName = true;
     classesSchoolInfo:ClassSchool[] = [];
 
   constructor(private tableItemsService: TableItemsService) { }
@@ -22,9 +15,6 @@ export class TableWithItemComponent implements OnInit {
   ngOnInit(): void {
     this.classesSchoolInfo = this.tableItemsService.getLessons();
 
-    for( let itemsClass of this.classesSchoolInfo) {
-
-    }
   }
 
 
