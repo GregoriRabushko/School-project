@@ -9,7 +9,7 @@ export class TableItemsService {
   classesSchoolInfo: ClassSchool[] = [
     {
       id: '9А',
-      lessons: {
+      schedule: {
         'Пн': [{room: '18', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'},],
         'Вт': [{room: '18', nameLesson: 'Русск.яз.'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'},],
         'Ср': [{room: '18', nameLesson: 'Бел.лит.'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'},],
@@ -20,7 +20,7 @@ export class TableItemsService {
     },
     {
       id: '9Б',
-      lessons: {
+      schedule: {
         'Пн': [{room: '18', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'},],
         'Вт': [{room: '18', nameLesson: 'Русск.яз.'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'},],
         'Ср': [{room: '18', nameLesson: 'Бел.лит.'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'},],
@@ -31,7 +31,7 @@ export class TableItemsService {
     },
     {
       id: '8A',
-      lessons: {
+      schedule: {
         'Пн': [{room: '18', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'},],
         'Вт': [{room: '18', nameLesson: 'Русск.яз.'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'},],
         'Ср': [{room: '18', nameLesson: 'Бел.лит.'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'},],
@@ -42,7 +42,7 @@ export class TableItemsService {
     },
     {
       id: '8Б',
-      lessons: {
+      schedule: {
         'Пн': [{room: '18', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'},],
         'Вт': [{room: '18', nameLesson: 'Русск.яз.'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'},],
         'Ср': [{room: '18', nameLesson: 'Бел.лит.'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'},],
@@ -53,7 +53,7 @@ export class TableItemsService {
     },
     {
       id: '7А',
-      lessons: {
+      schedule: {
         'Пн': [{room: '18', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'},],
         'Вт': [{room: '18', nameLesson: 'Русск.яз.'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'},],
         'Ср': [{room: '18', nameLesson: 'Бел.лит.'}, {room: '', nameLesson: '-'}, {room: '19', nameLesson: 'Астрономия'},],
@@ -64,7 +64,7 @@ export class TableItemsService {
     },
     {
       id: '7Б',
-      lessons: {
+      schedule: {
         'Пн': [{room: '18', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'},],
         'Вт': [{room: '18', nameLesson: 'Русск.яз.'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'},],
         'Ср': [{room: '18', nameLesson: 'Бел.лит.'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'},],
@@ -75,7 +75,7 @@ export class TableItemsService {
     },
     {
       id: '6А',
-      lessons: {
+      schedule: {
         'Пн': [{room: '18', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'}, {room: '19', nameLesson: 'Английский'},],
         'Вт': [{room: '18', nameLesson: 'Русск.яз.'}, {room: '19', nameLesson: 'Математика'}, {room: '19', nameLesson: 'Математика'},],
         'Ср': [{room: '18', nameLesson: 'Бел.лит.'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'}, {room: '19', nameLesson: 'Астрономия'},],
@@ -93,7 +93,7 @@ export class TableItemsService {
     // todo добавить сортировку при добавлении, что бы нумерация классов остовалась
     this.classesSchoolInfo.push({
       id:item,
-      lessons: {
+      schedule: {
         'Пн': [{room: '', nameLesson: ''}],
         'Вт': [{room: '', nameLesson: ''}],
         'Ср': [{room: '', nameLesson: ''}],
@@ -111,7 +111,7 @@ export class TableItemsService {
 
 export interface ClassSchool {
   id: string,
-  lessons: {
+  schedule: {
     [key: string]: {
       room: string,
       nameLesson: string

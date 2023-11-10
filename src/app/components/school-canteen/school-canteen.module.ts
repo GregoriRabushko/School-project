@@ -5,7 +5,7 @@ import {SchoolCanteenComponent} from "./school-canteen.component";
 import {HeaderCModule} from "../header-c/header-c.module";
 import { DishesComponent } from './dishes-category/dishes.component';
 import {RouterLink, RouterLinkWithHref, RouterModule} from "@angular/router";
-import {canteenRout, itemsRouts} from "./canteen.rout";
+import {schoolCanteenRout, itemsRouts} from "./school-canteen.rout";
 import { FirstDishesComponent } from './first-dishes/first-dishes.component';
 import { HotDishesComponent } from './hot-dishes/hot-dishes.component';
 import { SideDishComponent } from './side-dish/side-dish.component';
@@ -31,7 +31,7 @@ import { HomeCanteenComponent } from './home-canteen/home-canteen.component';
     HeaderCModule,
     RouterLink,
     RouterLinkWithHref,
-    RouterModule.forRoot(canteenRout),
+    RouterModule.forRoot(schoolCanteenRout),
   ],
   providers: [],
   exports: [

@@ -66,6 +66,7 @@ export class StudentsListComponent implements OnInit {
     if (subjectIndex && classIndex) {
       this.classInfo = this.selectSchoolListService.getClassInfo(+classIndex, +subjectIndex);
     }
+    console.log(this.classInfo);
   }
   addStudentToList() {
     this.countNumberStudent += this.countNumberStudent;

@@ -11,11 +11,6 @@ import {schoolObjects, studentsListNumber, students} from "src/assets/school-inf
 })
 export class SelectSchoolListService {
 
-  classInfo: ClassInfo = {
-    chooseSubject: '',
-    className: ''
-  };
-
 
 
   constructor(
@@ -28,7 +23,7 @@ export class SelectSchoolListService {
     // TODO get class info by subject id
     const classInfo: ClassInfo = {
       chooseSubject: subject,
-      className
+      className: className
     };
     return classInfo;
   }

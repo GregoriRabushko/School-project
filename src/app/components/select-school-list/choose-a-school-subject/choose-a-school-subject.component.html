@@ -6,9 +6,9 @@
       <button class="closeWindowWithSelectSchoolObject" (click)="closeWindowWithSelectSchoolObject(false)">X</button>
     </div>
     <div class="buttonsSelectObject">
-      <div class="containerSubjectWithBtnDelete" *ngFor="let item of schoolSubjects; let index = index;">
-        <div class="subject" (click)="viewSchoolObject(index)">{{item}}</div>
-                <button class="btnDelete" *ngIf="isDeleteButtonActive" (click)="deleteObject(item, index)">x</button>
+      <div class="containerSubjectWithBtnDelete" *ngFor="let item of schoolSubjects; let indexSubject = index;">
+        <div class="subject" (click)="viewSchoolObject(indexSubject)">{{item}}</div>
+        <button class="btnDelete" *ngIf="isDeleteButtonActive" (click)="deleteObject(item, indexSubject)">x</button>
       </div>
     </div>
     <button class="buttonAddNewSchoolObject" (click)="addNewSchoolObject()">Добавить новый предмет</button>

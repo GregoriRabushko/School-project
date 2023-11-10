@@ -1,8 +1,9 @@
 <div class="content-select-list">
   <div class="school-list">
-    <a class="school-list-number" (click)="clickButtonSchoolListNumber()" *ngFor="let item of classesSchoolInfo">
+    <a class="school-list-number" (click)="clickButtonSchoolListNumber()"
+       *ngFor="let item of classesSchoolInfo;let indexClass = index">
 
-      <div class="school-list-card">
+      <div class="school-list-card" (click)="selectedClass(indexClass)">
         <div *ngIf="deleteCard">
           <button class="btn-delete-card" (click)="deleteSchoolClassList(classesSchoolInfo.indexOf(item))">+</button>
         </div>
@@ -17,6 +18,13 @@
       <button class="control-btn btn-delete" (click)="changesTheContentOfTheButton()">{{contentButtonDelete}}</button>
     </div>
   </div>
-  <app-add-new-school-class (closeWindow)="checkingTheStateOfAVariableClassList($event)" *ngIf="openWindowAddSchoolClassList"></app-add-new-school-class>
-  <app-choose-a-school-subject (closeOrVueChooseASchoolSubject)="checkingTheStateOfAVariableSubject($event)" *ngIf="closeOrVueChooseASchoolSubject"></app-choose-a-school-subject>
+  <app-add-new-school-class
+    (closeWindow)="checkingTheStateOfAVariableClassList($event)"
+    *ngIf="openWindowAddSchoolClassList">
+  </app-add-new-school-class>
+  <app-choose-a-school-subject
+    [indexClass]="indexClass"
+    (closeOrVueChooseASchoolSubject)="checkingTheStateOfAVariableSubject($event)"
+    *ngIf="closeOrVueChooseASchoolSubject">
+  </app-choose-a-school-subject>
 </div>

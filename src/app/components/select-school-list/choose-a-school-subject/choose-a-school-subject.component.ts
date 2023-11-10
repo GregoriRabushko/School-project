@@ -2,7 +2,7 @@ import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import { SelectSchoolListService } from 'src/app/components/select-school-list/select-school-list.service';
 import {take} from "rxjs";
 import {User} from "src/app/components/select-school-list/interface";
-
+import {TableItemsService, ClassSchool} from 'src/app/components/items-to-school/table-with-item/table-items.service';
 import {Router} from "@angular/router";
 
 @Component({
@@ -14,7 +14,8 @@ export class ChooseASchoolSubjectComponent implements OnInit {
 
   @Output() closeOrVueChooseASchoolSubject = new EventEmitter<boolean>();
   schoolSubjects:string[] = [];
-
+  @Input() indexClass = 0;
+  classesSchoolInfo:ClassSchool[] = [];
   addSchoolObjectOnSchoolList:string = '';
   isAddNewSubjectModeActive = false;
   isChooseSubjectModeActive = true;
@@ -29,6 +30,7 @@ export class ChooseASchoolSubjectComponent implements OnInit {
   constructor(
     private selectSchoolListService:SelectSchoolListService,
     private readonly router: Router,
+    private tableItemsService: TableItemsService,
     ) {}
 
 
@@ -36,8 +38,9 @@ export class ChooseASchoolSubjectComponent implements OnInit {
     this._loadSubjects();
   }
 
-  viewSchoolObject(index: number) {
-    this.router.navigate(['selectList', index, index]); // TODO classId
+  viewSchoolObject(indexSubject: number) {
+    this.router.navigate(['studentList', indexSubject, this.indexClass]);
+    console.log(indexSubject, this.indexClass);
   }
 
   deleteObject(item: string, index: number) {

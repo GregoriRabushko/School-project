@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { CommonModule } from '@angular/common';
 import {RouterModule, RouterOutlet, Routes} from '@angular/router';
-import {selectSchoolListRout} from "./select-school-list.route";
+import {selectSchoolListRout} from "./select-school-list.routing";
 
 import {AddNewSchoolClassComponent} from "./add-new-school-class/add-new-school-class.component";
 import {ChooseASchoolSubjectComponent} from "./choose-a-school-subject/choose-a-school-subject.component";

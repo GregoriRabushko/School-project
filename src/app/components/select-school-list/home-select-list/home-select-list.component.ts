@@ -10,12 +10,11 @@ import {TableItemsService, ClassSchool} from 'src/app/components/items-to-school
 })
 export class HomeSelectListComponent implements OnInit {
 
-  // studentsListNumber:string[] = [];
   @Input() closeOrVueChooseASchoolSubject = false;
   @Input() openWindowAddSchoolClassList = false;
   deleteCard = false;
   contentButtonDelete = 'Удалить журнал -';
-
+  indexClass:number = 0;
 
   classesSchoolInfo:ClassSchool[] = [];
 
@@ -33,6 +32,12 @@ export class HomeSelectListComponent implements OnInit {
     console.log(this.classesSchoolInfo);
 
   }
+
+  selectedClass(indexClass:number) {
+    this.indexClass = indexClass;
+    console.log(this.indexClass);
+  }
+
   clickButtonSchoolListNumber() {
     this.closeOrVueChooseASchoolSubject = true;
   }

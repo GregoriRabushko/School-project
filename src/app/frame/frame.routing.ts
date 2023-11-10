@@ -13,20 +13,26 @@ import {FrameComponent} from "./frame.component";
 import {HomeComponent} from "../components/home/home.component";
 import {SchoolCanteenModule} from "../components/school-canteen/school-canteen.module";
 
-export const frameRout: Routes =[
-  { path: '', component: HomeComponent },
-  { path: 'selectList', component: SelectSchoolListComponent },
-  { path: 'schoolCanteen', component: SchoolCanteenComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'itemsToSchool', component: ItemsToSchoolComponent },
-  { path: 'userprofile', component: UserProfilComponent },
-  { path: 'messenger', component: MessangerComponent },
-  { path: 'news', component: NewsComponent },
-  { path: 'search', component: SearchComponent },
-  { path: 'aboutUs', component: AboutUsComponent },
-  { path: 'scheduleWorkers', component: ScheduleForWorkersComponent },
+export const frameRouting: Routes =[
+  // {
+  //   path: '',
+  //   component: FrameComponent,
+  //   children: [
+  //     { path: '', component: HomeComponent },
+  //     { path: 'selectList', component: SelectSchoolListComponent },
+  //     { path: 'schoolCanteen', loadChildren: () => import('../components/school-canteen/school-canteen.module').then(m => m.SchoolCanteenModule) },
+  //     { path: 'home', component: HomeComponent },
+  //     { path: 'itemsToSchool', component: ItemsToSchoolComponent },
+  //     { path: 'userprofile', component: UserProfilComponent },
+  //     { path: 'messenger', component: MessangerComponent },
+  //     { path: 'news', component: NewsComponent },
+  //     { path: 'search', component: SearchComponent },
+  //     { path: 'aboutUs', component: AboutUsComponent },
+  //     { path: 'scheduleWorkers', component: ScheduleForWorkersComponent },
+  //   ]
+  // },
 ];
 
-// export const frameRout: Routes = [
+// export const frameRouting: Routes = [
 //   { path: 'frame', component: FrameComponent, children:itemsRout },
 // ]

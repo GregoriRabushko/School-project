@@ -2,7 +2,7 @@ import {NgModule} from "@angular/core";
 import {RouterModule, RouterOutlet, Routes} from '@angular/router';
 import {FrameComponent} from "./frame.component";
 import {HeaderNavComponent} from "./header-nav/header-nav.component";
-import {frameRout} from "./frame.rout";
+import {frameRouting} from "./frame.routing";
 import { FooterComponent } from './footer/footer.component';
 import {HeaderCModule} from "../components/header-c/header-c.module";
 import { DropMenuComponent } from './header-nav/drop-menu/drop-menu.component';
@@ -23,7 +23,7 @@ import {SchoolCanteenModule} from "../components/school-canteen/school-canteen.m
   ],
   imports: [
     RouterOutlet,
-    RouterModule.forRoot(frameRout),
+    RouterModule.forRoot(frameRouting),
     HeaderCModule,
     ComponentsModule,
     NgForOf,

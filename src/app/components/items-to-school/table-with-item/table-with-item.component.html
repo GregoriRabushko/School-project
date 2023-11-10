@@ -15,7 +15,7 @@
     <tr *ngFor="let item of classesSchoolInfo">
       <td>{{item.id}}</td>
       <td>
-        <div *ngFor="let lessenWithRoom of item.lessons['Пн']" class="div-container-lesson-with-room">
+        <div *ngFor="let lessenWithRoom of item.schedule['Пн']" class="div-container-lesson-with-room">
           <p>
             {{lessenWithRoom.nameLesson}}
           </p>
@@ -26,7 +26,7 @@
         </div>
       </td>
       <td>
-        <div *ngFor="let lessenWithRoom of item.lessons['Вт']" class="div-container-lesson-with-room">
+        <div *ngFor="let lessenWithRoom of item.schedule['Вт']" class="div-container-lesson-with-room">
           <p>
             {{lessenWithRoom.nameLesson}}
           </p>
@@ -36,7 +36,7 @@
         </div>
       </td>
       <td>
-        <div *ngFor="let lessenWithRoom of item.lessons['Ср']" class="div-container-lesson-with-room">
+        <div *ngFor="let lessenWithRoom of item.schedule['Ср']" class="div-container-lesson-with-room">
           <p>
             {{lessenWithRoom.nameLesson}}
           </p>
@@ -46,7 +46,7 @@
         </div>
       </td>
       <td>
-        <div *ngFor="let lessenWithRoom of item.lessons['Чт']" class="div-container-lesson-with-room">
+        <div *ngFor="let lessenWithRoom of item.schedule['Чт']" class="div-container-lesson-with-room">
           <p>
             {{lessenWithRoom.nameLesson}}
           </p>
@@ -56,7 +56,7 @@
         </div>
       </td>
       <td>
-        <div *ngFor="let lessenWithRoom of item.lessons['Пт']" class="div-container-lesson-with-room">
+        <div *ngFor="let lessenWithRoom of item.schedule['Пт']" class="div-container-lesson-with-room">
           <p>
             {{lessenWithRoom.nameLesson}}
           </p>
@@ -66,7 +66,7 @@
         </div>
       </td>
       <td>
-        <div *ngFor="let lessenWithRoom of item.lessons['Сб']" class="div-container-lesson-with-room">
+        <div *ngFor="let lessenWithRoom of item.schedule['Сб']" class="div-container-lesson-with-room">
           <p>
             {{lessenWithRoom.nameLesson}}
           </p>
