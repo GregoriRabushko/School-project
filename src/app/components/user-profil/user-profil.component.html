@@ -1,51 +1,46 @@
 <div class="contentContainer">
-  <!--  <app-menu></app-menu>-->
   <app-header-c [info]="infoToHeader"></app-header-c>
-  <!--  <section>-->
-  <!--    <h1>Gregory Rabushko</h1>-->
-  <!--    <h2>день рождения</h2>-->
-  <!--    <h2>в каком классе учусь</h2>-->
-  <!--    <h2>место проживания</h2>-->
-  <!--    <h2>контактный номер </h2>-->
-  <!--    <h2>фото профиля</h2>-->
-  <!--    <h2>друзья</h2>-->
-  <!--    <h2>подписчики</h2>-->
-  <!--    <h2>личная инфа</h2>-->
-  <!--    <h2>что то еще</h2>-->
-  <!--  </section>-->
-
-  <!--  todo сделать дневник-->
-  <!--  <table>-->
-  <!--    <th>{{monthName}}</th>-->
-  <!--    <tbody>-->
-  <!--      <tr *ngFor="let day of week">-->
-  <!--        <td></td>-->
-  <!--        <td>{{day}}</td>-->
-  <!--        <td>-->
-  <!--          <div *ngFor="let lessons of weekSchedule.schedule[day]">{{lessons.nameLesson}}</div>-->
-  <!--        </td>-->
-  <!--&lt;!&ndash;        <td>{{}}</td>&ndash;&gt;-->
-  <!--&lt;!&ndash;        <td>{{}}</td>&ndash;&gt;-->
-  <!--      </tr>-->
-  <!--    </tbody>-->
-  <!--  </table>-->
-
-  <table>
-    <th>January</th>
-    <tbody>
-      <tr *ngFor="let day of diary">
+  <div class="div-content-table">
+    <h1>{{monthName}}</h1>
+    <table>
+      <tbody>
+      <tr *ngFor="let day of firstHalfOfTheWeek">
         <td>
-          <div>
+          <div class="div-info-day">
+            {{day.dayMonth}}
+          </div>
+          <div class="div-info-day">
             {{day.dayWeek}}
           </div>
-          <div>
-           {{day.dayMonth}}
-          </div>
-            </td>
+        </td>
         <td class="td-lesson" *ngFor="let lesson of day.schedule">
-          {{lesson}}
+          <div class="div-content-lesson">
+            <div class="name-subject">{{lesson.nameSubject}}</div>
+            <div class="homework">{{lesson.homework}}</div>
+            <div class="grade">{{lesson.grade}}</div>
+          </div>
         </td>
       </tr>
-    </tbody>
-  </table>
+      </tbody>
+      <tbody>
+      <tr *ngFor="let day of secondHalfOfTheWeek">
+        <td>
+          <div class="div-info-day">
+            {{day.dayMonth}}
+          </div>
+          <div class="div-info-day">
+            {{day.dayWeek}}
+          </div>
+        </td>
+        <td class="td-lesson" *ngFor="let lesson of day.schedule">
+          <div class="div-content-lesson">
+            <div class="name-subject">{{lesson.nameSubject}}</div>
+            <div class="homework">{{lesson.homework}}</div>
+            <div class="grade">{{lesson.grade}}</div>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

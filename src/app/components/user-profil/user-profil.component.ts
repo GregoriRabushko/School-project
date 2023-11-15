@@ -31,38 +31,256 @@ export class UserProfilComponent implements OnInit {
     }
   }
 
-  diary = [
+  firstHalfOfTheWeek = [
     {
       dayWeek: 'Понедельник',
       dayMonth: '12',
-      schedule: ['Математика', 'Английский', 'Русский', 'Астрономия', 'Физика', 'ДПЮ', 'ЧЗС',]
+      schedule: [
+        {
+          nameSubject: 'Математика',
+          homework: '№3',
+          grade: '7'
+        },
+        {
+          nameSubject: 'Английский',
+          homework: 'Выучить слова',
+          grade: '6'
+        },
+        {
+          nameSubject: 'Русский',
+          homework: 'Написать сочинение',
+          grade: ''
+        },
+        {
+          nameSubject: 'Астрономия',
+          homework: 'Подготовиться к КР',
+          grade: ''
+        },
+        {
+          nameSubject: 'Физика',
+          homework: 'прочит. следю параграф ',
+          grade: '8'
+        },
+        {
+          nameSubject: 'ДПЮ',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'ЧЗС',
+          homework: '',
+          grade: ''
+        },
+      ]
     },
     {
       dayWeek: 'Вторник',
       dayMonth: '13',
-      schedule: ['Астрономия', 'Физика', 'Русский', 'Астрономия', 'Физика', 'ДПЮ', 'Английский',]
+      schedule: [
+        {
+          nameSubject: 'Математика',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'Английский',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'Русский',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'Астрономия',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'Физика',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'ДПЮ',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'ЧЗС',
+          homework: '',
+          grade: ''
+        },
+      ]
     },
     {
       dayWeek: 'Среда',
       dayMonth: '14',
-      schedule: ['Математика', 'Английский', 'Русский', 'Астрономия', 'Физика', 'ДПЮ', 'ЧЗС',]
-    },
+      schedule: [
+        {
+          nameSubject: 'Математика',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'Английский',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'Русский',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'Астрономия',
+          homework: 'найти публикацию в библиотеке',
+          grade: ''
+        },
+        {
+          nameSubject: 'Физика',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'ДПЮ',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'ЧЗС',
+          homework: '',
+          grade: ''
+        },
+      ]
+    }];
+
+  secondHalfOfTheWeek = [
     {
       dayWeek: 'Четверг',
       dayMonth: '15',
-      schedule: ['Математика', 'Английский', 'Русский', 'Астрономия', 'Физика', 'ДПЮ', 'ЧЗС',]
+      schedule: [
+        {
+          nameSubject: 'Математика',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'Английский',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'Русский',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'Астрономия',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'Физика',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'ДПЮ',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'ЧЗС',
+          homework: '',
+          grade: ''
+        },
+      ]
     },
     {
       dayWeek: 'Пятница',
       dayMonth: '16',
-      schedule: ['Математика', 'Английский', 'Русский', 'Астрономия', 'Физика', 'ДПЮ', 'ЧЗС',]
+      schedule: [
+        {
+          nameSubject: 'Математика',
+          homework: 'з.3',
+          grade: '7'
+        },
+        {
+          nameSubject: 'Английский',
+          homework: 'прочитать, перевести',
+          grade: '9'
+        },
+        {
+          nameSubject: 'Русский',
+          homework: 'дописать',
+          grade: ''
+        },
+        {
+          nameSubject: 'Астрономия',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'Физика',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'ДПЮ',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'ЧЗС',
+          homework: '',
+          grade: ''
+        },
+      ]
     },
     {
       dayWeek: 'Суббота',
       dayMonth: '17',
-      schedule: ['Практика']
-    }
-  ]
+      schedule: [
+        {
+          nameSubject: 'Математика',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'Английский',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'Русский',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'Астрономия',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'Физика',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'ДПЮ',
+          homework: '',
+          grade: ''
+        },
+        {
+          nameSubject: 'ЧЗС',
+          homework: '',
+          grade: ''
+        },
+      ]
+    },
+  ];
 
   constructor(
     private readonly _router: Router,

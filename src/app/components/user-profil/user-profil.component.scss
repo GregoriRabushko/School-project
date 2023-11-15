@@ -1,8 +1,26 @@
 .contentContainer {
-  //width: 100vh;
-  //display: flex;
-  //flex-direction: column;
 }
+
+.div-content-table {
+  //width: 1170px;
+  width: 100%;
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  width: 1170px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-collapse: collapse;
+}
+
+
 
 td {
   border: 1px solid black;
@@ -11,4 +29,35 @@ td {
 .td-lesson {
   display: flex;
   flex-direction: column;
+}
+
+.div-content-lesson {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.div-info-day {
+  margin: 10px 0;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.name-subject {
+  width: 100px;
+  margin-right: 10px;
+  border-right: 1px solid black;
+}
+.homework {
+  display: flex;
+  //align-items: start;
+  justify-content: start;
+}
+.grade {
+  width: 30px;
+  display: flex;
+  margin-left: 10px;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid black;
 }
