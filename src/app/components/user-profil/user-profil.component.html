@@ -1,18 +1,51 @@
 <div class="contentContainer">
-<!--  <app-menu></app-menu>-->
+  <!--  <app-menu></app-menu>-->
   <app-header-c [info]="infoToHeader"></app-header-c>
-<!--  <section>-->
-<!--    <h1>Gregory Rabushko</h1>-->
-<!--    <h2>день рождения</h2>-->
-<!--    <h2>в каком классе учусь</h2>-->
-<!--    <h2>место проживания</h2>-->
-<!--    <h2>контактный номер </h2>-->
-<!--    <h2>фото профиля</h2>-->
-<!--    <h2>друзья</h2>-->
-<!--    <h2>подписчики</h2>-->
-<!--    <h2>личная инфа</h2>-->
-<!--    <h2>что то еще</h2>-->
-<!--  </section>-->
+  <!--  <section>-->
+  <!--    <h1>Gregory Rabushko</h1>-->
+  <!--    <h2>день рождения</h2>-->
+  <!--    <h2>в каком классе учусь</h2>-->
+  <!--    <h2>место проживания</h2>-->
+  <!--    <h2>контактный номер </h2>-->
+  <!--    <h2>фото профиля</h2>-->
+  <!--    <h2>друзья</h2>-->
+  <!--    <h2>подписчики</h2>-->
+  <!--    <h2>личная инфа</h2>-->
+  <!--    <h2>что то еще</h2>-->
+  <!--  </section>-->
 
-<!--  todo сделать дневник-->
+  <!--  todo сделать дневник-->
+  <!--  <table>-->
+  <!--    <th>{{monthName}}</th>-->
+  <!--    <tbody>-->
+  <!--      <tr *ngFor="let day of week">-->
+  <!--        <td></td>-->
+  <!--        <td>{{day}}</td>-->
+  <!--        <td>-->
+  <!--          <div *ngFor="let lessons of weekSchedule.schedule[day]">{{lessons.nameLesson}}</div>-->
+  <!--        </td>-->
+  <!--&lt;!&ndash;        <td>{{}}</td>&ndash;&gt;-->
+  <!--&lt;!&ndash;        <td>{{}}</td>&ndash;&gt;-->
+  <!--      </tr>-->
+  <!--    </tbody>-->
+  <!--  </table>-->
+
+  <table>
+    <th>January</th>
+    <tbody>
+      <tr *ngFor="let day of diary">
+        <td>
+          <div>
+            {{day.dayWeek}}
+          </div>
+          <div>
+           {{day.dayMonth}}
+          </div>
+            </td>
+        <td class="td-lesson" *ngFor="let lesson of day.schedule">
+          {{lesson}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
