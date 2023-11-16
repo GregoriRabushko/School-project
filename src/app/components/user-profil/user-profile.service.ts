@@ -260,6 +260,8 @@ export class UserProfileService {
   firstHalfOfTheWeek: DairyWeek[] = [];
   secondHalfOfTheWeek: DairyWeek[] = [];
 
+
+
   constructor(
     // private readonly _tableItemsService:TableItemsService,
   ) {

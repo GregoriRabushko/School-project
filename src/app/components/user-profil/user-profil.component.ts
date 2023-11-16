@@ -19,7 +19,15 @@ export class UserProfilComponent implements OnInit {
   classNameStudent = '9A';
   firstHalfOfTheWeek: DairyWeek[] = [];
   secondHalfOfTheWeek: DairyWeek[] = [];
-
+  userInfo = {
+    name: 'Tot Georgi Afanaciyvich ',
+    age: '15',
+    birthday: '12.05.2007',
+    className: '9A',
+    tel: '+375(29)777-77-77',
+    email: 'tot@mail.ru',
+    img: 'assets/img/user-profile/images-to-ava.png'
+  };
 
   constructor(
     private readonly _router: Router,

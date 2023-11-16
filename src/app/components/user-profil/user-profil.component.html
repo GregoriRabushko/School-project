@@ -1,6 +1,19 @@
 <div class="contentContainer">
   <app-header-c [info]="infoToHeader"></app-header-c>
   <div class="div-content-table">
+    <div class="user-info">
+      <img src="{{userInfo.img}}">
+      <section class="section-ul">
+        <ul>
+          <li>{{userInfo.name}}</li>
+          <li>{{userInfo.age}}</li>
+          <li>{{userInfo.birthday}}</li>
+          <li>{{userInfo.className}}</li>
+          <li>{{userInfo.tel}}</li>
+          <li>{{userInfo.email}}</li>
+        </ul>
+      </section>
+    </div>
     <h1>{{monthName}}</h1>
     <table>
       <tbody>
