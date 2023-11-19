@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {ClassSchool} from "../table-items.service";
+import {ClassSchool, Lessons} from "../table-items.service";
 
 @Component({
   selector: 'app-schedule-edit',
@@ -35,7 +35,7 @@ export class ScheduleEditComponent implements OnInit {
   lastDay() {
     this.indexDay --;
     if(this.indexDay < 0) {
-      this.indexDay = 0;
+      this.indexDay = 5;
     }
     this.weekDay = this.week[this.indexDay];
   }
@@ -45,5 +45,9 @@ export class ScheduleEditComponent implements OnInit {
       this.indexDay = 0;
     }
     this.weekDay = this.week[this.indexDay];
+  }
+
+  deleteLesson(indexLesson:number, weekDay:string) {
+    console.log(indexLesson, weekDay);
   }
 }

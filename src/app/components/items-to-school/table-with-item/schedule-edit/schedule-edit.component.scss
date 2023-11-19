@@ -3,13 +3,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  //width: 400px;
-  //height: 400px;
-  background-image: url("/assets/img/schedule-bg.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-top: 20px;
+  width: 40vh;
+  height: 40vh;
+  //background-image: url("/assets/img/schedule-bg.jpg");
+  //background-position: center center;
+  //background-repeat: no-repeat;
+  //background-size: cover;
+  background-color: #e3e3e3;
   border: 2px solid black;
   border-radius: 8px;
 }
@@ -17,14 +17,26 @@
 .items-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 400px;
   margin-bottom: 10px;
 }
 
 .bi-chevron-compact-left {
-  margin-right: 20px;
+  margin: 0 20px;
 }
 .bi-chevron-compact-right {
-  margin-left: 20px;
+  margin: 0 20px;
+}
+
+.bi-chevron-compact-left,
+.bi-chevron-compact-right:hover {
+  cursor: pointer;
+}
+
+.bi-x-circle:hover {
+  cursor: pointer;
+  color: #ef3c3c;
 }
 
 .lessons-container {
@@ -41,4 +53,14 @@
 
 .btn-group__cancel {
   margin-left: 10px;
+}
+
+.lessons {
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.name-lesson {
+
 }
