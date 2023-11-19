@@ -64,16 +64,7 @@ export class UserProfileService {
           homework: '',
           grade: ''
         },
-        {
-          nameSubject: 'Русский',
-          homework: '',
-          grade: ''
-        },
-        {
-          nameSubject: 'Астрономия',
-          homework: '',
-          grade: ''
-        },
+
         {
           nameSubject: 'Физика',
           homework: '',
@@ -122,11 +113,6 @@ export class UserProfileService {
         },
         {
           nameSubject: 'ДПЮ',
-          homework: '',
-          grade: ''
-        },
-        {
-          nameSubject: 'ЧЗС',
           homework: '',
           grade: ''
         },

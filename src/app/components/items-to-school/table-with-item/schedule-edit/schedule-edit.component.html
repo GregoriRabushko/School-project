@@ -1,0 +1,43 @@
+<div class="contentContainer">
+  <div class="class-name">
+    <h2>{{classesSchoolInfo.id}}</h2>
+  </div>
+    <div class="items-container">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-compact-left" viewBox="0 0 16 16" (click)="lastDay()">
+        <path fill-rule="evenodd" d="M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223z"/>
+      </svg>
+
+      <div class="lessons-container">
+        <p>{{weekDay}}</p>
+        <div *ngFor="let lessons of classesSchoolInfo.schedule[weekDay]">{{lessons.nameLesson}}</div>
+      </div>
+
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16" (click)="nextDay()">
+        <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z"/>
+      </svg>
+<!--      <div>-->
+<!--        <p>Вт</p>-->
+<!--        <div *ngFor="let lessons of classesSchoolInfo.schedule['Вт']">{{lessons.nameLesson}}</div>-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <p>Ср</p>-->
+<!--        <div *ngFor="let lessons of classesSchoolInfo.schedule['Ср']">{{lessons.nameLesson}}</div>-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <p>Чт</p>-->
+<!--        <div *ngFor="let lessons of classesSchoolInfo.schedule['Чт']">{{lessons.nameLesson}}</div>-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <p>Пт</p>-->
+<!--        <div *ngFor="let lessons of classesSchoolInfo.schedule['Пт']">{{lessons.nameLesson}}</div>-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <p>Сб</p>-->
+<!--        <div *ngFor="let lessons of classesSchoolInfo.schedule['Сб']">{{lessons.nameLesson}}</div>-->
+<!--      </div>-->
+    </div>
+    <div class="btn-group">
+      <button class="btn-group__save">Сохранить</button>
+      <button class="btn-group__cancel" (click)="change(false)">Отменить</button>
+    </div>
+</div>

@@ -15,68 +15,76 @@
     <tr *ngFor="let item of classesSchoolInfo">
       <td>{{item.id}}</td>
       <td>
-        <div *ngFor="let lessenWithRoom of item.schedule['Пн']" class="div-container-lesson-with-room">
-          <p>
-            {{lessenWithRoom.nameLesson}}
-          </p>
-          <p>
-<!--            todo если нет занятий убирать букву 'к', так же добавить ее во все ячейки-->
-            к.{{lessenWithRoom.room}}
-          </p>
+          <div *ngFor="let lessenWithRoom of item.schedule['Пн']" class="div-container-lesson-with-room">
+            <p>
+              {{lessenWithRoom.nameLesson}}
+            </p>
+            <p>
+              к.{{lessenWithRoom.room}}
+            </p>
+          </div>
+      </td>
+      <td>
+          <div *ngFor="let lessenWithRoom of item.schedule['Вт']" class="div-container-lesson-with-room">
+            <p>
+              {{lessenWithRoom.nameLesson}}
+            </p>
+            <p>
+              к.{{lessenWithRoom.room}}
+            </p>
+          </div>
+      </td>
+      <td>
+          <div *ngFor="let lessenWithRoom of item.schedule['Ср']" class="div-container-lesson-with-room">
+            <p>
+              {{lessenWithRoom.nameLesson}}
+            </p>
+            <p>
+              к.{{lessenWithRoom.room}}
+            </p>
+          </div>
+      </td>
+      <td>
+          <div *ngFor="let lessenWithRoom of item.schedule['Чт']" class="div-container-lesson-with-room">
+            <p>
+              {{lessenWithRoom.nameLesson}}
+            </p>
+            <p>Пт
+              к.{{lessenWithRoom.room}}
+            </p>
+          </div>
+      </td>
+      <td>
+          <div *ngFor="let lessenWithRoom of item.schedule['Пт']" class="div-container-lesson-with-room">
+            <p>
+              {{lessenWithRoom.nameLesson}}
+            </p>
+            <p>
+              к.{{lessenWithRoom.room}}
+            </p>
+          </div>
+      </td>
+      <td>
+          <div *ngFor="let lessenWithRoom of item.schedule['Сб']" class="div-container-lesson-with-room">
+            <p>
+              {{lessenWithRoom.nameLesson}}
+            </p>
+            <p>
+              {{lessenWithRoom.room}}
+            </p>
         </div>
       </td>
       <td>
-        <div *ngFor="let lessenWithRoom of item.schedule['Вт']" class="div-container-lesson-with-room">
-          <p>
-            {{lessenWithRoom.nameLesson}}
-          </p>
-          <p>
-            {{lessenWithRoom.room}}
-          </p>
-        </div>
-      </td>
-      <td>
-        <div *ngFor="let lessenWithRoom of item.schedule['Ср']" class="div-container-lesson-with-room">
-          <p>
-            {{lessenWithRoom.nameLesson}}
-          </p>
-          <p>
-            {{lessenWithRoom.room}}
-          </p>
-        </div>
-      </td>
-      <td>
-        <div *ngFor="let lessenWithRoom of item.schedule['Чт']" class="div-container-lesson-with-room">
-          <p>
-            {{lessenWithRoom.nameLesson}}
-          </p>
-          <p>
-            {{lessenWithRoom.room}}
-          </p>
-        </div>
-      </td>
-      <td>
-        <div *ngFor="let lessenWithRoom of item.schedule['Пт']" class="div-container-lesson-with-room">
-          <p>
-            {{lessenWithRoom.nameLesson}}
-          </p>
-          <p>
-            {{lessenWithRoom.room}}
-          </p>
-        </div>
-      </td>
-      <td>
-        <div *ngFor="let lessenWithRoom of item.schedule['Сб']" class="div-container-lesson-with-room">
-          <p>
-            {{lessenWithRoom.nameLesson}}
-          </p>
-          <p>
-            {{lessenWithRoom.room}}
-          </p>
-        </div>
+<!--        <app-items></app-items>-->
+        <button class="btn-edit"(click)="editingSchedule(item)">Реадктировать</button>
       </td>
     </tr>
   </table>
+        <app-schedule-edit
+          *ngIf="showOrHideScheduleEdit"
+          [classesSchoolInfo]="scheduleClass"
+          (onChanged)="showOrHideScheduleEditFunc($event)"
+        ></app-schedule-edit>
 </div>
 
 
@@ -96,4 +104,4 @@
 <!--  </app-add-class-to-schedule>-->
 
 <!-- Уже не надо-->
-<!--  <app-schedule-for-the-day class="scheduleForDay" *ngIf="classesSchoolInfo.length>0" [day]="selectDay"></app-schedule-for-the-day>-->
+<!--  <app-schedule-edit class="scheduleForDay" *ngIf="classesSchoolInfo.length>0" [day]="selectDay"></app-schedule-edit>-->

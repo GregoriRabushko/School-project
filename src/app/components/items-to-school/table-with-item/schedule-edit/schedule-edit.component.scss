@@ -1,0 +1,44 @@
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  //width: 400px;
+  //height: 400px;
+  background-image: url("/assets/img/schedule-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 20px;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+.items-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.bi-chevron-compact-left {
+  margin-right: 20px;
+}
+.bi-chevron-compact-right {
+  margin-left: 20px;
+}
+
+.lessons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.class-name {
+  font-size: 20px;
+  margin: 10px 0;
+  border-bottom: 1px solid black;
+}
+
+.btn-group__cancel {
+  margin-left: 10px;
+}

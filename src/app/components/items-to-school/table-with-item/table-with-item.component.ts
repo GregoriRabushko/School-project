@@ -1,5 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {TableItemsService, ClassSchool} from 'src/app/components/items-to-school/table-with-item/table-items.service';
+import {Component, Input, OnInit} from '@angular/core';
+import {
+  TableItemsService,
+  ClassSchool,
+  Lessons
+} from 'src/app/components/items-to-school/table-with-item/table-items.service';
 
 @Component({
   selector: 'app-table-with-item',
@@ -9,7 +13,18 @@ import {TableItemsService, ClassSchool} from 'src/app/components/items-to-school
 export class TableWithItemComponent implements OnInit {
     week:string[] = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
     classesSchoolInfo:ClassSchool[] = [];
-
+  @Input() showOrHideScheduleEdit = false;
+  scheduleClass:ClassSchool = {
+    id: '',
+    schedule: {
+      'Пн': [{room: '', nameLesson: ''}],
+      'Вт': [{room: '', nameLesson: ''}],
+      'Ср': [{room: '', nameLesson: ''}],
+      'Чт': [{room: '', nameLesson: ''}],
+      'Пт': [{room: '', nameLesson: ''}],
+      'Сб': [{room: '', nameLesson: ''}]
+    }
+  };
   constructor(private tableItemsService: TableItemsService) { }
 
   ngOnInit(): void {
@@ -17,36 +32,14 @@ export class TableWithItemComponent implements OnInit {
 
   }
 
+  editingSchedule(item:ClassSchool) {
+    this.scheduleClass = item;
+    this.showOrHideScheduleEdit = true;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  showOrHideScheduleEditFunc(item:boolean) {
+    this.showOrHideScheduleEdit = item;
+  }
 
   // showItemsMenu() {
   //   this.showItemsWindow = true;

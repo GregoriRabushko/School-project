@@ -18,10 +18,15 @@ table {
   //justify-content: space-between;
   align-items: center;
   justify-content: center;
-  //border: 1px solid black;
+
 }
 
-
+tbody {
+  background-image: url("/assets/img/schedule-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .div-content-table {
   display: flex;
@@ -32,6 +37,7 @@ table {
 }
 
 td {
+  font-size: 20px;
   border: 1px solid black;
 }
 
@@ -53,11 +59,12 @@ td {
 }
 
 .name-subject {
-  width: 100px;
+  width: 150px;
   margin-right: 10px;
   border-right: 1px solid black;
 }
 .homework {
+  font-size: 15px;
   display: flex;
 
 }

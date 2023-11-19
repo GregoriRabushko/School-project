@@ -7,7 +7,7 @@ import {BulletinBoardComponent} from "./bulletin-board/bulletin-board.component"
 import {TableWithItemComponent} from "./table-with-item/table-with-item.component";
 import {TdCalssNameAndRoomNumberComponent} from "./table-with-item/td-calss-name-and-room-number/td-calss-name-and-room-number.component";
 import {ItemsComponent} from "./table-with-item/items/items.component";
-import {ScheduleForTheDayComponent} from "./table-with-item/schedule-for-the-day/schedule-for-the-day.component";
+import {ScheduleEditComponent} from "./table-with-item/schedule-edit/schedule-edit.component";
 import {AddClassToScheduleComponent} from "./table-with-item/add-class-to-schedule/add-class-to-schedule.component";
 import {SharedModule} from "../../common/shared.module";
 import {FormsModule} from "@angular/forms";
@@ -24,7 +24,7 @@ import {HeaderCModule} from "../header-c/header-c.module";
     TableWithItemComponent,
     TdCalssNameAndRoomNumberComponent,
     ItemsComponent,
-    ScheduleForTheDayComponent,
+    ScheduleEditComponent,
     AddClassToScheduleComponent,
   ],
     imports: [
