@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {ClassSchool, Lessons} from "../table-items.service";
+import {ClassSchool, Lessons, TableItemsService} from "../table-items.service";
 
 @Component({
   selector: 'app-schedule-edit',
@@ -9,26 +9,40 @@ import {ClassSchool, Lessons} from "../table-items.service";
 export class ScheduleEditComponent implements OnInit {
 
   @Output() onChanged = new EventEmitter<boolean>();
+
   @Input() classesSchoolInfo:ClassSchool = {
     id: '',
     schedule: {
-      'Пн': [{room: '', nameLesson: ''}],
-      'Вт': [{room: '', nameLesson: ''}],
-      'Ср': [{room: '', nameLesson: ''}],
-      'Чт': [{room: '', nameLesson: ''}],
-      'Пт': [{room: '', nameLesson: ''}],
-      'Сб': [{room: '', nameLesson: ''}]
+      'Пн': [],
+      'Вт': [],
+      'Ср': [],
+      'Чт': [],
+      'Пт': [],
+      'Сб': []
     }
   };
+
+  scheduleClass = {}
+
   week:string[] = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
   indexDay:number = 0;
   weekDay = 'Пн';
-  constructor() { }
+
+  idClass: string = '';
+  scheduleDay: string = '';
+  indexNameLesson:number = 0;
+  constructor(
+    private readonly tableService: TableItemsService,
+  ) { }
 
   ngOnInit(): void {
+    if(this.classesSchoolInfo.id !== '') {
+      this.scheduleClass = {...this.classesSchoolInfo};
+    }
+    console.log(this.scheduleClass);
   }
 
-  change(increased:boolean) {
+  exitThisWindow(increased:boolean) {
     this.onChanged.emit(increased);
   }
 
@@ -48,6 +62,15 @@ export class ScheduleEditComponent implements OnInit {
   }
 
   deleteLesson(indexLesson:number, weekDay:string) {
-    console.log(indexLesson, weekDay);
+    this.idClass = this.classesSchoolInfo.id;
+    this.scheduleDay = weekDay;
+    this.indexNameLesson = indexLesson;
+  }
+
+  saveEditLesson() {
+    this.tableService.idClass = this.idClass;
+    this.tableService.scheduleDay = this.scheduleDay;
+    this.tableService.indexNameLesson = this.indexNameLesson;
+    this.tableService.deleteLessonSchedule();
   }
 }

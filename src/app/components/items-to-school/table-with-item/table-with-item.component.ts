@@ -32,7 +32,7 @@ export class TableWithItemComponent implements OnInit {
 
   }
 
-  editingSchedule(item:ClassSchool) {
+  btnEditingSchedule(item:ClassSchool) {
     this.scheduleClass = item;
     this.showOrHideScheduleEdit = true;
   }

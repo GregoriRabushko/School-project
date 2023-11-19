@@ -25,6 +25,7 @@
 .bi-chevron-compact-left {
   margin: 0 20px;
 }
+
 .bi-chevron-compact-right {
   margin: 0 20px;
 }
@@ -46,9 +47,12 @@
 }
 
 .class-name {
-  font-size: 20px;
-  margin: 10px 0;
-  border-bottom: 1px solid black;
+  display: flex;
+  h2 {
+    font-size: 20px;
+    margin: 10px 0;
+    border-bottom: 1px solid black;
+  }
 }
 
 .btn-group__cancel {
@@ -62,5 +66,6 @@
 }
 
 .name-lesson {
-
+  width: 100px;
+  margin: 5px 0;
 }
