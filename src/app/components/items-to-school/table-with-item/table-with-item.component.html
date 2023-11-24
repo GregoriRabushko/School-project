@@ -75,13 +75,19 @@
         </div>
       </td>
       <td>
-        <button class="btn-edit"(click)="btnEditingSchedule(item)">Реадктировать</button>
+        <button class="btn-edit" (click)="btnEditingSchedule(item)">Реадктировать</button>
+      </td>
+      <td>
+        <button>Удалить</button>
       </td>
     </tr>
   </table>
+  <div>
+    <button>Add Classes</button>
+  </div>
         <app-schedule-edit
           *ngIf="showOrHideScheduleEdit"
-          [classesSchoolInfo]="scheduleClass"
+          [classesId]="scheduleClass.id"
           (onChanged)="showOrHideScheduleEditFunc($event)"
         ></app-schedule-edit>
 </div>

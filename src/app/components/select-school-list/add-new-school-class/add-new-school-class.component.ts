@@ -9,11 +9,22 @@ import {TableItemsService, ClassSchool} from 'src/app/components/items-to-school
 })
 export class AddNewSchoolClassComponent implements OnInit {
 
-  className = '';
   numberClass:number = 1;
   indexToArrLetter:number = 0;
   arrToLettersClass:string[] = ['A', 'Б', 'В', 'Г']
   @Output() closeWindow = new EventEmitter<boolean>();
+  newClass:ClassSchool = {
+      id: '',
+      schedule: {
+        'Пн': [{room: '', nameLesson: ''}],
+        'Вт': [{room: '', nameLesson: ''}],
+        'Ср': [{room: '', nameLesson: ''}],
+        'Чт': [{room: '', nameLesson: ''}],
+        'Пт': [{room: '', nameLesson: ''}],
+        'Сб': [{room: '', nameLesson: ''}]
+      }
+    }
+
   constructor(private tableItemsService:TableItemsService) { }
 
   ngOnInit(): void {
@@ -21,8 +32,10 @@ export class AddNewSchoolClassComponent implements OnInit {
 
 
   addNewClassList() {
-    this.className = `${this.numberClass}`+this.arrToLettersClass[this.indexToArrLetter];
-    this.tableItemsService.postStudentsListNumber(this.className);
+    this.newClass.id = `${this.numberClass}`+this.arrToLettersClass[this.indexToArrLetter];
+    // console.log(this.newClass);
+    // console.log(this.newClass.id);
+    this.tableItemsService.postStudentsListNumber(this.newClass);
     this.closeWindowWithAddSchoolClassList(false);
   }
   closeWindowWithAddSchoolClassList(item:boolean) {

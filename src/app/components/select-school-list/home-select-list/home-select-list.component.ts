@@ -14,26 +14,27 @@ export class HomeSelectListComponent implements OnInit {
   @Input() openWindowAddSchoolClassList = false;
   deleteCard = false;
   contentButtonDelete = 'Удалить журнал -';
-  indexClass:number = 0;
+  indexClass: number = 0;
 
-  classesSchoolInfo:ClassSchool[] = [];
+  classesSchoolInfo: ClassSchool[] = [];
 
 
   constructor(
     private listService: FunctionalClassListService,
-    private selectSchoolListService:SelectSchoolListService,
+    private selectSchoolListService: SelectSchoolListService,
     private tableItemsService: TableItemsService,
-  ) { }
+  ) {
+  }
 
 
   ngOnInit(): void {
-    this.classesSchoolInfo = this.tableItemsService.getLessons();
-
-    console.log(this.classesSchoolInfo);
-
+    if (this.classesSchoolInfo.length === 0) {
+      this.tableItemsService.getLessons().subscribe((val:any) => this.classesSchoolInfo = val);
+    }
   }
 
-  selectedClass(indexClass:number) {
+
+  selectedClass(indexClass: number) {
     this.indexClass = indexClass;
     console.log(this.indexClass);
   }
@@ -49,25 +50,27 @@ export class HomeSelectListComponent implements OnInit {
 
   }
 
-  checkingTheStateOfAVariableClassList(item:boolean) {
+  checkingTheStateOfAVariableClassList(item: boolean) {
     this.openWindowAddSchoolClassList = item;
   }
-  checkingTheStateOfAVariableSubject(item:boolean) {
+
+  checkingTheStateOfAVariableSubject(item: boolean) {
     this.closeOrVueChooseASchoolSubject = item;
   }
 
   changesTheContentOfTheButton() {
     this.deleteCard = !this.deleteCard;
 
-    if(this.deleteCard) {
+    if (this.deleteCard) {
       this.contentButtonDelete = 'Отмена';
     }
-    if(!this.deleteCard) {
+    if (!this.deleteCard) {
       this.contentButtonDelete = 'Удалить журнал -';
     }
   }
-  deleteSchoolClassList(indexItem:number) {
-    this.classesSchoolInfo.splice(indexItem,1);
+
+  deleteSchoolClassList(indexItem: number) {
+    this.classesSchoolInfo.splice(indexItem, 1);
     // console.log(this.studentsListNumber)
   }
 

@@ -28,7 +28,10 @@ export class TableWithItemComponent implements OnInit {
   constructor(private tableItemsService: TableItemsService) { }
 
   ngOnInit(): void {
-    this.classesSchoolInfo = this.tableItemsService.getLessons();
+    if(this.classesSchoolInfo.length === 0) {
+      this.classesSchoolInfo = this.tableItemsService.getLessons()
+    }
+    console.log(this.classesSchoolInfo);
 
   }
 
