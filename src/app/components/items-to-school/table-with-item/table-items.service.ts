@@ -28,22 +28,6 @@ export class TableItemsService {
   //   })
   // }
 
-  postStudentsListNumber(item: ClassSchool) {
-   return this.http.post('http://localhost:3000/selectList', item);
-
-    // todo добавить сортировку при добавлении, что бы нумерация классов остовалась
-    // this.classesSchoolInfo.push({
-    //   id:item,
-    //   schedule: {
-    //     'Пн': [{room: '', nameLesson: ''}],
-    //     'Вт': [{room: '', nameLesson: ''}],
-    //     'Ср': [{room: '', nameLesson: ''}],
-    //     'Чт': [{room: '', nameLesson: ''}],
-    //     'Пт': [{room: '', nameLesson: ''}],
-    //     'Сб': [{room: '', nameLesson: ''}]
-    //   }
-    // })
-  }
 
 
   getLessons(): any {

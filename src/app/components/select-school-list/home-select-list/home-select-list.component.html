@@ -5,7 +5,7 @@
 
       <div class="school-list-card" (click)="selectedClass(indexClass)">
         <div *ngIf="deleteCard">
-          <button class="btn-delete-card" (click)="deleteSchoolClassList(classesSchoolInfo.indexOf(item))">+</button>
+          <button class="btn-delete-card" (click)="deleteSchoolClassList(classesSchoolInfo?.indexOf(item))">+</button>
         </div>
 
         <img src="../../../assets/img/img-to-select-school-component/images.jpg" alt="books">
@@ -20,7 +20,7 @@
   </div>
   <app-add-new-school-class
     (closeWindow)="checkingTheStateOfAVariableClassList($event)"
-    *ngIf="openWindowAddSchoolClassList">
+    *ngIf="isWindowAddSchoolClassListOpened">
   </app-add-new-school-class>
   <app-choose-a-school-subject
     [indexClass]="indexClass"

@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from "@angular/common/http";
-import { Observable, Subscription} from 'rxjs';
-import { ActivatedRoute} from '@angular/router';
+import {Observable, scan, Subscription, take, toArray} from 'rxjs';
+import {ActivatedRoute} from '@angular/router';
 import {map} from "rxjs/operators";
 import {User} from "./interface";
 import {schoolObjects, studentsListNumber, students} from "src/assets/school-info-test-db/info-school"
+import {ClassSchool} from "../items-to-school/table-with-item/table-items.service";
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +13,10 @@ import {schoolObjects, studentsListNumber, students} from "src/assets/school-inf
 export class SelectSchoolListService {
 
 
-
   constructor(
     private http: HttpClient
-  ){}
+  ) {
+  }
 
   getClassInfo(classIndex: number, subjectIndex: number) {
     const subject = schoolObjects[subjectIndex];
@@ -28,64 +29,49 @@ export class SelectSchoolListService {
     return classInfo;
   }
 
-  getStudentsListNumber() {
-    console.log(studentsListNumber)
-    return studentsListNumber;
-  }
-
-
   postSchoolObjects(item: string) {
     schoolObjects.push(item);
     console.log(item);
   }
 
-  postStudentsListNumber(item: string) {
-    studentsListNumber.push(item)
+
+  getLessons(): any {
+   return this.http.get('http://localhost:3000/itemsToSchool')
+  }
+
+
+  postStudentsListNumber(item: ClassSchool) {
+    return this.http.post<ClassSchool[]>('http://localhost:3000/addList', item);
+
+    // todo добавить сортировку при добавлении, что бы нумерация классов остовалась
+    // this.classesSchoolInfo.push({
+    //   id:item,
+    //   schedule: {
+    //     'Пн': [{room: '', nameLesson: ''}],
+    //     'Вт': [{room: '', nameLesson: ''}],
+    //     'Ср': [{room: '', nameLesson: ''}],
+    //     'Чт': [{room: '', nameLesson: ''}],
+    //     'Пт': [{room: '', nameLesson: ''}],
+    //     'Сб': [{room: '', nameLesson: ''}]
+    //   }
+    // })
   }
 
   deleteSchoolObjects(itemIndex: number) {
     schoolObjects.splice(itemIndex, 1)
   }
 
-
   getSchoolSubjects() {
     return schoolObjects
   }
-
-
-
-
-  // ================= просто пробовал через observer ===========
-  getInfo():Observable<User[]> {
-    return this.http.get('http://localhost:3000/classes').
-    pipe(map((data:any)=>{
-    let usersList = data["classes"];
-
-    // console.log(usersList)
-    return usersList.map(function(user: any): User {
-      return new User(user.id, user.name);
-    });
-  }));
-  }
-
-  // getSchoolSubjects():Observable<User[]> {
-  //   return this.http.get('assets/school-info-test-db/infoprostotak.json').
-  //     pipe(map((data:any)=>{
-  //       let schoolSubject = data["schoolSubjects"];
-  //
-  //       return schoolSubject.map(function(item:any):User {
-  //         return new User(item.id, item.name);
-  //     });
-  //   }));
-  // }
 }
 
 export interface ClassInfo {
-  chooseSubject:string,
-  className:string
+  chooseSubject: string,
+  className: string
 }
 
 export interface InfoClass {
-  [key:number]:[string]
+  [key: number]: [string]
 }
 

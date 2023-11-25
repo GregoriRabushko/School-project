@@ -1,23 +1,22 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FunctionalClassListService} from "../students-list/functional-class-list.service";
 import {SelectSchoolListService} from "../select-school-list.service";
 import {TableItemsService, ClassSchool} from 'src/app/components/items-to-school/table-with-item/table-items.service';
+import {take} from "rxjs";
 
 @Component({
-  selector: 'app-home-select-list',
   templateUrl: './home-select-list.component.html',
   styleUrls: ['./home-select-list.component.scss']
 })
 export class HomeSelectListComponent implements OnInit {
 
-  @Input() closeOrVueChooseASchoolSubject = false;
-  @Input() openWindowAddSchoolClassList = false;
+  closeOrVueChooseASchoolSubject = false;
+  isWindowAddSchoolClassListOpened = false;
   deleteCard = false;
   contentButtonDelete = 'Удалить журнал -';
   indexClass: number = 0;
 
-  classesSchoolInfo: ClassSchool[] = [];
-
+  classesSchoolInfo: ClassSchool[] | undefined;
 
   constructor(
     private listService: FunctionalClassListService,
@@ -26,13 +25,18 @@ export class HomeSelectListComponent implements OnInit {
   ) {
   }
 
-
   ngOnInit(): void {
-    if (this.classesSchoolInfo.length === 0) {
-      this.tableItemsService.getLessons().subscribe((val:any) => this.classesSchoolInfo = val);
-    }
+      // console.log(this.selectSchoolListService.getLessons());
+      this.loadLessons();
+      // console.log(this.classesSchoolInfo);
   }
 
+
+  loadLessons() {
+    this.selectSchoolListService.getLessons().pipe(
+      take(1)
+    ).subscribe((val: any) => this.classesSchoolInfo = val);
+  }
 
   selectedClass(indexClass: number) {
     this.indexClass = indexClass;
@@ -44,14 +48,20 @@ export class HomeSelectListComponent implements OnInit {
   }
 
   divVueAddSchoolClass() {
-    this.openWindowAddSchoolClassList = true;
+    this.isWindowAddSchoolClassListOpened = true;
     this.deleteCard = false;
     this.contentButtonDelete = 'Удалить журнал -';
 
   }
 
-  checkingTheStateOfAVariableClassList(item: boolean) {
-    this.openWindowAddSchoolClassList = item;
+  checkingTheStateOfAVariableClassList(result: {
+    success: boolean,
+    updatedData?: ClassSchool[],
+  }) {
+    this.isWindowAddSchoolClassListOpened = false;
+    if (result.success) {
+      this.classesSchoolInfo = result.updatedData;
+    }
   }
 
   checkingTheStateOfAVariableSubject(item: boolean) {
@@ -69,8 +79,8 @@ export class HomeSelectListComponent implements OnInit {
     }
   }
 
-  deleteSchoolClassList(indexItem: number) {
-    this.classesSchoolInfo.splice(indexItem, 1);
+  deleteSchoolClassList(indexItem?: number) {
+    // this.classesSchoolInfo.splice(indexItem, 1);
     // console.log(this.studentsListNumber)
   }
 

@@ -94,11 +94,4 @@ export class ChooseASchoolSubjectComponent implements OnInit {
     //   console.log(this.schoolSubjects);
     // });
   }
-
-
-  //========================================== просто пробовал через observer ===========
-  giveInfo() {
-    this.selectSchoolListService.getInfo().subscribe({next:(data: User[]) => this.users=data});
-    return console.log(this.users);
-  }
 }

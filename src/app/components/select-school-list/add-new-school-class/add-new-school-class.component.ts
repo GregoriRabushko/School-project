@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {SelectSchoolListService} from "../select-school-list.service";
 import {TableItemsService, ClassSchool} from 'src/app/components/items-to-school/table-with-item/table-items.service';
+import {take} from "rxjs";
 
 @Component({
   selector: 'app-add-new-school-class',
@@ -11,8 +12,11 @@ export class AddNewSchoolClassComponent implements OnInit {
 
   numberClass:number = 1;
   indexToArrLetter:number = 0;
-  arrToLettersClass:string[] = ['A', 'Б', 'В', 'Г']
-  @Output() closeWindow = new EventEmitter<boolean>();
+  arrToLettersClass:string[] = ['A', 'Б', 'В', 'Г'];
+  @Output() closeWindow = new EventEmitter<{
+    success: boolean,
+    updatedData?: ClassSchool[],
+  }>();
   newClass:ClassSchool = {
       id: '',
       schedule: {
@@ -25,21 +29,30 @@ export class AddNewSchoolClassComponent implements OnInit {
       }
     }
 
-  constructor(private tableItemsService:TableItemsService) { }
+  constructor(private selectSchoolListService:SelectSchoolListService) { }
 
   ngOnInit(): void {
   }
-
 
   addNewClassList() {
     this.newClass.id = `${this.numberClass}`+this.arrToLettersClass[this.indexToArrLetter];
     // console.log(this.newClass);
     // console.log(this.newClass.id);
-    this.tableItemsService.postStudentsListNumber(this.newClass);
-    this.closeWindowWithAddSchoolClassList(false);
+    this.selectSchoolListService.postStudentsListNumber(this.newClass)
+      .pipe(take(1))
+      .subscribe(value => this.closeWindowWithAddSchoolClassList({
+      success: true,
+      updatedData: value,
+    }));
   }
-  closeWindowWithAddSchoolClassList(item:boolean) {
-    this.closeWindow.emit(item);
+  closeWindowWithAddSchoolClassList(result?:{
+    success: boolean,
+    updatedData?: ClassSchool[],
+  }) {
+    this.closeWindow.emit({
+      success: !!result?.success,
+      updatedData: result?.updatedData,
+    });
   }
 
   nextNumberClass() {
